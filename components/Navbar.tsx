@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Search, MapPin, Fish, Waves, Calendar } from 'lucide-react';
+import { Search, MapPin, Fish, Waves, Calendar, Compass, Shield } from 'lucide-react';
 import { searchLocations, LocationSearchResult } from '@/lib/geo/geocoding';
 
 interface NavbarProps {
@@ -76,80 +76,94 @@ export default function Navbar({
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-river-950/90 backdrop-blur-md border-b border-river-800 text-river-300">
+    <header className="bg-[#0e1712] border-b border-[#1f3629] text-[#f4f3ef] sticky top-0 z-40 shadow-lg">
+      
+      {/* Top Banner Notice */}
+      <div className="bg-[#14231b] border-b border-[#1f3629] py-1.5 px-4 text-xs text-[#c49f6e] flex items-center justify-between">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-4">
+          <span className="font-serif italic flex items-center gap-1.5">
+            <Shield className="w-3.5 h-3.5 text-[#2e7d58]" />
+            Službene informacije o uslovima ribolova, vodama i zakonskim mjerama u BiH
+          </span>
+          <span className="hidden md:inline font-mono text-[11px] text-[#4ca778]">
+            Verificirani podaci SRS BiH & FBiH
+          </span>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-4">
+        <div className="flex items-center justify-between h-20 gap-4">
           
-          {/* Logo Branding */}
-          <a href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 flex items-center justify-center text-white shadow-lg shadow-emerald-950/50 group-hover:scale-105 transition-transform border border-emerald-500/30">
-              <Fish className="w-5 h-5 text-emerald-200" />
+          {/* Outdoor Serif Branding */}
+          <a href="/" className="flex items-center gap-3 shrink-0 group">
+            <div className="w-11 h-11 rounded bg-[#182820] border border-[#274535] flex items-center justify-center text-white shadow-md">
+              <span className="text-xl">🎣</span>
             </div>
             <div>
-              <span className="font-extrabold text-lg text-white tracking-wide flex items-center gap-1">
-                RIBOLOV <span className="text-emerald-400">BiH</span>
+              <span className="font-serif font-black text-xl text-white tracking-wide block">
+                RIBOLOV <span className="text-[#c49f6e]">BiH</span>
               </span>
-              <span className="text-[10px] text-emerald-400/80 block uppercase tracking-widest font-semibold">
-                Prognoza & Vode
+              <span className="text-[11px] text-[#8ea396] font-sans block tracking-wider uppercase">
+                Portal i Prognoza na Vodama
               </span>
             </div>
           </a>
 
-          {/* Center Search Bar & Geolocation Button */}
+          {/* Location Search Bar & GPS Trigger */}
           <div className="flex-1 max-w-lg relative" ref={searchRef}>
             <div className="relative flex items-center">
-              <Search className="w-4 h-4 absolute left-3 text-emerald-500/70" />
+              <Search className="w-4 h-4 absolute left-3.5 text-[#4ca778]" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => searchQuery.trim() && setIsOpen(true)}
-                placeholder="Pretraži rijeku, jezero ili grad (npr. Jablaničko jezero, Bihać, Drina)..."
-                className="w-full pl-9 pr-24 py-2 text-sm bg-river-900/90 border border-river-800 rounded-xl text-emerald-100 placeholder-emerald-700/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/50 transition-all"
+                placeholder="Pretraži vode ili grad (npr. Jablaničko jezero, Bihać, Drina)..."
+                className="w-full pl-10 pr-28 py-2.5 text-xs font-medium bg-[#14231b] border border-[#274535] rounded-md text-white placeholder-[#8ea396] focus:outline-none focus:border-[#4ca778] transition-colors"
               />
               <button
                 onClick={handleGeoClick}
                 disabled={isLocating}
-                className="absolute right-1.5 px-2.5 py-1 text-xs bg-emerald-800/60 hover:bg-emerald-700 text-emerald-200 rounded-lg flex items-center gap-1 transition-colors border border-emerald-600/40"
+                className="absolute right-1 px-2.5 py-1.5 text-xs bg-[#1f3629] hover:bg-[#274535] text-[#f4f3ef] rounded font-medium flex items-center gap-1.5 transition-colors border border-[#345b46]"
                 title="Koristi trenutnu GPS lokaciju"
               >
-                <MapPin className="w-3 h-3 text-emerald-400" />
-                <span className="hidden sm:inline">{isLocating ? 'Tražim...' : 'Lokacija'}</span>
+                <MapPin className="w-3.5 h-3.5 text-[#4ca778]" />
+                <span className="hidden sm:inline">{isLocating ? 'Tražim...' : 'Moja lokacija'}</span>
               </button>
             </div>
 
             {/* Search Dropdown Results */}
             {isOpen && (
-              <div className="absolute left-0 right-0 top-full mt-2 bg-river-900 border border-river-800 rounded-xl shadow-2xl overflow-hidden z-50 max-h-80 overflow-y-auto divide-y divide-river-800/50">
+              <div className="absolute left-0 right-0 top-full mt-1 bg-[#14231b] border border-[#274535] rounded-md shadow-2xl overflow-hidden z-50 max-h-80 overflow-y-auto divide-y divide-[#1f3629]">
                 {isSearching ? (
-                  <div className="p-3 text-xs text-emerald-400/70 text-center flex items-center justify-center gap-2">
-                    <div className="w-3 h-3 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin"></div>
-                    Pretraživanje geolocijskog registra...
+                  <div className="p-3 text-xs text-[#4ca778] text-center flex items-center justify-center gap-2">
+                    <div className="w-3 h-3 border-2 border-[#4ca778] border-t-transparent rounded-full animate-spin"></div>
+                    Pretraživanje...
                   </div>
                 ) : results.length > 0 ? (
                   results.map((item) => (
                     <button
                       key={item.id}
                       onClick={() => handleSelectResult(item)}
-                      className="w-full text-left p-3 hover:bg-river-800/60 transition-colors flex items-center justify-between group"
+                      className="w-full text-left p-3 hover:bg-[#1c3126] transition-colors flex items-center justify-between group"
                     >
                       <div>
-                        <div className="text-sm font-semibold text-emerald-100 group-hover:text-emerald-300 flex items-center gap-1.5">
+                        <div className="text-sm font-semibold text-white group-hover:text-[#c49f6e] flex items-center gap-1.5 font-serif">
                           <span>{item.type === 'water' ? '🏞️' : '🏙️'}</span>
                           {item.name}
                         </div>
-                        <div className="text-xs text-emerald-400/60">
+                        <div className="text-xs text-[#8ea396]">
                           {item.municipality ? `${item.municipality}, ` : ''}{item.region || item.country}
                         </div>
                       </div>
-                      <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
+                      <span className="text-[10px] px-2 py-0.5 rounded bg-[#0b120f] text-[#4ca778] border border-[#1f3629]">
                         {item.type === 'water' ? 'Voda' : 'Grad'}
                       </span>
                     </button>
                   ))
                 ) : (
-                  <div className="p-3 text-xs text-emerald-400/60 text-center">
-                    Nije pronađena nijedna lokacija za "{searchQuery}".
+                  <div className="p-3 text-xs text-[#8ea396] text-center">
+                    Nije pronađena lokacija za "{searchQuery}".
                   </div>
                 )}
               </div>
@@ -157,26 +171,33 @@ export default function Navbar({
           </div>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1 text-xs font-medium">
+          <nav className="hidden lg:flex items-center gap-1 text-xs font-semibold uppercase tracking-wider">
+            <a
+              href="/"
+              className="px-3.5 py-2 rounded hover:bg-[#182820] text-white transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#274535]"
+            >
+              <Compass className="w-4 h-4 text-[#c49f6e]" />
+              Naslovna
+            </a>
             <a
               href="/forecast"
-              className="px-3 py-2 rounded-lg hover:bg-river-900 text-emerald-200/80 hover:text-emerald-300 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded hover:bg-[#182820] text-[#d5d1c3] hover:text-white transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#274535]"
             >
-              <Calendar className="w-3.5 h-3.5 text-emerald-400" />
+              <Calendar className="w-4 h-4 text-[#4ca778]" />
               Prognoza
             </a>
             <a
               href="/fish"
-              className="px-3 py-2 rounded-lg hover:bg-river-900 text-emerald-200/80 hover:text-emerald-300 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded hover:bg-[#182820] text-[#d5d1c3] hover:text-white transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#274535]"
             >
-              <Fish className="w-3.5 h-3.5 text-emerald-400" />
+              <Fish className="w-4 h-4 text-[#4ca778]" />
               Ribe BiH
             </a>
             <a
               href="/waters"
-              className="px-3 py-2 rounded-lg hover:bg-river-900 text-emerald-200/80 hover:text-emerald-300 transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2 rounded hover:bg-[#182820] text-[#d5d1c3] hover:text-white transition-colors flex items-center gap-1.5 border border-transparent hover:border-[#274535]"
             >
-              <Waves className="w-3.5 h-3.5 text-emerald-400" />
+              <Waves className="w-4 h-4 text-[#4ca778]" />
               Vode BiH
             </a>
           </nav>

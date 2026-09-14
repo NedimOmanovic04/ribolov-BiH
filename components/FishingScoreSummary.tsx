@@ -16,94 +16,70 @@ export default function FishingScoreSummary({
 }: FishingScoreSummaryProps) {
   const { totalScore, categoryLabel, category, factors, bestPeriods, disclaimer } = scoreResult;
 
-  // Rating color theme
-  let badgeBg = 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40';
-  let gaugeColor = 'from-emerald-600 to-teal-400';
-
-  if (category === 'excellent') {
-    badgeBg = 'bg-emerald-500/30 text-emerald-200 border-emerald-400';
-    gaugeColor = 'from-emerald-500 to-green-400';
-  } else if (category === 'very_good') {
-    badgeBg = 'bg-teal-500/20 text-teal-300 border-teal-500/40';
-    gaugeColor = 'from-teal-600 to-emerald-400';
-  } else if (category === 'good') {
-    badgeBg = 'bg-sky-500/20 text-sky-300 border-sky-500/40';
-    gaugeColor = 'from-sky-600 to-teal-400';
-  } else if (category === 'fair') {
-    badgeBg = 'bg-amber-500/20 text-amber-300 border-amber-500/40';
-    gaugeColor = 'from-amber-600 to-yellow-400';
-  } else {
-    badgeBg = 'bg-rose-500/20 text-rose-300 border-rose-500/40';
-    gaugeColor = 'from-rose-600 to-amber-500';
-  }
+  let badgeColor = 'bg-[#2e7d58] text-white border-[#4ca778]';
+  if (totalScore >= 85) badgeColor = 'bg-[#2e7d58] text-white border-emerald-400 font-black';
+  else if (totalScore >= 75) badgeColor = 'bg-[#27523e] text-emerald-200 border-[#346d53]';
+  else if (totalScore >= 60) badgeColor = 'bg-[#1e435f] text-sky-200 border-[#2b536e]';
+  else if (totalScore >= 45) badgeColor = 'bg-[#473d34] text-amber-200 border-[#755c43]';
+  else badgeColor = 'bg-[#4a2222] text-rose-200 border-rose-800';
 
   return (
-    <div className="glass-panel-water rounded-2xl p-5 border border-water-800/80 shadow-2xl space-y-5">
+    <div className="panel-outdoors-water rounded-lg p-5 space-y-4">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-water-800/60 pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#1a354c] pb-3">
         <div>
-          <div className="text-xs font-semibold uppercase tracking-wider text-water-400 flex items-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-water-400" />
-            Ribolovni Uslovi {selectedSpeciesName ? `za: ${selectedSpeciesName}` : 'Općenito'}
-          </div>
-          <h3 className="text-lg font-bold text-white tracking-tight">{locationName}</h3>
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#0284c7] block font-serif">
+            Bilten Ribolovnih Uslova
+          </span>
+          <h3 className="text-xl font-bold text-white font-serif">
+            {selectedSpeciesName ? `Uslovi za: ${selectedSpeciesName}` : 'Opšti Uslovi na Vodi'}
+          </h3>
         </div>
-        <div className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${badgeBg}`}>
+        <div className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border ${badgeColor}`}>
           🟢 {categoryLabel}
         </div>
       </div>
 
-      {/* Main Score Display & Best Periods */}
+      {/* Main Score & Best Intervals */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
         
-        {/* Big 0-100 Score Gauge */}
-        <div className="bg-water-900/90 rounded-xl p-4 border border-water-800/80 flex items-center gap-4">
-          <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
-            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-              <path
-                className="text-water-950 stroke-current"
-                strokeWidth="3.5"
-                fill="none"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path
-                className="stroke-current text-emerald-400 transition-all duration-1000 ease-out"
-                strokeDasharray={`${totalScore}, 100`}
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                fill="none"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-            </svg>
-            <div className="absolute flex flex-col items-center">
-              <span className="text-2xl font-black text-white">{totalScore}</span>
-              <span className="text-[9px] text-water-400 uppercase font-semibold">/ 100</span>
-            </div>
+        {/* Score Dial */}
+        <div className="bg-[#122536] p-4 rounded border border-[#1a354c] flex items-center gap-4">
+          <div className="w-16 h-16 rounded bg-[#0d1a26] border border-[#244866] flex flex-col items-center justify-center shrink-0">
+            <span className="text-2xl font-black text-white font-serif">{totalScore}</span>
+            <span className="text-[9px] text-[#2b87be] uppercase font-bold">/ 100</span>
           </div>
           <div>
-            <span className="text-xs text-water-300 font-semibold block">Ribolovni Indeks</span>
-            <div className="text-xs text-water-400/80 mt-0.5">
-              {totalScore >= 80 ? 'Izvanredni uslovi za ulazak na vodu' : totalScore >= 65 ? 'Povoljno vrijeme i pritisak' : 'Preporučuje se prilagođavanje mamca'}
-            </div>
+            <span className="text-xs text-[#d5d1c3] font-bold block">Indeks Ulova</span>
+            <span className="text-xs text-[#8ea396] block mt-0.5">
+              {totalScore >= 80 ? 'Vrlo povoljan pritisak i temperatura' : totalScore >= 65 ? 'Dobre šanse u rano jutro' : 'Potrebna precizna prezentacija'}
+            </span>
           </div>
         </div>
 
-        {/* Best Hours Window Card */}
-        <div className="md:col-span-2 bg-water-900/90 rounded-xl p-4 border border-water-800/80 space-y-2">
-          <div className="text-xs font-semibold text-water-300 flex items-center gap-1.5">
-            <Clock className="w-3.5 h-3.5 text-emerald-400" />
+        {/* Hot Intervals for Species */}
+        <div className="md:col-span-2 bg-[#122536] p-4 rounded border border-[#1a354c] space-y-2">
+          <div className="text-xs font-bold text-[#e8e5db] flex items-center gap-1.5 font-serif">
+            <Clock className="w-4 h-4 text-[#2b87be]" />
             Najbolji intervali danas za aktivnost ribe:
           </div>
           <div className="flex flex-wrap gap-2.5 pt-1">
             {bestPeriods.map((period, idx) => (
               <div
                 key={idx}
-                className="bg-river-900/90 border border-emerald-500/40 rounded-lg px-3 py-1.5 flex items-center gap-2"
+                className="bg-[#0d1a26] border border-[#2e7d58] rounded px-3 py-1.5 flex flex-col gap-0.5"
               >
-                <span className="text-xs font-bold text-white">{period.start} – {period.end}</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">
-                  {period.score}% ⭐
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold text-white font-serif">{period.start} – {period.end}</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#2e7d58]/30 text-emerald-300 font-bold border border-[#2e7d58]">
+                    {period.score}% ⭐
+                  </span>
+                </div>
+                {period.reason && (
+                  <span className="text-[10px] text-[#c49f6e] font-medium truncate">
+                    💡 {period.reason}
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -111,43 +87,43 @@ export default function FishingScoreSummary({
 
       </div>
 
-      {/* Factor Breakdown Grid */}
-      <div className="bg-water-950/60 rounded-xl p-4 border border-water-800/60 space-y-2.5">
-        <div className="text-xs font-semibold text-water-300 flex items-center gap-1.5">
-          <TrendingUp className="w-3.5 h-3.5 text-water-400" />
-          Faktori ribolovne ocjene:
+      {/* Factor Matrix */}
+      <div className="bg-[#0d1a26] p-3 rounded border border-[#1a354c] space-y-2">
+        <div className="text-xs font-bold text-[#c49f6e] flex items-center gap-1.5 font-serif">
+          <TrendingUp className="w-3.5 h-3.5 text-[#c49f6e]" />
+          Razrada faktora ocjene:
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
           
-          <div className="bg-water-900/80 p-2 rounded-lg border border-water-800/60">
-            <div className="text-water-400 text-[11px]">Temperatura</div>
-            <div className="font-bold text-white mt-0.5">{factors.temperature} / 20</div>
+          <div className="bg-[#122536] p-2 rounded border border-[#1a354c]">
+            <div className="text-[#8ea396] text-[11px]">Temperatura</div>
+            <div className="font-bold text-white mt-0.5 font-mono">{factors.temperature} / 20</div>
           </div>
 
-          <div className="bg-water-900/80 p-2 rounded-lg border border-water-800/60">
-            <div className="text-water-400 text-[11px]">Pritisak & Trend</div>
-            <div className="font-bold text-white mt-0.5">{factors.pressure + factors.pressureTrend} / 25</div>
+          <div className="bg-[#122536] p-2 rounded border border-[#1a354c]">
+            <div className="text-[#8ea396] text-[11px]">Pritisak & Trend</div>
+            <div className="font-bold text-white mt-0.5 font-mono">{factors.pressure + factors.pressureTrend} / 25</div>
           </div>
 
-          <div className="bg-water-900/80 p-2 rounded-lg border border-water-800/60">
-            <div className="text-water-400 text-[11px]">Dio Dana</div>
-            <div className="font-bold text-white mt-0.5">{factors.timeOfDay} / 15</div>
+          <div className="bg-[#122536] p-2 rounded border border-[#1a354c]">
+            <div className="text-[#8ea396] text-[11px]">Dio Dana</div>
+            <div className="font-bold text-white mt-0.5 font-mono">{factors.timeOfDay} / 15</div>
           </div>
 
-          <div className="bg-water-900/80 p-2 rounded-lg border border-water-800/60">
-            <div className="text-water-400 text-[11px]">Vjetar & Oblaci</div>
-            <div className="font-bold text-white mt-0.5">{factors.wind + factors.cloudCover} / 20</div>
+          <div className="bg-[#122536] p-2 rounded border border-[#1a354c]">
+            <div className="text-[#8ea396] text-[11px]">Vjetar & Oblaci</div>
+            <div className="font-bold text-white mt-0.5 font-mono">{factors.wind + factors.cloudCover} / 20</div>
           </div>
 
         </div>
       </div>
 
-      {/* Explicit User Requirements Disclaimer */}
-      <div className="bg-river-950/80 border border-river-800/80 rounded-xl p-3 flex items-start gap-2.5 text-xs text-river-300/80">
-        <Info className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+      {/* Fisherman's Disclaimer Notice */}
+      <div className="bg-[#0b120f] border border-[#1f3629] rounded p-3 flex items-start gap-2.5 text-xs text-[#8ea396]">
+        <Info className="w-4 h-4 text-[#4ca778] shrink-0 mt-0.5" />
         <div>
-          <span className="font-semibold text-emerald-300">Procjena ribolovnih uslova: </span>
-          {disclaimer} Ova ocjena predstavlja procjenu ponašanja ribe na osnovu vremenskih varijabli i ne garantuje ulov.
+          <span className="font-semibold text-[#e8e5db]">Napomena za ribolovce: </span>
+          {disclaimer} Ocjena ne predstavlja garantovan ulov, već proračun povoljnosti uslova na terenu.
         </div>
       </div>
     </div>

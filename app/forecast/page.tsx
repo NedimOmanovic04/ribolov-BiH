@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import { fetchWeatherData, WeatherData, getWeatherDescription } from '@/lib/weather/open-meteo';
 import { getAstronomyData, AstronomyData } from '@/lib/astronomy/moon';
-import { Calendar, Sun, Moon, Gauge, Wind, Thermometer, CloudRain } from 'lucide-react';
+import { Calendar, Sun, Moon, Wind, Thermometer, CloudRain } from 'lucide-react';
 
 export default function ForecastPage() {
   const [location, setLocation] = useState({ lat: 43.6844, lng: 17.8289, name: 'Jablaničko jezero' });
@@ -27,7 +27,7 @@ export default function ForecastPage() {
   }, [location]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-river-950 text-emerald-50">
+    <div className="min-h-screen flex flex-col bg-[#0b120f] text-[#f4f3ef]">
       <Navbar
         currentLocationName={location.name}
         onSelectLocation={(loc) => setLocation(loc)}
@@ -35,16 +35,18 @@ export default function ForecastPage() {
       />
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-        <div className="glass-panel rounded-2xl p-6 border border-river-800/80 space-y-2">
-          <div className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
-            📅 Višednevna prognoza ribolova
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white">7-Dnevni Vremenski i Solunarni Pregled</h1>
-          <p className="text-xs text-emerald-400/70">Lokacija: <strong className="text-white">{location.name}</strong></p>
+        <div className="panel-outdoors rounded-lg p-6 space-y-2 border border-[#1f3629]">
+          <span className="text-xs font-serif font-bold uppercase tracking-widest text-[#c49f6e] block">
+            📅 SOLUNARNI I VREMENSKI ALMANAH
+          </span>
+          <h1 className="text-2xl sm:text-3xl font-serif font-black text-white">7-Dnevna Prognoza na Vodama</h1>
+          <p className="text-xs text-[#8ea396] font-sans">
+            Lokacija: <strong className="text-white font-serif">{location.name}</strong>
+          </p>
         </div>
 
         {loading ? (
-          <div className="p-12 text-center text-emerald-400">Učitavanje višednevne prognoze...</div>
+          <div className="p-12 text-center text-[#4ca778] font-serif">Očitavanje višednevnog almanaha...</div>
         ) : weather && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {weather.daily.time.map((dateStr, idx) => {
@@ -58,38 +60,38 @@ export default function ForecastPage() {
               const windMax = Math.round(weather.daily.wind_speed_10m_max[idx]);
 
               return (
-                <div key={dateStr} className="glass-panel rounded-2xl p-5 border border-river-800 space-y-3">
-                  <div className="flex items-center justify-between border-b border-river-800 pb-2">
-                    <span className="font-extrabold text-white text-base capitalize">{dayName}</span>
-                    <span className="text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-bold">
+                <div key={dateStr} className="panel-outdoors rounded-lg p-5 space-y-3 border border-[#1f3629]">
+                  <div className="flex items-center justify-between border-b border-[#1f3629] pb-2">
+                    <span className="font-bold text-white text-base capitalize font-serif">{dayName}</span>
+                    <span className="text-xs px-2 py-0.5 rounded bg-[#14231b] text-emerald-300 border border-[#274535] font-bold">
                       ⭐ {astro.solunarRating.toUpperCase()}
                     </span>
                   </div>
 
-                  <div className="space-y-2 text-xs">
+                  <div className="space-y-2 text-xs font-sans">
                     <div className="flex items-center justify-between">
-                      <span className="text-emerald-400/70 flex items-center gap-1.5"><Thermometer className="w-3.5 h-3.5 text-emerald-400" /> Temperatura:</span>
-                      <span className="font-bold text-white">{minTemp}°C → {maxTemp}°C</span>
+                      <span className="text-[#8ea396] flex items-center gap-1.5"><Thermometer className="w-3.5 h-3.5 text-[#4ca778]" /> Temperatura:</span>
+                      <span className="font-bold text-white font-mono">{minTemp}°C → {maxTemp}°C</span>
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <span className="text-emerald-400/70 flex items-center gap-1.5"><CloudRain className="w-3.5 h-3.5 text-emerald-400" /> Padavine:</span>
-                      <span className="font-bold text-white">{rainProb}% ({rainSum} mm)</span>
+                      <span className="text-[#8ea396] flex items-center gap-1.5"><CloudRain className="w-3.5 h-3.5 text-[#4ca778]" /> Padavine:</span>
+                      <span className="font-bold text-white font-mono">{rainProb}% ({rainSum} mm)</span>
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <span className="text-emerald-400/70 flex items-center gap-1.5"><Wind className="w-3.5 h-3.5 text-emerald-400" /> Vjetar max:</span>
-                      <span className="font-bold text-white">{windMax} km/h</span>
+                      <span className="text-[#8ea396] flex items-center gap-1.5"><Wind className="w-3.5 h-3.5 text-[#4ca778]" /> Vjetar max:</span>
+                      <span className="font-bold text-white font-mono">{windMax} km/h</span>
                     </div>
 
-                    <div className="flex items-center justify-between pt-2 border-t border-river-800/50">
+                    <div className="flex items-center justify-between pt-2 border-t border-[#1f3629]">
                       <span className="text-amber-300 flex items-center gap-1"><Sun className="w-3.5 h-3.5 text-amber-400" /> Sunce:</span>
-                      <span className="text-white">{astro.sunrise} - {astro.sunset}</span>
+                      <span className="text-white font-mono">{astro.sunrise} - {astro.sunset}</span>
                     </div>
 
                     <div className="flex items-center justify-between">
                       <span className="text-sky-300 flex items-center gap-1"><Moon className="w-3.5 h-3.5 text-sky-400" /> Mjesec:</span>
-                      <span className="text-white">{astro.moonPhaseName} ({astro.illumination}%)</span>
+                      <span className="text-white font-mono">{astro.moonPhaseName} ({astro.illumination}%)</span>
                     </div>
                   </div>
                 </div>
