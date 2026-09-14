@@ -1,0 +1,122 @@
+[
+  {
+    "fish_id": "common-carp",
+    "water_body_id": "water-jablanicko-lake",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-jablanicko-lake",
+    "notes": "Jedna od dominantnih vrsta. Kapitalni primjerci preko 15kg u zalivima Čelebići i Ostrožac."
+  },
+  {
+    "fish_id": "zander",
+    "water_body_id": "water-jablanicko-lake",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-jablanicko-lake",
+    "notes": "Izuzetno brojan smuđ u starom koritu Neretve i Rama ušću."
+  },
+  {
+    "fish_id": "wels-catfish",
+    "water_body_id": "water-jablanicko-lake",
+    "presence_level": "medium",
+    "confidence": "high",
+    "source_id": "src-jablanicko-lake",
+    "notes": "Lovljeni trofejni somovi preko 50kg uz branu i u dubokim virovima."
+  },
+  {
+    "fish_id": "huchen",
+    "water_body_id": "water-una",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-pliva-una-guide",
+    "notes": "Jedno od najjačih staništa mladice u Evropi, posebno na potezu Bihać - Bosanska Krupa."
+  },
+  {
+    "fish_id": "grayling",
+    "water_body_id": "water-una",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-pliva-una-guide",
+    "notes": "Brojan lipljen u gornjem toku i na reviru Kulen Vakuf."
+  },
+  {
+    "fish_id": "grayling",
+    "water_body_id": "water-pliva",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-pliva-una-guide",
+    "notes": "Pliva je svjetski poznata po lipljenu trofejnih dimenzija (preko 50cm)."
+  },
+  {
+    "fish_id": "brown-trout",
+    "water_body_id": "water-pliva",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-pliva-una-guide",
+    "notes": "Divlja potočna pastrmka izuzetne opreznosti na reviru u Šipovu."
+  },
+  {
+    "fish_id": "huchen",
+    "water_body_id": "water-drina",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-np-drina",
+    "notes": "Drina je najpoznatija voda za lov kapitalne mladice zimi."
+  },
+  {
+    "fish_id": "nase",
+    "water_body_id": "water-drina",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-np-drina",
+    "notes": "Drinski škobalj je čuven po veličini i snazi borbe na bolonjez."
+  },
+  {
+    "fish_id": "grayling",
+    "water_body_id": "water-ribnik",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-pliva-una-guide",
+    "notes": "Izuzetna gustoća populacije lipljena po metru kvadratnom rijeke."
+  },
+  {
+    "fish_id": "softmouth-trout",
+    "water_body_id": "water-neretva",
+    "presence_level": "medium",
+    "confidence": "high",
+    "source_id": "src-jablanicko-lake",
+    "notes": "Endemska vrsta gornjeg toka Neretve i Glavatičeva."
+  },
+  {
+    "fish_id": "marble-trout-glavatica",
+    "water_body_id": "water-neretva",
+    "presence_level": "low",
+    "confidence": "high",
+    "source_id": "src-jablanicko-lake",
+    "notes": "Zaštićena vrsta u kanjonskom dijelu Neretve."
+  },
+  {
+    "fish_id": "common-carp",
+    "water_body_id": "water-modrac",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-srs-bih",
+    "notes": "Tradicionalno jedno od najbogatijih šaranskih jezera u BiH."
+  },
+  {
+    "fish_id": "pike",
+    "water_body_id": "water-bosna",
+    "presence_level": "medium",
+    "confidence": "high",
+    "source_id": "src-srs-bih",
+    "notes": "Mrtvaje i spori zalivi rijeke Bosne nude odličan ribolov štuke u jesen."
+  },
+  {
+    "fish_id": "wels-catfish",
+    "water_body_id": "water-bilecko-lake",
+    "presence_level": "high",
+    "confidence": "high",
+    "source_id": "src-srs-bih",
+    "notes": "Ovo jezero drži nezvanične rekorde za najveće ulovljene somove u regiji."
+  }
+]

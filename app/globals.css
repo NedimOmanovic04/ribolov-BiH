@@ -1,0 +1,73 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #07130e;
+  --foreground: #ecfdf5;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e2017;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c3a2c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #27523e;
+}
+
+/* Leaflet map custom styling for natural green dark mode */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: #0b1d2e !important;
+  border-radius: 0.75rem;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #0e2017 !important;
+  color: #ecfdf5 !important;
+  border: 1px solid #1c3a2c !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Micro animation utility classes */
+.glass-panel {
+  background: rgba(14, 32, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(28, 58, 44, 0.6);
+}
+
+.glass-panel-water {
+  background: rgba(11, 29, 46, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(24, 56, 86, 0.6);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.5);
+}

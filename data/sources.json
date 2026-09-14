@@ -1,0 +1,52 @@
+[
+  {
+    "id": "src-fbih-law-2025",
+    "title": "Zakon o slatkovodnom ribarstvu FBiH (izmjene 2025)",
+    "type": "official_legislation",
+    "publisher": "Federalno ministarstvo poljoprivrede, vodoprivrede i šumarstva FBiH",
+    "url": "https://fmpvs.gov.ba",
+    "verified_at": "2026-03-01",
+    "confidence": "high",
+    "notes": "Službena pravila o minimalnim mjerama, lovostaju i dozvolama za slatkovodni ribolov u FBiH."
+  },
+  {
+    "id": "src-srs-bih",
+    "title": "Sportsko ribolovni savez Bosne i Hercegovine (SRS BiH)",
+    "type": "fishing_organization",
+    "publisher": "SRS BiH",
+    "url": "https://srsbih.com",
+    "verified_at": "2026-02-15",
+    "confidence": "high",
+    "notes": "Podaci o upravljanju vodama, takmičenjima i rasprostranjenosti riba."
+  },
+  {
+    "id": "src-np-drina",
+    "title": "Nacionalni park Drina - Ribolov na Perućcu i Drini",
+    "type": "national_park",
+    "publisher": "NP Drina Srebrenica",
+    "url": "http://npdrina.com",
+    "verified_at": "2026-01-20",
+    "confidence": "high",
+    "notes": "Popis vrsta u Perućcu i Drini: mladica, lipljen, mrena, potočna pastrmka, škobalj, klen, plotica, som, šaran."
+  },
+  {
+    "id": "src-pliva-una-guide",
+    "title": "Ribolovni vodič za rijeke Plivu, Unu i Sanu",
+    "type": "local_association",
+    "publisher": "SRD Ribnik & SRD Ključ",
+    "url": "https://srd-ribnik.ba",
+    "verified_at": "2026-04-10",
+    "confidence": "high",
+    "notes": "Mušičarske revire na Plivi, Sanici, Ribniku i Uncu s naglaskom na lipljena i potočnu pastrmku."
+  },
+  {
+    "id": "src-jablanicko-lake",
+    "title": "Sportsko ribolovno društvo Konjic / Jablanica",
+    "type": "local_association",
+    "publisher": "USR Glavatičevo & OSR Jablanica",
+    "url": "https://usr-glavaticevo.ba",
+    "verified_at": "2026-05-12",
+    "confidence": "high",
+    "notes": "Popis ribljeg fonda Jablaničkog, Boračkog i Grabovičkog jezera (šaran, smuđ, som, pastrmka, klen)."
+  }
+]

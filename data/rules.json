@@ -1,0 +1,58 @@
+[
+  {
+    "fish_id": "brown-trout",
+    "min_length_cm": 25,
+    "closed_season": "01.10. - 01.03.",
+    "daily_limit": "3 komada",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Na mušičarskim revirima važi Catch & Release (Ulovi i pusti) pravilo."
+  },
+  {
+    "fish_id": "huchen",
+    "min_length_cm": 70,
+    "closed_season": "01.02. - 31.05.",
+    "daily_limit": "1 komad godišnje / po dozvoli",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Strogo zaštićena vrsta. Zahtijeva posebnu dnevnu dozvolu."
+  },
+  {
+    "fish_id": "grayling",
+    "min_length_cm": 30,
+    "closed_season": "01.01. - 15.05.",
+    "daily_limit": "2 komada",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Na većini plemenitih revira (Pliva, Ribnik, Sanica) samo umjetna muha bez kontre."
+  },
+  {
+    "fish_id": "pike",
+    "min_length_cm": 40,
+    "closed_season": "01.02. - 31.03.",
+    "daily_limit": "2 komada",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Dozvoljen varaličarski i dubinski ribolov."
+  },
+  {
+    "fish_id": "zander",
+    "min_length_cm": 40,
+    "closed_season": "01.03. - 30.04.",
+    "daily_limit": "2 komada",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Najaktivniji u sumrak i noću."
+  },
+  {
+    "fish_id": "common-carp",
+    "min_length_cm": 30,
+    "closed_season": "01.04. - 31.05.",
+    "daily_limit": "3 komada",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Zabranjeno odnošenje kapitalnih primjeraka preko 8kg na pojedinim jezerima."
+  },
+  {
+    "fish_id": "wels-catfish",
+    "min_length_cm": 60,
+    "closed_season": "15.04. - 15.06.",
+    "daily_limit": "1 komad",
+    "source_id": "src-fbih-law-2025",
+    "notes": "Zimi važi zabrana lova na zimovnicima."
+  }
+]
