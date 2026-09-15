@@ -1,392 +1,687 @@
 [
   {
-    "id": "water-bosna",
-    "slug": "rijeka-bosna",
+    "id": "water-bosna-ilidza",
+    "slug": "rijeka-bosna-ilidza",
     "name": "Rijeka Bosna",
     "type": "river",
-    "municipality": "Zenica / Visoko / Doboj",
-    "city": "Zenica",
-    "region": "Zeničko-dobojski kanton",
-    "latitude": 44.2039,
-    "longitude": 17.9078,
-    "description": "Glavni vodotok centralne BiH. Bogata mrenom, škobaljem, klenom, somom, štukom, smuđem i bolenom.",
-    "manager": "UGSR Bistro Zenica / USR Visoko / USR Doboj",
+    "municipality": "Ilidža",
+    "city": "Ilidža / Vrelo Bosne",
+    "region": "Kanton Sarajevo",
+    "latitude": 43.8319,
+    "longitude": 18.3044,
+    "description": "Gornji izvorišni dio rijeke Bosne od Vrela Bosne prema Ilijašu. Hladniji salmonidni karakter sa potočnom pastrmkom.",
+    "manager": "SRSD Sarajevo",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
     "source_id": "src-srs-bih",
     "cities": [
       {
-        "id": "bosna-visoko",
+        "id": "bosna-ilidza-vrelo",
+        "name": "Ilidža / Vrelo Bosne",
+        "latitude": 43.8319,
+        "longitude": 18.3044,
+        "municipality": "Ilidža",
+        "region": "Kanton Sarajevo",
+        "spot_description": "Izvorišni dio Bosne. Hladna voda, salmonidni karakter. Gornji tok.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common", "note": "Potočna pastrmka je dominantna vrsta ovog dijela toka." },
+          { "fish_id": "grayling", "level": "rare", "note": "Lipljen prisutan rijetko u čistim dijelovima." },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava na ovom dijelu Bosne." },
+          { "fish_id": "common-carp", "level": "absent", "note": "Šaran ne obitava u hladnom izvorišnom dijelu Bosne." },
+          { "fish_id": "wels-catfish", "level": "absent" },
+          { "fish_id": "zander", "level": "absent" },
+          { "fish_id": "pike", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bosna-visoko",
+    "slug": "rijeka-bosna-visoko",
+    "name": "Rijeka Bosna",
+    "type": "river",
+    "municipality": "Visoko",
+    "city": "Visoko",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 43.9889,
+    "longitude": 18.1781,
+    "description": "Mrenski i ciprinidni dio rijeke Bosne u Visokom. Dominiraju škobalj, mrena, klijen i šaran. Nema pastrmke ni mladice.",
+    "manager": "USR Visoko",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bosna-visoko-grad",
         "name": "Visoko",
         "latitude": 43.9889,
         "longitude": 18.1781,
         "municipality": "Visoko",
         "region": "Zeničko-dobojski kanton",
-        "spot_description": "Mrenski dio rijeke Bosne u Visokom. Izuzetni virovi za ribolov klena, mrene, škobalja, soma i štuke.",
+        "spot_description": "Mrenski dio rijeke Bosne u Visokom. Virovi za ribolov klena, mrene, škobalja, soma i šarana.",
         "fish_presence": [
-          { "fish_id": "chub", "level": "common", "note": "Vrlo brojan klen na svim prelivima i uz obalu." },
-          { "fish_id": "barbel", "level": "common", "note": "Dominantna riba u brzacima i na dubljem šljunku." },
-          { "fish_id": "nase", "level": "common", "note": "Škobalj na vožnju plovka uz hleb i travu." },
-          { "fish_id": "wels-catfish", "level": "common", "note": "Lovljeni somovi u dubokim virovima." },
-          { "fish_id": "pike", "level": "common", "note": "Zasjede u sporijim zalivima i mrtvajama." },
-          { "fish_id": "asp", "level": "common", "note": "Bolen pri površini na brzinama." },
-          { "fish_id": "zander", "level": "rare", "note": "Sporadični ulovi smuđa na dubini." },
-          { "fish_id": "common-carp", "level": "rare", "note": "Sporadični ulovi šarana u mirnim zalivima." },
-          { "fish_id": "crucian-carp", "level": "common", "note": "Babuška u spornim zalivima i mrtvajama." },
-          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne postoji u rijeci Bosni u Visokom niti centralnom toku." },
-          { "fish_id": "brown-trout", "level": "absent", "note": "Pastrmka ne obitava u tolim mrenskim vodama Bosne u Visokom (potražite je u pritoci Fojnici)." },
+          { "fish_id": "chub", "level": "common", "note": "Klijen brojan na svim prelivima i uz obalu." },
+          { "fish_id": "nase", "level": "common", "note": "Škobalj dominantan u brzacima." },
+          { "fish_id": "barbel", "level": "common", "note": "Mrena na dnu riječnih korita i šljunku." },
+          { "fish_id": "common-carp", "level": "common", "note": "Šaran u mirnim zalivima." },
+          { "fish_id": "wels-catfish", "level": "rare", "note": "Som prisutan u dubokim virovima." },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "asp", "level": "rare", "note": "Bucov rijetko pri površini." },
+          { "fish_id": "bream", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "bodorka", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "pike", "level": "rare", "note": "Štuka moguća, ali nije potvrđena bez lokalnog izvora." },
+          { "fish_id": "zander", "level": "rare", "note": "Smuđ moguć sporadično." },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne postoji u rijeci Bosni u Visokom." },
+          { "fish_id": "brown-trout", "level": "absent", "note": "Pastrmka ne obitava u toplim mrenskim vodama Bosne u Visokom." },
           { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne postoji u koritu rijeke Bosne u Visokom." },
-          { "fish_id": "rainbow-trout", "level": "absent", "note": "Nema kalifornijske pastrmke u Bosni u Visokom." },
-          { "fish_id": "softmouth-trout", "level": "absent", "note": "Nema mekouste pastrmke u slivovima Bosne." },
-          { "fish_id": "marble-trout-glavatica", "level": "absent", "note": "Glavatica ne obitava van jadranskog sliva." }
+          { "fish_id": "rainbow-trout", "level": "absent" },
+          { "fish_id": "softmouth-trout", "level": "absent" },
+          { "fish_id": "marble-trout-glavatica", "level": "absent" }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "water-bosna-kakanj",
+    "slug": "rijeka-bosna-kakanj",
+    "name": "Rijeka Bosna",
+    "type": "river",
+    "municipality": "Kakanj",
+    "city": "Kakanj",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 44.1306,
+    "longitude": 18.1225,
+    "description": "Ciprinidni tok Bosne u Kaknju. Dominiraju škobalj, mrena, klijen i šaran sa pratećim vrstama.",
+    "manager": "SRD Kakanj",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
       {
-        "id": "bosna-zenica",
-        "name": "Zenica",
-        "latitude": 44.2039,
-        "longitude": 17.9078,
-        "municipality": "Zenica",
-        "region": "Zeničko-dobojski kanton",
-        "spot_description": "Gradski tok rijeke Bosne u Zenici. Bogat mrenom, škobaljem, klenom, somom, smuđem i štukom.",
-        "fish_presence": [
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "pike", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "asp", "level": "common" },
-          { "fish_id": "crucian-carp", "level": "common" },
-          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeki Bosni." },
-          { "fish_id": "brown-trout", "level": "absent", "note": "U Zenici u rijeci Bosni nema pastrmke." },
-          { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne postoji u rijeki Bosni u Zenici." }
-        ]
-      },
-      {
-        "id": "bosna-doboj",
-        "name": "Doboj",
-        "latitude": 44.7322,
-        "longitude": 18.0869,
-        "municipality": "Doboj",
-        "region": "Republika Srpska",
-        "spot_description": "Donji tokovi rijeke Bosne blizu ušća Usore i Spreče. Bogat šaranom, somom, smuđem, štukom i bolenom.",
-        "fish_presence": [
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "pike", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "asp", "level": "common" },
-          { "fish_id": "crucian-carp", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "brown-trout", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent" }
-        ]
-      },
-      {
-        "id": "bosna-kakanj",
+        "id": "bosna-kakanj-grad",
         "name": "Kakanj",
         "latitude": 44.1306,
         "longitude": 18.1225,
         "municipality": "Kakanj",
         "region": "Zeničko-dobojski kanton",
-        "spot_description": "Kakanjski potez rijeke Bosne bogat mrenom, škobaljem, klenom i somom.",
+        "spot_description": "Kakanjski potez rijeke Bosne. Ciprinidna voda sa dominantnim škobaljem, mrenom i klijenom.",
         "fish_presence": [
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
           { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "bream", "level": "rare" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "bodorka", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "tench", "level": "rare" },
+          { "fish_id": "asp", "level": "rare", "note": "Bucov lokalno." },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Moguće sporadično, nije dominantno." },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeci Bosni." },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "rainbow-trout", "level": "absent" },
+          { "fish_id": "softmouth-trout", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bosna-zenica",
+    "slug": "rijeka-bosna-zenica",
+    "name": "Rijeka Bosna",
+    "type": "river",
+    "municipality": "Zenica",
+    "city": "Zenica",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 44.2039,
+    "longitude": 17.9078,
+    "description": "Gradski tok rijeke Bosne u Zenici i kanjonu Vranduk. Dominiraju škobalj, mrena, klijen i plotica.",
+    "manager": "UGSR Bistro Zenica",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bosna-zenica-vranduk",
+        "name": "Zenica / Vranduk",
+        "latitude": 44.2039,
+        "longitude": 17.9078,
+        "municipality": "Zenica",
+        "region": "Zeničko-dobojski kanton",
+        "spot_description": "Gradski tok Bosne u Zenici i kanjon Vranduk. Dominiraju škobalj, mrena, klijen i plotica.",
+        "fish_presence": [
+          { "fish_id": "nase", "level": "common", "note": "Škobalj dominantan." },
+          { "fish_id": "barbel", "level": "common", "note": "Mrena dominantna." },
+          { "fish_id": "chub", "level": "common", "note": "Klijen dominantan." },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "common-carp", "level": "common" },
           { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "pike", "level": "common" },
+          { "fish_id": "asp", "level": "common", "note": "Bucov čest." },
+          { "fish_id": "bream", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "bodorka", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka rijetko, sporadično u čistijim dionicama." },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeci Bosni u Zenici." },
+          { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne postoji u rijeci Bosni u Zenici." },
+          { "fish_id": "rainbow-trout", "level": "absent" },
+          { "fish_id": "softmouth-trout", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bosna-zepce",
+    "slug": "rijeka-bosna-zepce",
+    "name": "Rijeka Bosna",
+    "type": "river",
+    "municipality": "Žepče",
+    "city": "Žepče",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 44.4281,
+    "longitude": 18.0456,
+    "description": "Potez rijeke Bosne u Žepču. Bogat ciprinidima: škobaljem, klijenom, bucovom, bolenom i pratećim vrstama.",
+    "manager": "SRD Žepče",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bosna-zepce-grad",
+        "name": "Žepče",
+        "latitude": 44.4281,
+        "longitude": 18.0456,
+        "municipality": "Žepče",
+        "region": "Zeničko-dobojski kanton",
+        "spot_description": "Bosna u Žepču – bogat ciprinidni potez sa potvrđenim vrstama.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare", "note": "Potvrđeno, ali nije dominantno." },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "asp", "level": "common", "note": "Bolen/bucov potvrđen." },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "bream", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "pes", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "rainbow-trout", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bosna-maglaj",
+    "slug": "rijeka-bosna-maglaj-doboj",
+    "name": "Rijeka Bosna",
+    "type": "river",
+    "municipality": "Maglaj / Doboj",
+    "city": "Maglaj",
+    "region": "Zeničko-dobojski kanton / Republika Srpska",
+    "latitude": 44.5508,
+    "longitude": 18.0972,
+    "description": "Nizvodni tok Bosne kroz Maglaj i Doboj. Bogat ciprinidima: škobaljem, mrenom, šaranom, somom i smuđem.",
+    "manager": "SRD Maglaj / USR Doboj",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bosna-maglaj-grad",
+        "name": "Maglaj",
+        "latitude": 44.5508,
+        "longitude": 18.0972,
+        "municipality": "Maglaj",
+        "region": "Zeničko-dobojski kanton",
+        "spot_description": "Bosna u Maglaju. Dominiraju škobalj, mrena, klijen i plotica.",
+        "fish_presence": [
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "wels-catfish", "level": "common" },
+          { "fish_id": "bream", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "bodorka", "level": "rare" },
+          { "fish_id": "asp", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "tench", "level": "rare" },
           { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
       },
       {
-        "id": "bosna-zavidovici",
+        "id": "bosna-doboj-grad",
+        "name": "Doboj",
+        "latitude": 44.7322,
+        "longitude": 18.0869,
+        "municipality": "Doboj",
+        "region": "Republika Srpska",
+        "spot_description": "Donji tok Bosne kod Doboja, blizu ušća Usore i Spreče. Nizinska, ciprinidno-predatorska voda.",
+        "fish_presence": [
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "wels-catfish", "level": "common" },
+          { "fish_id": "bream", "level": "common" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "tench", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "brown-trout", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-fojnicka",
+    "slug": "fojnicka-rijeka",
+    "name": "Fojnička rijeka",
+    "type": "river",
+    "municipality": "Fojnica",
+    "city": "Fojnica",
+    "region": "Srednjobosanski kanton",
+    "latitude": 43.9667,
+    "longitude": 17.9044,
+    "description": "Salmonidna pritoka Bosne iz Fojnice. Potvrđeni: pastrmka, lipljen, klen, mrena i pratece vrste. Gornji tok ima jači salmonidni karakter.",
+    "manager": "SRD Fojnica",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "fojnicka-fojnica",
+        "name": "Fojnica",
+        "latitude": 43.9667,
+        "longitude": 17.9044,
+        "municipality": "Fojnica",
+        "region": "Srednjobosanski kanton",
+        "spot_description": "Fojnička rijeka – salmonidna pritoka Bosne sa pastrmkom, lipljenom i mrenom.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common", "note": "Potvrđena pastrmka." },
+          { "fish_id": "grayling", "level": "rare", "note": "Lipljen potvrđen." },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Kalifornijska pastrmka potvrđena (najčešće poribljavanjem)." },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "pes", "level": "rare" },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-zeljeznica",
+    "slug": "rijeka-zeljeznica",
+    "name": "Željeznica",
+    "type": "river",
+    "municipality": "Trnovo / Foča",
+    "city": "Trnovo",
+    "region": "Kanton Sarajevo / FBiH",
+    "latitude": 43.6744,
+    "longitude": 18.3025,
+    "description": "Salmonidna pritoka Bosne iz Trnova prema Sarajevu. Potočna pastrmka dominira u gornjem toku.",
+    "manager": "SRD Trnovo",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "zeljeznica-trnovo",
+        "name": "Trnovo",
+        "latitude": 43.6744,
+        "longitude": 18.3025,
+        "municipality": "Trnovo",
+        "region": "Kanton Sarajevo",
+        "spot_description": "Gornji tok Željeznice u Trnovu. Dominira potočna pastrmka, prisutan lipljen i peš.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "pes", "level": "rare" },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "zeljeznica-fojnica-donji",
+        "name": "Donji tok (prema Bosni)",
+        "latitude": 43.8019,
+        "longitude": 18.2783,
+        "municipality": "Hadžići",
+        "region": "Kanton Sarajevo",
+        "spot_description": "Nizvodni tok Željeznice prema Bosni. Pastrmka povremena, klen i ciprinidi preuzimaju.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka moguća u hladnijim dionicama." },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-lepenica",
+    "slug": "rijeka-lepenica",
+    "name": "Lepenica",
+    "type": "river",
+    "municipality": "Kiseljak",
+    "city": "Kiseljak",
+    "region": "Srednjobosanski kanton",
+    "latitude": 43.9500,
+    "longitude": 18.0700,
+    "description": "Pritoka Bosne iz Kiseljaka. Prisutni pastrmka, klen, sapača i potočna mrena. Sastav zavisi od dionice.",
+    "manager": "SRD Kiseljak",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "lepenica-kiseljak",
+        "name": "Kiseljak",
+        "latitude": 43.9500,
+        "longitude": 18.0700,
+        "municipality": "Kiseljak",
+        "region": "Srednjobosanski kanton",
+        "spot_description": "Lepenica u Kiseljaku. Pastrmka, klen, sapača i potočna mrena.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-lasva",
+    "slug": "rijeka-lasva",
+    "name": "Lašva",
+    "type": "river",
+    "municipality": "Travnik / Vitez / Zenica",
+    "city": "Travnik",
+    "region": "Srednjobosanski kanton",
+    "latitude": 44.2258,
+    "longitude": 17.6642,
+    "description": "Pritoka Bosne iz Travnika. Česta pastrmka, klen i mrena, prisutna mladica i lipljen. Gornji tok salmonidniji.",
+    "manager": "SRD Lašva Travnik",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "lasva-travnik",
+        "name": "Travnik",
+        "latitude": 44.2258,
+        "longitude": 17.6642,
+        "municipality": "Travnik",
+        "region": "Srednjobosanski kanton",
+        "spot_description": "Gornji i srednji tok Lašve. Pastrmka, klen, mrena, prisutna mladica i lipljen.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "huchen", "level": "rare", "note": "Mladica prisutna lokalno." },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Kaliornijska pastrmka lokalno/poribljavanjem." },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" },
+          { "fish_id": "zander", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bila",
+    "slug": "rijeka-bila",
+    "name": "Bila",
+    "type": "river",
+    "municipality": "Travnik / Vitez",
+    "city": "Vitez",
+    "region": "Srednjobosanski kanton",
+    "latitude": 44.1558,
+    "longitude": 17.7919,
+    "description": "Pritoka Lašve. Gornji tok salmonidni, donji dio ciprinidniji. Česta pastrmka, lipljen, klen i mrena.",
+    "manager": "SRD Bila",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bila-vitez",
+        "name": "Vitez",
+        "latitude": 44.1558,
+        "longitude": 17.7919,
+        "municipality": "Vitez",
+        "region": "Srednjobosanski kanton",
+        "spot_description": "Bila u Vitezu. Pastrmka, lipljen, klen, mrena i prisutna mladica.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "huchen", "level": "rare", "note": "Mladica prisutna lokalno." },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-krivaja-olovo",
+    "slug": "rijeka-krivaja-olovo",
+    "name": "Krivaja",
+    "type": "river",
+    "municipality": "Olovo / Zavidovići",
+    "city": "Olovo",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 44.1239,
+    "longitude": 18.6697,
+    "description": "Притока Bosne. Gornji tok (Olovo) dominira lipljen i mladica. Donji tok (Zavidovići) škobalj i klen.",
+    "manager": "SRD Krivaja",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "krivaja-olovo",
+        "name": "Olovo",
+        "latitude": 44.1239,
+        "longitude": 18.6697,
+        "municipality": "Olovo",
+        "region": "Zeničko-dobojski kanton",
+        "spot_description": "Gornji tok Krivaje u Olovu. Dominiraju lipljen i mladica, česte pastrmka i škobalj.",
+        "fish_presence": [
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" },
+          { "fish_id": "zander", "level": "absent" }
+        ]
+      },
+      {
+        "id": "krivaja-zavidovici",
         "name": "Zavidovići",
         "latitude": 44.4456,
         "longitude": 18.1497,
         "municipality": "Zavidovići",
         "region": "Zeničko-dobojski kanton",
-        "spot_description": "Ušće Krivaje u Bosnu. Odlična mrenska i škobaljska voda sa kapitalnim somovima.",
+        "spot_description": "Donji tok Krivaje kod Zavidovića. Dominiraju škobalj i klen, česta mrena i plotica.",
         "fish_presence": [
           { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
           { "fish_id": "chub", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "pike", "level": "common" },
-          { "fish_id": "asp", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "huchen", "level": "common", "note": "Mladica česta i u donjem toku Krivaje." },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka u gornjim dionicama." },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-stupcanica",
+    "slug": "rijeka-stupcanica",
+    "name": "Stupčanica",
+    "type": "river",
+    "municipality": "Olovo",
+    "city": "Olovo",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 44.1500,
+    "longitude": 18.7000,
+    "description": "Pritoka Krivaje. Dominiraju pastrmka i lipljen, prisutna mladica, klen i škobalj.",
+    "manager": "SRD Olovo",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "stupcanica-olovo",
+        "name": "Olovo",
+        "latitude": 44.1500,
+        "longitude": 18.7000,
+        "municipality": "Olovo",
+        "region": "Zeničko-dobojski kanton",
+        "spot_description": "Stupčanica – salmonidna pritoka Krivaje sa dominantnom pastrmkom, lipljenom i mladicom.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "common", "note": "Mladica vrlo značajna vrsta." },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-usora",
+    "slug": "rijeka-usora",
+    "name": "Usora",
+    "type": "river",
+    "municipality": "Tešanj / Usora",
+    "city": "Tešanj",
+    "region": "Zeničko-dobojski kanton",
+    "latitude": 44.6108,
+    "longitude": 17.9908,
+    "description": "Pritoka Bosne. Dominiraju klen, škobalj i mrena. Prisutna plotica, potočna mrena i krkuša. Rijetko pastrmka.",
+    "manager": "SRD Usora",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "usora-tesanj",
+        "name": "Tešanj",
+        "latitude": 44.6108,
+        "longitude": 17.9908,
+        "municipality": "Tešanj",
+        "region": "Zeničko-dobojski kanton",
+        "spot_description": "Usora u Tešnju. Dominiraju klen, škobalj i mrena.",
+        "fish_presence": [
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka rijetko, sporadično." },
           { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "brown-trout", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent" }
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-miljacka",
+    "slug": "rijeka-miljacka",
+    "name": "Miljacka",
+    "type": "river",
+    "municipality": "Sarajevo / Pale",
+    "city": "Sarajevo",
+    "region": "Kanton Sarajevo",
+    "latitude": 43.8563,
+    "longitude": 18.4131,
+    "description": "Rijeka Sarajeva. Gornji tok ima pastrmku i klena, gradski tok dominira klen, nizvodni tok samo klen.",
+    "manager": "SRD Sarajevo",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "miljacka-gornji",
+        "name": "Gornji tok (Pale / Renovica)",
+        "latitude": 43.8133,
+        "longitude": 18.5647,
+        "municipality": "Pale",
+        "region": "Republika Srpska",
+        "spot_description": "Gornji tok Miljacke. Pastrmka i klen dominiraju, prisutna sapača i gagica.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" }
         ]
       },
       {
-        "id": "bosna-sarajevo",
-        "name": "Sarajevo (Ilijaš / Reljevo)",
-        "latitude": 43.9531,
-        "longitude": 18.2711,
-        "municipality": "Ilijaš / Novi Grad",
+        "id": "miljacka-sarajevo",
+        "name": "Sarajevo (gradski tok)",
+        "latitude": 43.8563,
+        "longitude": 18.4131,
+        "municipality": "Sarajevo",
         "region": "Kanton Sarajevo",
-        "spot_description": "Gornji tok rijeke Bosne od Vrela Bosne prema Ilijašu.",
+        "spot_description": "Gradski tok Miljacke kroz Sarajevo. Dominira klen, sapača prisutna.",
         "fish_presence": [
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "pike", "level": "common" },
-          { "fish_id": "brown-trout", "level": "rare", "note": "Sporadično pri samom izvoru Vrela Bosne i ušću pritoka." },
+          { "fish_id": "chub", "level": "common", "note": "Klen dominira." },
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka rijetko." },
           { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "water-neretva",
-    "slug": "rijeka-neretva",
-    "name": "Rijeka Neretva",
-    "type": "river",
-    "municipality": "Konjic / Mostar / Čapljina",
-    "city": "Konjic",
-    "region": "Hercegovačko-neretvanski kanton",
-    "latitude": 43.6514,
-    "longitude": 17.9608,
-    "description": "Hladna i brza kraška rijeka. Dom endemske mekousne pastrmke, glavatice, potočne pastrmke i strugača.",
-    "manager": "USR Konjic / USR Neretva Mostar",
-    "fishing_rules_url": "https://usr-glavaticevo.ba",
-    "permit_url": "https://usr-glavaticevo.ba",
-    "source_id": "src-jablanicko-lake",
-    "cities": [
-      {
-        "id": "neretva-glavaticevo",
-        "name": "Glavatičevo / Ulog",
-        "latitude": 43.5283,
-        "longitude": 18.1258,
-        "municipality": "Konjic",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Gornji netaknuti tok Neretve. Vrhunski reviri za mušičarenje mekouste i potočne pastrmke te glavatice.",
-        "fish_presence": [
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "softmouth-trout", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "marble-trout-glavatica", "level": "common" },
-          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeci Neretvi." },
-          { "fish_id": "common-carp", "level": "absent", "note": "Šaran ne obitava u hladnoj planinskoj Neretvi u Glavatičevu." },
-          { "fish_id": "wels-catfish", "level": "absent" },
-          { "fish_id": "pike", "level": "absent" }
-        ]
-      },
-      {
-        "id": "neretva-konjic",
-        "name": "Konjic",
-        "latitude": 43.6514,
-        "longitude": 17.9608,
-        "municipality": "Konjic",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Gradski potez Neretve ispod Stare Ćuprije. Poznat po potočnoj i mekousnoj pastrmki te klenu.",
-        "fish_presence": [
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "softmouth-trout", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "marble-trout-glavatica", "level": "rare" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "common-carp", "level": "absent" },
-          { "fish_id": "wels-catfish", "level": "absent" }
-        ]
-      },
-      {
-        "id": "neretva-mostar",
-        "name": "Mostar",
-        "latitude": 43.3438,
-        "longitude": 17.8078,
-        "municipality": "Mostar",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Neretva u Mostaru. Dom mekouste pastrmke, glavatice, potočne pastrmke i klena.",
-        "fish_presence": [
-          { "fish_id": "softmouth-trout", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "marble-trout-glavatica", "level": "rare" },
-          { "fish_id": "common-carp", "level": "rare" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne obitava u donjem toku Neretve kod Mostara." }
-        ]
-      },
-      {
-        "id": "neretva-capljina",
-        "name": "Počitelj / Čapljina",
-        "latitude": 43.1122,
-        "longitude": 17.7022,
-        "municipality": "Čapljina",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Donji spori tok Neretve prema ušću. Bogat klenom, šaranom, somom i strugačem.",
-        "fish_presence": [
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "rare" },
-          { "fish_id": "brown-trout", "level": "rare" },
-          { "fish_id": "softmouth-trout", "level": "rare" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "water-una",
-    "slug": "rijeka-una",
-    "name": "Rijeka Una",
-    "type": "river",
-    "municipality": "Bihać / Bosanska Krupa",
-    "city": "Bihać",
-    "region": "Unsko-sanski kanton",
-    "latitude": 44.8169,
-    "longitude": 15.8708,
-    "description": "Smaragdna ljepotica Krajine. Vrhunska voda za ribolov mladice, lipljena, potočne pastrmke i škobalja.",
-    "manager": "Nacionalni Park Una & USR Una Bihać",
-    "fishing_rules_url": "https://npuna.com",
-    "permit_url": "https://npuna.com/ribolov",
-    "source_id": "src-pliva-una-guide",
-    "cities": [
-      {
-        "id": "una-martin-brod",
-        "name": "Martin Brod (Unac)",
-        "latitude": 44.4900,
-        "longitude": 16.1400,
-        "municipality": "Bihać",
-        "region": "Unsko-sanski kanton",
-        "spot_description": "Čuveni revir na ušću Unca u Unu u NP Una. Vrhunski trofejni primjerci kalifornijske i potočne pastrmke te lipljena.",
-        "fish_presence": [
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "rainbow-trout", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "huchen", "level": "rare" },
-          { "fish_id": "common-carp", "level": "absent", "note": "Šaran ne obitava u hladnom hladnom reviru Unac." },
-          { "fish_id": "wels-catfish", "level": "absent" },
-          { "fish_id": "pike", "level": "absent" }
-        ]
-      },
-      {
-        "id": "una-kulen-vakuf",
-        "name": "Kulen Vakuf",
-        "latitude": 44.5608,
-        "longitude": 16.0883,
-        "municipality": "Bihać",
-        "region": "Unsko-sanski kanton",
-        "spot_description": "Revir Kulen Vakuf u NP Una. Svjetski poznato mušičarište za lipljena i pastrmku.",
-        "fish_presence": [
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "common-carp", "level": "absent" },
-          { "fish_id": "wels-catfish", "level": "absent" }
-        ]
-      },
-      {
-        "id": "una-bihac",
-        "name": "Bihać",
-        "latitude": 44.8169,
-        "longitude": 15.8708,
-        "municipality": "Bihać",
-        "region": "Unsko-sanski kanton",
-        "spot_description": "Gradski otoci i adice Une u Bihaću. Bogati mladicom, lipljenom, pastrmkom i škobaljem.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "common-carp", "level": "rare" }
-        ]
-      },
-      {
-        "id": "una-bosanska-krupa",
-        "name": "Bosanska Krupa",
-        "latitude": 44.8825,
-        "longitude": 16.1514,
-        "municipality": "Bosanska Krupa",
-        "region": "Unsko-sanski kanton",
-        "spot_description": "Čuveni krupski kanjon i adice. Jedno od najboljih staništa kapitalne mladice na svijetu.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "pike", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "water-jablanicko-lake",
-    "slug": "jablanicko-jezero",
-    "name": "Jablaničko jezero",
-    "type": "reservoir",
-    "municipality": "Jablanica / Konjic",
-    "city": "Jablanica",
-    "region": "Hercegovačko-neretvanski kanton",
-    "latitude": 43.6844,
-    "longitude": 17.8289,
-    "description": "Jedna od najatraktivnijih akumulacija u BiH. Poznata po kapitalnim šaranima, smuđevima, somovima i klenu.",
-    "manager": "OSR Konjic & OSR Jablanica",
-    "fishing_rules_url": "https://usr-glavaticevo.ba/dozvole",
-    "permit_url": "https://usr-glavaticevo.ba",
-    "source_id": "src-jablanicko-lake",
-    "cities": [
-      {
-        "id": "jablanicko-ostrozac",
-        "name": "Ostrožac / Čelebići",
-        "latitude": 43.6844,
-        "longitude": 17.8289,
-        "municipality": "Konjic",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Zalivi Ostrožac i Čelebići. Najpoznatije šaransko i smuđarsko područje Jablaničkog jezera sa zalivima.",
-        "fish_presence": [
-          { "fish_id": "common-carp", "level": "common", "note": "Kapitalci preko 15kg na boile i kukuruz." },
-          { "fish_id": "zander", "level": "common", "note": "Smuđ u starom koritu i oko podvodnih konstrukcija." },
-          { "fish_id": "wels-catfish", "level": "common", "note": "Somovi na kedere i bućku." },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "brown-trout", "level": "rare" },
-          { "fish_id": "huchen", "level": "absent", "note": "U Jablaničkom jezeru nema mladice." },
-          { "fish_id": "grayling", "level": "absent", "note": "U Jablaničkom jezeru nema lipljena." }
-        ]
-      },
-      {
-        "id": "jablanicko-lisicici",
-        "name": "Buturović Polje / Lisičići",
-        "latitude": 43.7122,
-        "longitude": 17.8722,
-        "municipality": "Konjic",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Sjeverni zalivi i ušće Neretvice. Izuzetne šaranske i smuđarske pozicije.",
-        "fish_presence": [
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent" }
-        ]
-      },
-      {
-        "id": "jablanicko-brana",
-        "name": "Brana Jablanica",
-        "latitude": 43.6608,
-        "longitude": 17.7658,
-        "municipality": "Jablanica",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Najdublji dio jezera uz samu branu. Poznat po trofejnim somovima preko 50kg.",
-        "fish_presence": [
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "grayling", "level": "absent" }
+          { "fish_id": "common-carp", "level": "absent" }
         ]
       }
     ]
@@ -401,8 +696,8 @@
     "region": "Republika Srpska",
     "latitude": 44.2819,
     "longitude": 17.0856,
-    "description": "Svjetski poznati mušičarski revir. Kristalno čista pitka voda bogata lipljenom i krupnom potočnom pastrmkom.",
-    "manager": "LTG Fly Fishing Pliva & SRD Zlatovčica Jajce",
+    "description": "Svjetski poznati mušičarski revir. Kristalno čista pitka voda bogata lipljenom i krupnom potočnom pastrmkom. Jedna od najkvalitetnijih ribolovnih voda Evrope.",
+    "manager": "LTG Fly Fishing Pliva / SRD Zlatovčica Jajce",
     "fishing_rules_url": "https://srd-ribnik.ba",
     "permit_url": "https://srd-ribnik.ba",
     "source_id": "src-pliva-una-guide",
@@ -414,167 +709,107 @@
         "longitude": 17.0856,
         "municipality": "Šipovo",
         "region": "Republika Srpska",
-        "spot_description": "Mušičarski revir Pliva u Šipovu. Svjetski premijum revir za lipljena i potočnu pastrmku.",
+        "spot_description": "Gornji tok Plive u Šipovu. Salmonidna voda. Lipljen i pastrmka dominiraju, mladica lokalno.",
         "fish_presence": [
-          { "fish_id": "grayling", "level": "common", "note": "Trofejni lipljeni preko 50cm na suvu muvu." },
-          { "fish_id": "brown-trout", "level": "common", "note": "Divlja potočna pastrmka izuzetne opreznosti." },
-          { "fish_id": "huchen", "level": "absent", "note": "Nema mladice u gornjem toku Plive u Šipovu." },
-          { "fish_id": "common-carp", "level": "absent", "note": "Pliva u Šipovu je čista salmonidna voda, nema šarana, soma ni štuke." },
+          { "fish_id": "grayling", "level": "common", "note": "Trofejni lipljeni na suhu muvu." },
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "huchen", "level": "rare", "note": "Mladica lokalno prisutna." },
+          { "fish_id": "common-carp", "level": "absent" },
           { "fish_id": "wels-catfish", "level": "absent" },
-          { "fish_id": "pike", "level": "absent" }
+          { "fish_id": "pike", "level": "absent" },
+          { "fish_id": "zander", "level": "absent" }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "water-plivska-jezera",
+    "slug": "plivska-jezera",
+    "name": "Plivska jezera",
+    "type": "lake",
+    "municipality": "Jajce",
+    "city": "Jajce",
+    "region": "Srednjobosanski kanton",
+    "latitude": 44.3467,
+    "longitude": 17.2250,
+    "description": "Veliko i Malo Plivsko jezero u Jajcu. Odlično jezero s pastrmkama, lipljenom, klenom, linjak i pratećim vrstama.",
+    "manager": "SRD Zlatovčica Jajce",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-pliva-una-guide",
+    "cities": [
       {
-        "id": "pliva-jajce",
-        "name": "Plivska jezera (Jajce)",
+        "id": "plivska-jezera-veliko",
+        "name": "Veliko Plivsko jezero",
         "latitude": 44.3467,
         "longitude": 17.2250,
         "municipality": "Jajce",
         "region": "Srednjobosanski kanton",
-        "spot_description": "Veliko i Malo Plivsko jezero u Jajcu. Odličan ribolov pastrmke, lipljena, klena i linjaka.",
+        "spot_description": "Veliko Plivsko jezero. Bogato pastrmkama, lipljenom, jezerskom zlatovčicom i pratećim vrstama.",
         "fish_presence": [
           { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "rainbow-trout", "level": "common" },
-          { "fish_id": "lake-trout", "level": "common" },
           { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "tench", "level": "common" },
+          { "fish_id": "lake-trout", "level": "common" },
+          { "fish_id": "lake-char", "level": "common", "note": "Jezerska zlatovčica potvrđena." },
+          { "fish_id": "rainbow-trout", "level": "common" },
+          { "fish_id": "rudd", "level": "rare" },
+          { "fish_id": "tench", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "plivska-jezera-malo",
+        "name": "Malo Plivsko jezero",
+        "latitude": 44.3400,
+        "longitude": 17.2100,
+        "municipality": "Jajce",
+        "region": "Srednjobosanski kanton",
+        "spot_description": "Malo Plivsko jezero. Prisutni pastrmka, šaran, amur, som i bijela riba.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "grass-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "bodorka", "level": "rare" },
+          { "fish_id": "uklija", "level": "rare" },
+          { "fish_id": "bream", "level": "rare" },
           { "fish_id": "huchen", "level": "absent" }
         ]
       }
     ]
   },
   {
-    "id": "water-drina",
-    "slug": "rijeka-drina",
-    "name": "Rijeka Drina",
+    "id": "water-janj",
+    "slug": "rijeka-janj",
+    "name": "Rijeka Janj",
     "type": "river",
-    "municipality": "Foča / Višegrad / Zvornik",
-    "city": "Foča",
+    "municipality": "Šipovo",
+    "city": "Šipovo",
     "region": "Republika Srpska",
-    "latitude": 43.5064,
-    "longitude": 18.7783,
-    "description": "Moćna planinska rijeka poznata po kapitalnim mladicama, lipljenu, škobalju i mreni.",
-    "manager": "NP Drina & SRD Mladica Foča",
-    "fishing_rules_url": "http://npdrina.com",
-    "permit_url": "http://npdrina.com",
-    "source_id": "src-np-drina",
-    "cities": [
-      {
-        "id": "drina-foca",
-        "name": "Foča",
-        "latitude": 43.5064,
-        "longitude": 18.7783,
-        "municipality": "Foča",
-        "region": "Republika Srpska",
-        "spot_description": "Gornji drinski tok od nastanka spajanjem Tare i Pive. Čuven po mladici, lipljenu i potočnoj pastrmki.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "common-carp", "level": "absent", "note": "Nema šarana u brzoj brdskoj Drini u Foči." },
-          { "fish_id": "wels-catfish", "level": "absent" }
-        ]
-      },
-      {
-        "id": "drina-gorazde",
-        "name": "Goražde",
-        "latitude": 43.6672,
-        "longitude": 18.9758,
-        "municipality": "Goražde",
-        "region": "Bosansko-podrinjski kanton",
-        "spot_description": "Potez Drine kroz Goražde sa čuvenim vožnjama plovka za škobalja i mrenu te zimski ribolov mladice.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "chub", "level": "common" }
-        ]
-      },
-      {
-        "id": "drina-visegrad",
-        "name": "Višegrad",
-        "latitude": 43.7825,
-        "longitude": 19.2925,
-        "municipality": "Višegrad",
-        "region": "Republika Srpska",
-        "spot_description": "Drina ispod Mehmed-pašine ćuprije i akumulacija Višegrad. Bogata mladicom, somom, smuđem i škobaljem.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" }
-        ]
-      },
-      {
-        "id": "drina-perucac",
-        "name": "Perućac / Bajina Bašta",
-        "latitude": 43.9619,
-        "longitude": 19.4089,
-        "municipality": "Srebrenica",
-        "region": "Republika Srpska",
-        "spot_description": "Kanjonsko jezero Perućac u NP Drina. Izuzetan ribolov somova, smuđa, mladice i šarana.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "pike", "level": "common" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "water-vrbas",
-    "slug": "rijeka-vrbas",
-    "name": "Rijeka Vrbas",
-    "type": "river",
-    "municipality": "Banja Luka / Jajce / Bugojno",
-    "city": "Banja Luka",
-    "region": "Republika Srpska",
-    "latitude": 44.7722,
-    "longitude": 17.1910,
-    "description": "Kanjonska rijeka izuzetne dinamike. Potiče mladicu, lipljena, pastrmku, škobalja i mrenu.",
-    "manager": "SRD Banja Luka",
+    "latitude": 44.2300,
+    "longitude": 17.1100,
+    "description": "Salmonidna pritoka Plive. Dominiraju pastrmka i lipljen, prisutna mladica.",
+    "manager": "SRD Janj Šipovo",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
-    "source_id": "src-srs-bih",
+    "source_id": "src-pliva-una-guide",
     "cities": [
       {
-        "id": "vrbas-banja-luka",
-        "name": "Banja Luka (Kanjon)",
-        "latitude": 44.7722,
-        "longitude": 17.1910,
-        "municipality": "Banja Luka",
+        "id": "janj-sipovo",
+        "name": "Šipovo",
+        "latitude": 44.2300,
+        "longitude": 17.1100,
+        "municipality": "Šipovo",
         "region": "Republika Srpska",
-        "spot_description": "Kanjon Vrbasa od Karanovca do Banja Luke. Vrhunski reviri za mladicu, lipljena, škobalja i mrenu.",
-        "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "nase", "level": "common" },
-          { "fish_id": "barbel", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" }
-        ]
-      },
-      {
-        "id": "vrbas-bugojno",
-        "name": "Bugojno",
-        "latitude": 44.0572,
-        "longitude": 17.4508,
-        "municipality": "Bugojno",
-        "region": "Srednjobosanski kanton",
-        "spot_description": "Gornji tok Vrbasa u Skopaljskoj dolini. Bogat potočnom pastrmkom, lipljenom i mladicom.",
+        "spot_description": "Rijeka Janj – salmonidna pritoka Plive. Pastrmka i lipljen dominiraju, prisutna mladica.",
         "fish_presence": [
           { "fish_id": "brown-trout", "level": "common" },
           { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "nase", "level": "common" }
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
         ]
       }
     ]
@@ -589,7 +824,7 @@
     "region": "Republika Srpska",
     "latitude": 44.4172,
     "longitude": 16.8164,
-    "description": "Kratka kraška rijeka, raj za mušičarenje na lipljena i pastrmku sa gustinom ribe među najvećim u Evropi.",
+    "description": "Kratka kraška rijeka, raj za mušičarenje na lipljena i pastrmku sa gustinom ribe među najvećim u Evropi. Dominiraju lipljen i pastrmka, prisutna mladica.",
     "manager": "SRD Ribnik",
     "fishing_rules_url": "https://srd-ribnik.ba",
     "permit_url": "https://srd-ribnik.ba",
@@ -602,14 +837,15 @@
         "longitude": 16.8164,
         "municipality": "Ribnik",
         "region": "Republika Srpska",
-        "spot_description": "Mušičarski revir Ribnik. Gustoća populacije lipljena i pastrmke drži evropske rekorde.",
+        "spot_description": "Mušičarski revir Ribnik. Gustoća lipljena i pastrmke drži evropske rekorde.",
         "fish_presence": [
-          { "fish_id": "grayling", "level": "common", "note": "Gustoća lipljena preko 500 ribe po 100m rijeke." },
+          { "fish_id": "grayling", "level": "common", "note": "Gustoća lipljena jedna od najvećih u Evropi." },
           { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "common-carp", "level": "absent", "note": "Ribnik je čista kraška salmonidna rijeka, nema šarana, soma ni štuke." },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
           { "fish_id": "wels-catfish", "level": "absent" },
-          { "fish_id": "pike", "level": "absent" }
+          { "fish_id": "pike", "level": "absent" },
+          { "fish_id": "zander", "level": "absent" }
         ]
       }
     ]
@@ -624,12 +860,29 @@
     "region": "Unsko-sanski kanton",
     "latitude": 44.7667,
     "longitude": 16.6667,
-    "description": "Čista i pitoma kraška rijeka obogaćena mladicom, lipljenom, klenom i štukom.",
+    "description": "Čista kraška rijeka. Gornji tok (Ključ) salmonidni – pastrmka i lipljen. Donji tok (Prijedor) ciprinidni sa škobaljem, mrenom, somom i šaranom.",
     "manager": "USR Sana Sanski Most",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
     "source_id": "src-pliva-una-guide",
     "cities": [
+      {
+        "id": "sana-kljuc",
+        "name": "Ključ (gornji tok)",
+        "latitude": 44.5325,
+        "longitude": 16.7769,
+        "municipality": "Ključ",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Gornji tok Sane u Ključu. Salmonidna voda – pastrmka i lipljen dominiraju, prisutna mladica.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" },
+          { "fish_id": "zander", "level": "absent" }
+        ]
+      },
       {
         "id": "sana-sanski-most",
         "name": "Sanski Most",
@@ -637,33 +890,23 @@
         "longitude": 16.6667,
         "municipality": "Sanski Most",
         "region": "Unsko-sanski kanton",
-        "spot_description": "Srednji tok Sane sa pritokama Sanicom, Dabarom i Blihom. Odličan ribolov mladice, lipljena i štuke.",
+        "spot_description": "Srednji tok Sane u Sanskom Mostu. Prisutna mladica, škobalj, klen, plotica i šaran.",
         "fish_presence": [
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "rare" },
           { "fish_id": "nase", "level": "common" },
           { "fish_id": "chub", "level": "common" },
-          { "fish_id": "pike", "level": "common" }
-        ]
-      },
-      {
-        "id": "sana-kljuc",
-        "name": "Ključ",
-        "latitude": 44.5325,
-        "longitude": 16.7769,
-        "municipality": "Ključ",
-        "region": "Unsko-sanski kanton",
-        "spot_description": "Gornji bistri tok Sane u Ključu. Dom lipljena, potočne pastrmke i mladice.",
-        "fish_presence": [
-          { "fish_id": "grayling", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "huchen", "level": "common" },
-          { "fish_id": "chub", "level": "common" }
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "absent", "note": "Pastrmka ne obitava u donjem toku Sane." },
+          { "fish_id": "grayling", "level": "absent" }
         ]
       },
       {
         "id": "sana-prijedor",
-        "name": "Prijedor",
+        "name": "Prijedor (donji tok)",
         "latitude": 44.9794,
         "longitude": 16.7142,
         "municipality": "Prijedor",
@@ -675,59 +918,429 @@
           { "fish_id": "nase", "level": "common" },
           { "fish_id": "barbel", "level": "common" },
           { "fish_id": "chub", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" }
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "brown-trout", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
         ]
       }
     ]
   },
   {
-    "id": "water-busko-lake",
-    "slug": "busko-jezero",
-    "name": "Buško jezero",
-    "type": "lake",
-    "municipality": "Livno / Tomislavgrad",
-    "city": "Livno",
-    "region": "Kanton 10",
-    "latitude": 43.6333,
-    "longitude": 17.0333,
-    "description": "Ogromna akumulacija poznata po kapitalnim primjercima šarana, smuđa, deverike i somova.",
-    "manager": "SRD Livno",
+    "id": "water-sanica",
+    "slug": "rijeka-sanica",
+    "name": "Sanica",
+    "type": "river",
+    "municipality": "Sanski Most",
+    "city": "Sanski Most",
+    "region": "Unsko-sanski kanton",
+    "latitude": 44.7200,
+    "longitude": 16.6000,
+    "description": "Pritoka Sane. Dominiraju lipljen i pastrmka. Mladica veoma značajna vrsta.",
+    "manager": "USR Sana",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-pliva-una-guide",
+    "cities": [
+      {
+        "id": "sanica-sanski-most",
+        "name": "Sanski Most",
+        "latitude": 44.7200,
+        "longitude": 16.6000,
+        "municipality": "Sanski Most",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Sanica – pritoka Sane. Lipljen i pastrmka dominiraju, mladica veoma značajna.",
+        "fish_presence": [
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "huchen", "level": "common", "note": "Mladica veoma značajna vrsta." },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-una",
+    "slug": "rijeka-una",
+    "name": "Rijeka Una",
+    "type": "river",
+    "municipality": "Bihać / Bosanska Krupa",
+    "city": "Bihać",
+    "region": "Unsko-sanski kanton",
+    "latitude": 44.8169,
+    "longitude": 15.8708,
+    "description": "Smaragdna ljepotica Krajine. Vrhunska voda za ribolov mladice, lipljena, potočne pastrmke, škobalja i mrene.",
+    "manager": "Nacionalni Park Una / USR Una Bihać",
+    "fishing_rules_url": "https://npuna.com",
+    "permit_url": "https://npuna.com/ribolov",
+    "source_id": "src-pliva-una-guide",
+    "cities": [
+      {
+        "id": "una-martin-brod",
+        "name": "Martin Brod (Unac)",
+        "latitude": 44.4900,
+        "longitude": 16.1400,
+        "municipality": "Bihać",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Čuveni revir na ušću Unca u Unu u NP Una. Dominiraju pastrmka i lipljen, mladica veoma značajna.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "common", "note": "Mladica dominantna vrsta ovog revira." },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" },
+          { "fish_id": "pike", "level": "absent" }
+        ]
+      },
+      {
+        "id": "una-kulen-vakuf",
+        "name": "Kulen Vakuf",
+        "latitude": 44.5608,
+        "longitude": 16.0883,
+        "municipality": "Bihać",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Revir Kulen Vakuf u NP Una. Svjetski poznato mušičarište za lipljena i pastrmku. Mladica značajna.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "una-bihac",
+        "name": "Bihać",
+        "latitude": 44.8169,
+        "longitude": 15.8708,
+        "municipality": "Bihać",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Gradski otoci i adice Une u Bihaću. Bogati mladicom, lipljenom, pastrmkom, škobaljem, mrenom i klijenom.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "zander", "level": "absent" }
+        ]
+      },
+      {
+        "id": "una-bosanska-krupa",
+        "name": "Bosanska Krupa",
+        "latitude": 44.8825,
+        "longitude": 16.1514,
+        "municipality": "Bosanska Krupa",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Čuveni krupski kanjon i adice. Jedno od najboljh staništa kapitalne mladice na svijetu.",
+        "fish_presence": [
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-unac",
+    "slug": "rijeka-unac",
+    "name": "Unac",
+    "type": "river",
+    "municipality": "Bihać",
+    "city": "Martin Brod",
+    "region": "Unsko-sanski kanton",
+    "latitude": 44.4700,
+    "longitude": 16.2200,
+    "description": "Pritoka Une. Dominiraju pastrmka i lipljen, mladica veoma značajna. Dio NP Una.",
+    "manager": "NP Una",
+    "fishing_rules_url": "https://npuna.com",
+    "permit_url": "https://npuna.com",
+    "source_id": "src-pliva-una-guide",
+    "cities": [
+      {
+        "id": "unac-martin-brod",
+        "name": "Martin Brod",
+        "latitude": 44.4700,
+        "longitude": 16.2200,
+        "municipality": "Bihać",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Unac – salmonidna pritoka Une. Pastrmka i lipljen dominiraju, mladica veoma značajna.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "common", "note": "Mladica veoma značajna vrsta." },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Druge salmonidne vrste povremeno prisutne." },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-krušnica",
+    "slug": "rijeka-krusnica",
+    "name": "Krušnica",
+    "type": "river",
+    "municipality": "Bihać",
+    "city": "Bihać",
+    "region": "Unsko-sanski kanton",
+    "latitude": 44.8300,
+    "longitude": 15.9200,
+    "description": "Pritoka Une iz Bihaća. Dominiraju lipljen i pastrmka, prisutna mladica.",
+    "manager": "USR Una Bihać",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-pliva-una-guide",
+    "cities": [
+      {
+        "id": "krusnica-bihac",
+        "name": "Bihać",
+        "latitude": 44.8300,
+        "longitude": 15.9200,
+        "municipality": "Bihać",
+        "region": "Unsko-sanski kanton",
+        "spot_description": "Krušnica – pritoka Une. Lipljen i pastrmka dominiraju, prisutna mladica.",
+        "fish_presence": [
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-vrbas",
+    "slug": "rijeka-vrbas",
+    "name": "Rijeka Vrbas",
+    "type": "river",
+    "municipality": "Banja Luka / Jajce / Bugojno",
+    "city": "Banja Luka",
+    "region": "Republika Srpska",
+    "latitude": 44.7722,
+    "longitude": 17.1910,
+    "description": "Kanjonska rijeka izuzetne dinamike. Gornji tok salmonidni sa pastrmkom i mladicom, donji tok ciprinidni sa škobaljem, mrenom i šaranom.",
+    "manager": "SRD Banja Luka",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
     "source_id": "src-srs-bih",
     "cities": [
       {
-        "id": "busko-podhum",
-        "name": "Podhum (Livno)",
-        "latitude": 43.6333,
-        "longitude": 17.0333,
-        "municipality": "Livno",
-        "region": "Kanton 10",
-        "spot_description": "Podhum i zapadne obale Buškog jezera. Tradicionalni teren za kapitalne šarane i smuđeve.",
+        "id": "vrbas-bugojno",
+        "name": "Bugojno (gornji tok)",
+        "latitude": 44.0572,
+        "longitude": 17.4508,
+        "municipality": "Bugojno",
+        "region": "Srednjobosanski kanton",
+        "spot_description": "Gornji tok Vrbasa u Skopaljskoj dolini. Dominiraju pastrmka, mladica i lipljen.",
         "fish_presence": [
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "zander", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "bream", "level": "common" },
-          { "fish_id": "crucian-carp", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "brown-trout", "level": "absent", "note": "U Buškom jezeru nema pastrmke ni lipljena." },
-          { "fish_id": "grayling", "level": "absent" }
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "rainbow-trout", "level": "rare" },
+          { "fish_id": "lake-char", "level": "rare", "note": "Potočna zlatovčica lokalno." },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
         ]
       },
       {
-        "id": "busko-tomislavgrad",
-        "name": "Kazagrazac (Tomislavgrad)",
-        "latitude": 43.6122,
-        "longitude": 17.1122,
-        "municipality": "Tomislavgrad",
-        "region": "Kanton 10",
-        "spot_description": "Istočna strana Buškog jezera u opštini Tomislavgrad.",
+        "id": "vrbas-banja-luka",
+        "name": "Banja Luka (Kanjon)",
+        "latitude": 44.7722,
+        "longitude": 17.1910,
+        "municipality": "Banja Luka",
+        "region": "Republika Srpska",
+        "spot_description": "Kanjon Vrbasa od Karanovca do Banja Luke. Vrhunski reviri za mladicu, lipljena, škobalja i mrenu.",
         "fish_presence": [
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "zander", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" }
+        ]
+      },
+      {
+        "id": "vrbas-donji",
+        "name": "Donji tok (Laktaši / Gradiška)",
+        "latitude": 44.9000,
+        "longitude": 17.0500,
+        "municipality": "Laktaši",
+        "region": "Republika Srpska",
+        "spot_description": "Donji tok Vrbasa prema ušću u Savu. Ciprinidno-predatorska voda.",
+        "fish_presence": [
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bocac-lake",
+    "slug": "jezero-bocac",
+    "name": "Jezero Bočac",
+    "type": "reservoir",
+    "municipality": "Banja Luka",
+    "city": "Bočac",
+    "region": "Republika Srpska",
+    "latitude": 44.5908,
+    "longitude": 17.3217,
+    "description": "Akumulacija na Vrbasu. Dominiraju som, šaran i smuđ. Prisutna mladica, pastrmka, klen, škobalj.",
+    "manager": "SRD Bočac",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bocac-akumulacija",
+        "name": "Bočac",
+        "latitude": 44.5908,
+        "longitude": 17.3217,
+        "municipality": "Banja Luka",
+        "region": "Republika Srpska",
+        "spot_description": "Akumulacija Bočac na Vrbasu. Dominiraju som, šaran i smuđ.",
+        "fish_presence": [
+          { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "common-carp", "level": "common" },
           { "fish_id": "zander", "level": "common" },
-          { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-vrbanja",
+    "slug": "rijeka-vrbanja",
+    "name": "Vrbanja",
+    "type": "river",
+    "municipality": "Kotor Varoš / Čelinac",
+    "city": "Kotor Varoš",
+    "region": "Republika Srpska",
+    "latitude": 44.6200,
+    "longitude": 17.3700,
+    "description": "Pritoka Vrbasa. Gornji tok salmonidni – pastrmka i klen. Donji tok ciprinidni – škobalj, klen i plotica.",
+    "manager": "SRD Vrbanja",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "vrbanja-gornji",
+        "name": "Kotor Varoš (gornji tok)",
+        "latitude": 44.6200,
+        "longitude": 17.3700,
+        "municipality": "Kotor Varoš",
+        "region": "Republika Srpska",
+        "spot_description": "Gornji tok Vrbanje. Dominiraju pastrmka i klen, prisutni kalifornijska pastrmka, mladica, škobalj i mrena.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "rainbow-trout", "level": "rare" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "vrbanja-donji",
+        "name": "Čelinac (donji tok)",
+        "latitude": 44.7100,
+        "longitude": 17.2900,
+        "municipality": "Čelinac",
+        "region": "Republika Srpska",
+        "spot_description": "Donji tok Vrbanje. Dominiraju škobalj, klen, plotica i mrena.",
+        "fish_presence": [
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-spreča",
+    "slug": "rijeka-spreca",
+    "name": "Spreča",
+    "type": "river",
+    "municipality": "Lukavac / Tuzla / Živinice",
+    "city": "Lukavac",
+    "region": "Tuzlanski kanton",
+    "latitude": 44.5500,
+    "longitude": 18.5000,
+    "description": "Pritoka Bosave. Potvrđene: klen, škobalj, mrena, deverika, štuka, smuđ, grgeč i pratece ciprinidne vrste.",
+    "manager": "SRD Spreča",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "spreca-lukavac",
+        "name": "Lukavac / Živinice",
+        "latitude": 44.5500,
+        "longitude": 18.5000,
+        "municipality": "Lukavac",
+        "region": "Tuzlanski kanton",
+        "spot_description": "Spreča – nizinska ciprinidna rijeka sa deverikom, kljenom, škobaljem, mrenom, štukime, smuđem i grgeča.",
+        "fish_presence": [
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "bream", "level": "common" },
+          { "fish_id": "uklija", "level": "common" },
+          { "fish_id": "bodorka", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "asp", "level": "rare" },
           { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
@@ -745,7 +1358,7 @@
     "region": "Tuzlanski kanton",
     "latitude": 44.5028,
     "longitude": 18.4878,
-    "description": "Najveće jezero Tuzlanskog kraja. Glavno stanište šarana, smuđa, soma, deverike i babuške.",
+    "description": "Najveće jezero Tuzlanskog kraja. Bogato šaranom, somom, smuđem, štukm, deverikom, bucovom i linjakom.",
     "manager": "USR Smuđ Lukavac",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
@@ -758,17 +1371,622 @@
         "longitude": 18.4878,
         "municipality": "Lukavac",
         "region": "Tuzlanski kanton",
-        "spot_description": "Brana Modrac i zalivi Kiseljak i Prokosovići. Tradicionalno jedno od najbogatijih šaranskih jezera u BiH.",
+        "spot_description": "Brana Modrac i zalivi. Šaransko i smuđarsko jezero. Sastav se razlikuje po uvalama.",
         "fish_presence": [
           { "fish_id": "common-carp", "level": "common" },
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "zander", "level": "common" },
-          { "fish_id": "bream", "level": "common" },
-          { "fish_id": "crucian-carp", "level": "common" },
           { "fish_id": "pike", "level": "common" },
-          { "fish_id": "grass-carp", "level": "common" },
+          { "fish_id": "bream", "level": "common" },
+          { "fish_id": "asp", "level": "common", "note": "Bucov potvrđen." },
+          { "fish_id": "tench", "level": "common" },
+          { "fish_id": "grass-carp", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "bodorka", "level": "rare" },
           { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "brown-trout", "level": "absent", "note": "U jezeru Modrac nema pastrmke ni lipljena." },
+          { "fish_id": "brown-trout", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-drina",
+    "slug": "rijeka-drina",
+    "name": "Rijeka Drina",
+    "type": "river",
+    "municipality": "Foča / Goražde / Višegrad / Zvornik",
+    "city": "Foča",
+    "region": "Republika Srpska",
+    "latitude": 43.5064,
+    "longitude": 18.7783,
+    "description": "Moćna planinska rijeka poznata po kapitalnim mladicama, lipljenu, škobalju i mreni. Gornji tok čisto salmonidni, donji miješani.",
+    "manager": "NP Drina / SRD Mladica Foča",
+    "fishing_rules_url": "http://npdrina.com",
+    "permit_url": "http://npdrina.com",
+    "source_id": "src-np-drina",
+    "cities": [
+      {
+        "id": "drina-foca",
+        "name": "Foča (gornji tok)",
+        "latitude": 43.5064,
+        "longitude": 18.7783,
+        "municipality": "Foča",
+        "region": "Republika Srpska",
+        "spot_description": "Gornji drinski tok od nastanka spajanjem Tare i Pive. Čuven po mladici, lipljenu i potočnoj pastrmki.",
+        "fish_presence": [
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "drina-gorazde",
+        "name": "Goražde",
+        "latitude": 43.6672,
+        "longitude": 18.9758,
+        "municipality": "Goražde",
+        "region": "Bosansko-podrinjski kanton",
+        "spot_description": "Drina kroz Goražde. Mladica, lipljen, škobalj i mrena. Zimski ribolov mladice.",
+        "fish_presence": [
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "drina-visegrad",
+        "name": "Višegrad (srednji tok)",
+        "latitude": 43.7825,
+        "longitude": 19.2925,
+        "municipality": "Višegrad",
+        "region": "Republika Srpska",
+        "spot_description": "Drina u Višegradu i akumulacija. Mladica, mrena, škobalj, som, smuđ i šaran.",
+        "fish_presence": [
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-perucacko-jezero",
+    "slug": "perucacko-jezero",
+    "name": "Perućačko jezero",
+    "type": "reservoir",
+    "municipality": "Srebrenica",
+    "city": "Perućac",
+    "region": "Republika Srpska",
+    "latitude": 43.9619,
+    "longitude": 19.4089,
+    "description": "Kanjonsko jezero na Drini u NP Drina. Veoma značajni mladica i lipljen, prisutni pastrmka, šaran, som i škobalj.",
+    "manager": "NP Drina",
+    "fishing_rules_url": "http://npdrina.com",
+    "permit_url": "http://npdrina.com",
+    "source_id": "src-np-drina",
+    "cities": [
+      {
+        "id": "perucac-jezero",
+        "name": "Perućac",
+        "latitude": 43.9619,
+        "longitude": 19.4089,
+        "municipality": "Srebrenica",
+        "region": "Republika Srpska",
+        "spot_description": "Perućačko jezero u NP Drina. Mladica i lipljen veoma značajni, prisutni pastrmka, škobalj, klen, som i šaran.",
+        "fish_presence": [
+          { "fish_id": "huchen", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "barbel", "level": "common" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "plotica", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-drinjaca",
+    "slug": "rijeka-drinjaca",
+    "name": "Drinjača",
+    "type": "river",
+    "municipality": "Zvornik / Milići",
+    "city": "Milići",
+    "region": "Republika Srpska",
+    "latitude": 44.1700,
+    "longitude": 19.0900,
+    "description": "Pritoka Drine. Prisutni pastrmka, lipljen, klen, škobalj, plotica, mrena, potočna mrena i mladica.",
+    "manager": "SRD Drinjača",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "drinjaca-milici",
+        "name": "Milići",
+        "latitude": 44.1700,
+        "longitude": 19.0900,
+        "municipality": "Milići",
+        "region": "Republika Srpska",
+        "spot_description": "Drinjača – pritoka Drine sa pastrmkom, lipljenom, kljenom, škobaljem i mladicom.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "nase", "level": "common" },
+          { "fish_id": "plotica", "level": "common" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "potocna-mrena", "level": "rare" },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-praca",
+    "slug": "rijeka-praca",
+    "name": "Prača",
+    "type": "river",
+    "municipality": "Pale / Rogatica",
+    "city": "Pale",
+    "region": "Republika Srpska",
+    "latitude": 43.8200,
+    "longitude": 18.6400,
+    "description": "Pritoka Drine. Gornji tok ima pastrmku i lipljena, prisutni klen, mrena i lokalno mladica.",
+    "manager": "SRD Prača",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "praca-pale",
+        "name": "Pale",
+        "latitude": 43.8200,
+        "longitude": 18.6400,
+        "municipality": "Pale",
+        "region": "Republika Srpska",
+        "spot_description": "Prača u Palama. Gornji tok – pastrmka i lipljen. Nizvodno klen, mrena i lokalno mladica.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "huchen", "level": "rare", "note": "Mladica lokalno prisutna." },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-neretva",
+    "slug": "rijeka-neretva",
+    "name": "Rijeka Neretva",
+    "type": "river",
+    "municipality": "Konjic / Mostar / Čapljina",
+    "city": "Konjic",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.6514,
+    "longitude": 17.9608,
+    "description": "Hladna i brza kraška rijeka. Dom endemske mekousne pastrmke, glavatice, potočne pastrmke i lipljena u gornjem toku. Nizvodno šaran, klen i strugač.",
+    "manager": "USR Konjic / USR Neretva Mostar",
+    "fishing_rules_url": "https://usr-glavaticevo.ba",
+    "permit_url": "https://usr-glavaticevo.ba",
+    "source_id": "src-jablanicko-lake",
+    "cities": [
+      {
+        "id": "neretva-glavaticevo",
+        "name": "Glavatičevo / Ulog (gornji tok)",
+        "latitude": 43.5283,
+        "longitude": 18.1258,
+        "municipality": "Konjic",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Gornji netaknuti tok Neretve. Dominiraju pastrmka, mekousna pastrmka i glavatica. Lipljen prisutan.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "softmouth-trout", "level": "common" },
+          { "fish_id": "marble-trout-glavatica", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "pes", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeci Neretvi." },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" },
+          { "fish_id": "pike", "level": "absent" }
+        ]
+      },
+      {
+        "id": "neretva-konjic",
+        "name": "Konjic",
+        "latitude": 43.6514,
+        "longitude": 17.9608,
+        "municipality": "Konjic",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Neretva u Konjicu. Dominiraju pastrmka, mekousna pastrmka i glavatica. Klen i lipljen prisutni.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "softmouth-trout", "level": "common" },
+          { "fish_id": "marble-trout-glavatica", "level": "rare" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "pes", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      },
+      {
+        "id": "neretva-mostar",
+        "name": "Mostar",
+        "latitude": 43.3438,
+        "longitude": 17.8078,
+        "municipality": "Mostar",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Neretva u Mostaru. Klen, šaran, strugač/sval i kaliornijska pastrmka. Jegulja prisutna.",
+        "fish_presence": [
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "sval", "level": "rare", "note": "Strugač/sval prisutan." },
+          { "fish_id": "uklija", "level": "rare" },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Kalifornijska pastrmka, uglavnom poribljavanjem." },
+          { "fish_id": "eel", "level": "rare" },
+          { "fish_id": "zander", "level": "rare", "note": "Smuđ lokalno." },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne obitava u donjem toku Neretve kod Mostara." },
+          { "fish_id": "softmouth-trout", "level": "absent" }
+        ]
+      },
+      {
+        "id": "neretva-capljina",
+        "name": "Čapljina / donji tok",
+        "latitude": 43.1122,
+        "longitude": 17.7022,
+        "municipality": "Čapljina",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Donji spori tok Neretve prema ušću. Klen, strugač, bijela riba, šaran i jegulja.",
+        "fish_presence": [
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "sval", "level": "common" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "eel", "level": "rare" },
+          { "fish_id": "uklija", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "softmouth-trout", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-buna",
+    "slug": "rijeka-buna",
+    "name": "Buna",
+    "type": "river",
+    "municipality": "Mostar",
+    "city": "Blagaj",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.2567,
+    "longitude": 17.9022,
+    "description": "Kraška rijeka iz Blagaja. Pastrmka, mekousna pastrmka, lipljen i kalifornijska pastrmka. Jegulja i klen prisutni.",
+    "manager": "SRD Buna",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "buna-blagaj",
+        "name": "Blagaj",
+        "latitude": 43.2567,
+        "longitude": 17.9022,
+        "municipality": "Mostar",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Buna iz vrela kod Blagaja. Pastrmka, mekousna pastrmka, lipljen, jegulja i klen.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "softmouth-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "rainbow-trout", "level": "rare" },
+          { "fish_id": "eel", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "sval", "level": "rare" },
+          { "fish_id": "uklija", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-rakitnica",
+    "slug": "rijeka-rakitnica",
+    "name": "Rakitnica",
+    "type": "river",
+    "municipality": "Konjic",
+    "city": "Konjic",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.5900,
+    "longitude": 18.0200,
+    "description": "Pritoka Neretve. Dominira pastrmka, prisutne mekousna pastrmka i kalifornijska pastrmka, rijetko glavatica.",
+    "manager": "USR Konjic",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "rakitnica-konjic",
+        "name": "Konjic",
+        "latitude": 43.5900,
+        "longitude": 18.0200,
+        "municipality": "Konjic",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Rakitnica – pritoka Neretve. Pastrmka dominira, mekousna i kalifornijska prisutne.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "softmouth-trout", "level": "rare" },
+          { "fish_id": "rainbow-trout", "level": "rare" },
+          { "fish_id": "marble-trout-glavatica", "level": "rare", "note": "Glavatica rijetka." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-jablanicko-lake",
+    "slug": "jablanicko-jezero",
+    "name": "Jablaničko jezero",
+    "type": "reservoir",
+    "municipality": "Jablanica / Konjic",
+    "city": "Jablanica",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.6844,
+    "longitude": 17.8289,
+    "description": "Jedna od najatraktivnijih akumulacija u BiH. Potvrđeni: pastrmka, glavatica, strugač, bijeli klijen, šaran, babuška. Smuđ, linjak i kaliornijska pastrmka po novijim podacima.",
+    "manager": "OSR Konjic / OSR Jablanica",
+    "fishing_rules_url": "https://usr-glavaticevo.ba/dozvole",
+    "permit_url": "https://usr-glavaticevo.ba",
+    "source_id": "src-jablanicko-lake",
+    "cities": [
+      {
+        "id": "jablanicko-ostrozac",
+        "name": "Ostrožac / Čelebići",
+        "latitude": 43.6844,
+        "longitude": 17.8289,
+        "municipality": "Konjic",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Zalivi Ostrožac i Čelebići. Šaransko i smuđarsko područje Jablaničkog jezera.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "marble-trout-glavatica", "level": "rare", "note": "Glavatica potvrđena u jezeru." },
+          { "fish_id": "sval", "level": "rare", "note": "Strugač/sval potvrđen." },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "common" },
+          { "fish_id": "zander", "level": "rare", "note": "Smuđ po novijim lokalnim podacima." },
+          { "fish_id": "tench", "level": "rare", "note": "Linjak po novijim lokalnim podacima." },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Kaliornijska pastrmka po novijim podacima." },
+          { "fish_id": "huchen", "level": "absent", "note": "U Jablaničkom jezeru nema mladice." },
+          { "fish_id": "grayling", "level": "absent", "note": "U Jablaničkom jezeru nema lipljena." }
+        ]
+      },
+      {
+        "id": "jablanicko-brana",
+        "name": "Brana Jablanica",
+        "latitude": 43.6608,
+        "longitude": 17.7658,
+        "municipality": "Jablanica",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Najdublji dio jezera uz samu branu. Poznat po trofejnim somovima.",
+        "fish_presence": [
+          { "fish_id": "wels-catfish", "level": "common" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-salakovac",
+    "slug": "salakovac",
+    "name": "Salakovac",
+    "type": "reservoir",
+    "municipality": "Mostar",
+    "city": "Mostar",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.4400,
+    "longitude": 17.8900,
+    "description": "Akumulacija na Neretvi ispod Jablaničkog jezera. Prisutni pastrmka, glavatica, mekousna pastrmka, kaliornijska pastrmka, zlatovčica, strugač, bijeli klijen i šaran.",
+    "manager": "SRD Salakovac",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-jablanicko-lake",
+    "cities": [
+      {
+        "id": "salakovac-akumulacija",
+        "name": "Salakovac",
+        "latitude": 43.4400,
+        "longitude": 17.8900,
+        "municipality": "Mostar",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Akumulacija Salakovac na Neretvi. Bogata neretvansim endemima i šaranom.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "marble-trout-glavatica", "level": "rare" },
+          { "fish_id": "softmouth-trout", "level": "rare" },
+          { "fish_id": "rainbow-trout", "level": "rare" },
+          { "fish_id": "lake-char", "level": "rare", "note": "Jezerska zlatovčica prisutna." },
+          { "fish_id": "sval", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-boracko-lake",
+    "slug": "boracko-jezero",
+    "name": "Boračko jezero",
+    "type": "lake",
+    "municipality": "Konjic",
+    "city": "Boračko jezero",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.5511,
+    "longitude": 18.0353,
+    "description": "Prirodno gorsko jezero pod planinom Prenj. Česti šaran i klijen, prisutan smuđ. Pastrmka prisutna historijski, ali ne tretirati kao dominantnu.",
+    "manager": "USR Glavatičevo Konjic",
+    "fishing_rules_url": "https://usr-glavaticevo.ba",
+    "permit_url": "https://usr-glavaticevo.ba",
+    "source_id": "src-jablanicko-lake",
+    "cities": [
+      {
+        "id": "boracko-jezero",
+        "name": "Boračko jezero",
+        "latitude": 43.5511,
+        "longitude": 18.0353,
+        "municipality": "Konjic",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Boračko jezero. Šaran i klijen česti, smuđ prisutan. Pastrmka historijski, aktuelno stanje provjeriti.",
+        "fish_presence": [
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "zander", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka historijski. Aktuelno stanje i pastrmke ne tretirati kao dominantno." },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Californijska pastrmka historijski unešena." },
+          { "fish_id": "lake-trout", "level": "rare", "note": "Jezerska pastrmka historijski." },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "gagica", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-ramsko-lake",
+    "slug": "ramsko-jezero",
+    "name": "Ramsko jezero",
+    "type": "reservoir",
+    "municipality": "Prozor-Rama",
+    "city": "Prozor",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.8247,
+    "longitude": 17.5258,
+    "description": "Planinsko veštačko jezero. Dominiraju smuđ i šaran. Prisutni strugač, bijeli klen, pastrmke, zlatovčica i sunčanica.",
+    "manager": "SRD Rama",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-jablanicko-lake",
+    "cities": [
+      {
+        "id": "ramsko-prozor",
+        "name": "Prozor-Rama",
+        "latitude": 43.8247,
+        "longitude": 17.5258,
+        "municipality": "Prozor-Rama",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Ramsko jezero. Smuđ i šaran dominiraju. Strugač, bijeli klen, pastrmka, jezerska pastrmka, zlatovčica.",
+        "fish_presence": [
+          { "fish_id": "zander", "level": "common" },
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "sval", "level": "rare", "note": "Strugač prisutan." },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "lake-trout", "level": "rare" },
+          { "fish_id": "rainbow-trout", "level": "rare" },
+          { "fish_id": "lake-char", "level": "rare", "note": "Zlatovčica prisutna." },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "uklija", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-busko-lake",
+    "slug": "busko-jezero",
+    "name": "Buško jezero",
+    "type": "lake",
+    "municipality": "Livno / Tomislavgrad",
+    "city": "Livno",
+    "region": "Kanton 10",
+    "latitude": 43.6333,
+    "longitude": 17.0333,
+    "description": "Ogromna akumulacija poznata po šaranu, pastrmki, babuški, klenu i somu.",
+    "manager": "SRD Livno",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "busko-livno",
+        "name": "Livno",
+        "latitude": 43.6333,
+        "longitude": 17.0333,
+        "municipality": "Livno",
+        "region": "Kanton 10",
+        "spot_description": "Buško jezero kod Livna. Šaran, pastrmka, babuška, klen i som.",
+        "fish_presence": [
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "softmouth-trout", "level": "absent" }
+        ]
+      },
+      {
+        "id": "busko-tomislavgrad",
+        "name": "Tomislavgrad",
+        "latitude": 43.6122,
+        "longitude": 17.1122,
+        "municipality": "Tomislavgrad",
+        "region": "Kanton 10",
+        "spot_description": "Istočna strana Buškog jezera. Šaran, babuška, klen i som.",
+        "fish_presence": [
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
       }
@@ -784,7 +2002,7 @@
     "region": "Republika Srpska",
     "latitude": 42.8550,
     "longitude": 18.4350,
-    "description": "Najveće veštačko jezero u BiH. Poznato po gigantskim somovima, somini, šaranu i smuđu.",
+    "description": "Najveće veštačko jezero u BiH. Oko 16 vrsta riba. Glavne: som, smuđ, pastrmka, šaran i pratece bijele ribe.",
     "manager": "SRD Bileća",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
@@ -797,83 +2015,18 @@
         "longitude": 18.4350,
         "municipality": "Bileća",
         "region": "Republika Srpska",
-        "spot_description": "Potez Bilećkog jezera kod Bileće i Orahovica. Gigantski somovi preko 80kg.",
+        "spot_description": "Bilećko jezero. Gigantski somovi, smuđ, pastrmka, šaran i bijela riba. Lokalni izvori navode oko 16 vrsta.",
         "fish_presence": [
           { "fish_id": "wels-catfish", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" },
           { "fish_id": "zander", "level": "common" },
-          { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "bream", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
           { "fish_id": "huchen", "level": "absent" },
-          { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "water-ramsko-lake",
-    "slug": "ramsko-jezero",
-    "name": "Ramsko jezero",
-    "type": "lake",
-    "municipality": "Prozor-Rama",
-    "city": "Prozor",
-    "region": "Hercegovačko-neretvanski kanton",
-    "latitude": 43.8247,
-    "longitude": 17.5258,
-    "description": "Prelijepo planinsko veštačko jezero. Bogato šaranom, klenom, jezerskom i potočnom pastrmkom.",
-    "manager": "SRD Rama",
-    "fishing_rules_url": "https://srsbih.com",
-    "permit_url": "https://srsbih.com",
-    "source_id": "src-jablanicko-lake",
-    "cities": [
-      {
-        "id": "ramsko-prozor",
-        "name": "Prozor-Rama",
-        "latitude": 43.8247,
-        "longitude": 17.5258,
-        "municipality": "Prozor-Rama",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Ostrvo Šćit i zalivi Ramskog jezera.",
-        "fish_presence": [
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "lake-trout", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "water-boracko-lake",
-    "slug": "boracko-jezero",
-    "name": "Boračko jezero",
-    "type": "lake",
-    "municipality": "Konjic",
-    "city": "Boračko jezero",
-    "region": "Hercegovačko-neretvanski kanton",
-    "latitude": 43.5511,
-    "longitude": 18.0353,
-    "description": "Prirodno gorsko oko pod planinom Prenj. Dom potočne pastrmke, jezerske pastrmke, šarana i klena.",
-    "manager": "USR Glavatičevo Konjic",
-    "fishing_rules_url": "https://usr-glavaticevo.ba",
-    "permit_url": "https://usr-glavaticevo.ba",
-    "source_id": "src-jablanicko-lake",
-    "cities": [
-      {
-        "id": "boracko-boracko",
-        "name": "Boračko jezero",
-        "latitude": 43.5511,
-        "longitude": 18.0353,
-        "municipality": "Konjic",
-        "region": "Hercegovačko-neretvanski kanton",
-        "spot_description": "Gorsko jezero Boračko pod Prenjem.",
-        "fish_presence": [
-          { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "lake-trout", "level": "common" },
-          { "fish_id": "chub", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" }
         ]
       }
     ]
@@ -888,7 +2041,7 @@
     "region": "Republika Srpska",
     "latitude": 42.7092,
     "longitude": 18.3442,
-    "description": "Nekada najveća ponornica u Evropi. Bogata kalifornijskom pastrmkom, klenom i strugačem.",
+    "description": "Nekada najveća ponornica u Evropi. Procjena: klen, mrena, šaran, som, grgeč, smuđ. Pastrmka u hladnijim dijelovima. Obavezno podijeliti po dionicama.",
     "manager": "SRD Trebinje",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
@@ -901,12 +2054,320 @@
         "longitude": 18.3442,
         "municipality": "Trebinje",
         "region": "Republika Srpska",
-        "spot_description": "Gradski tok Trebišnjice kroz Trebinje.",
+        "spot_description": "Gradski tok Trebišnjice kroz Trebinje. Sastav varira po dionici – potrebna lokalna verifikacija.",
         "fish_presence": [
-          { "fish_id": "rainbow-trout", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "chub", "level": "rare", "note": "Procjena – potrebna lokalna verifikacija." },
+          { "fish_id": "barbel", "level": "rare", "note": "Procjena." },
+          { "fish_id": "common-carp", "level": "rare", "note": "Procjena." },
+          { "fish_id": "wels-catfish", "level": "rare", "note": "Procjena." },
+          { "fish_id": "perch", "level": "rare", "note": "Procjena." },
+          { "fish_id": "zander", "level": "rare", "note": "Procjena." },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Pastrmka u hladnijim dionicama – procjena." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "softmouth-trout", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bregava",
+    "slug": "rijeka-bregava",
+    "name": "Bregava",
+    "type": "river",
+    "municipality": "Stolac",
+    "city": "Stolac",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.0900,
+    "longitude": 17.9600,
+    "description": "Pritoka Neretve. Gornji hladniji tok ima pastrmku i klena. Nizvodno klen, mrena, šaran i ciprinidi.",
+    "manager": "SRD Stolac",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bregava-stolac",
+        "name": "Stolac",
+        "latitude": 43.0900,
+        "longitude": 17.9600,
+        "municipality": "Stolac",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Bregava u Stocu. Gornji tok – pastrmka i klen. Nizvodno – klen, mrena, šaran.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare", "note": "Gornji/hladniji tok." },
           { "fish_id": "chub", "level": "common" },
-          { "fish_id": "huchen", "level": "absent" }
+          { "fish_id": "sapaca", "level": "rare" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "eel", "level": "rare", "note": "Jegulja moguća u vezanim sistemima." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-hutovo-blato",
+    "slug": "hutovo-blato",
+    "name": "Hutovo Blato",
+    "type": "lake",
+    "municipality": "Čapljina",
+    "city": "Čapljina",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.1300,
+    "longitude": 17.7100,
+    "description": "Velika močvara i jezerski sistem. Vrste vezati za konkretan sektor. Šaran, štuka, som, jegulja, klen, babuška, linjak, grgeč i nizinske vrste.",
+    "manager": "Park prirode Hutovo Blato",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "hutovo-blato-capljina",
+        "name": "Čapljina",
+        "latitude": 43.1300,
+        "longitude": 17.7100,
+        "municipality": "Čapljina",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Hutovo Blato – veliki močvarni sistem. Vrste po sektoru. Šaran, štuka, jegulja, linjak, grgeč.",
+        "fish_presence": [
+          { "fish_id": "common-carp", "level": "rare", "note": "Prisutno – veže za konkretan lokalitet." },
+          { "fish_id": "pike", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare" },
+          { "fish_id": "eel", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "crucian-carp", "level": "rare" },
+          { "fish_id": "tench", "level": "rare" },
+          { "fish_id": "perch", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "brown-trout", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-ugar",
+    "slug": "rijeka-ugar",
+    "name": "Ugar",
+    "type": "river",
+    "municipality": "Kotor Varoš / Šipovo",
+    "city": "Kotor Varoš",
+    "region": "Republika Srpska",
+    "latitude": 44.4200,
+    "longitude": 17.3700,
+    "description": "Pritoka Vrbasa. Gornji tok salmonidni – pastrmka i lipljen. Prisutna mladica i klen. Donji tok ciprinidni.",
+    "manager": "SRD Ugar",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "ugar-kotor-varos",
+        "name": "Kotor Varoš",
+        "latitude": 44.4200,
+        "longitude": 17.3700,
+        "municipality": "Kotor Varoš",
+        "region": "Republika Srpska",
+        "spot_description": "Ugar – gornji tok salmonidni, donji ciprinidni.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common", "note": "Gornji tok." },
+          { "fish_id": "grayling", "level": "rare", "note": "Gornji tok." },
+          { "fish_id": "huchen", "level": "rare" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-bistrica-kalinovik",
+    "slug": "rijeka-bistrica-kalinovik",
+    "name": "Bistrica (Kalinovik)",
+    "type": "river",
+    "municipality": "Kalinovik",
+    "city": "Kalinovik",
+    "region": "Republika Srpska",
+    "latitude": 43.4900,
+    "longitude": 18.4500,
+    "description": "Planinska salmonidna rijeka. Pastrmka dominira, prisutni lipljen, peš i klen.",
+    "manager": "SRD Kalinovik",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "bistrica-kalinovik",
+        "name": "Kalinovik",
+        "latitude": 43.4900,
+        "longitude": 18.4500,
+        "municipality": "Kalinovik",
+        "region": "Republika Srpska",
+        "spot_description": "Bistrica u Kalinović – planinska salmonidna rijeka. Pastrmka dominira.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "pes", "level": "rare" },
+          { "fish_id": "chub", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-neretva-gornji",
+    "slug": "neretva-gornji-tok",
+    "name": "Neretva (gornji tok / Kalinovik)",
+    "type": "river",
+    "municipality": "Kalinovik / Foča",
+    "city": "Kalinovik",
+    "region": "Republika Srpska",
+    "latitude": 43.5100,
+    "longitude": 18.4300,
+    "description": "Gornji izvorišni tok Neretve na planini Zelengori. Pastrmka dominira, prisutni lipljen, mekousna pastrmka i lokalno glavatica.",
+    "manager": "SRD Kalinovik",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "neretva-kalinovik",
+        "name": "Kalinovik",
+        "latitude": 43.5100,
+        "longitude": 18.4300,
+        "municipality": "Kalinovik",
+        "region": "Republika Srpska",
+        "spot_description": "Gornji tok Neretve u Kalinović. Pastrmka dominira, lipljen i mekousna prisutni.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "grayling", "level": "rare" },
+          { "fish_id": "softmouth-trout", "level": "rare" },
+          { "fish_id": "marble-trout-glavatica", "level": "rare", "note": "Glavatica lokalno." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-prokosko",
+    "slug": "prokosko-jezero",
+    "name": "Prokoško jezero",
+    "type": "lake",
+    "municipality": "Fojnica",
+    "city": "Fojnica",
+    "region": "Središnja BiH",
+    "latitude": 43.9667,
+    "longitude": 17.7233,
+    "description": "Visoko planinsko jezero na Vranici. Historijsko poribljavnje pastrmkama i zlatovčicom. Novija istraživanja: pastrmka i peš. Ne tretirati historijsko poribljavnje kao dokaz stabilne populacije.",
+    "manager": "SRD Fojnica",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "prokosko-jezero",
+        "name": "Fojnica (Vranica)",
+        "latitude": 43.9667,
+        "longitude": 17.7233,
+        "municipality": "Fojnica",
+        "region": "Středodobosanski kanton",
+        "spot_description": "Prokoško jezero. Historijsko poribljavnje pastrmkama. Novija istraživanja potvrđuju pastrmku i peša.",
+        "fish_presence": [
+          { "fish_id": "brown-trout", "level": "rare", "note": "Potvrđena u novijim istraživanjima sliva." },
+          { "fish_id": "pes", "level": "rare", "note": "Peš potvrđen u novijim istraživanjima." },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Historijsko unošenje – ne tretirati kao stabilnu populaciju." },
+          { "fish_id": "lake-char", "level": "rare", "note": "Zlatovčica historijski unešena." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "common-carp", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-blidinjsko",
+    "slug": "blidinjsko-jezero",
+    "name": "Blidinjsko jezero",
+    "type": "lake",
+    "municipality": "Prozor-Rama / Jablanica",
+    "city": "Blidinje",
+    "region": "Hercegovačko-neretvanski kanton",
+    "latitude": 43.6950,
+    "longitude": 17.4050,
+    "description": "Planinsko jezero u NP Blidinje. Slabije istražen riblji fond. Potvrđeni: klen, bijeli klen, kaliornijska pastrmka, oštrulja i bjelica.",
+    "manager": "NP Blidinje",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "blidinjsko-jezero",
+        "name": "Blidinje",
+        "latitude": 43.6950,
+        "longitude": 17.4050,
+        "municipality": "Prozor-Rama",
+        "region": "Hercegovačko-neretvanski kanton",
+        "spot_description": "Blidinjsko jezero. Klen, bijeli klen i kaliornijska pastrmka. Riblji fond slabije istražen.",
+        "fish_presence": [
+          { "fish_id": "chub", "level": "rare", "note": "Klen i bijeli klen potvrđeni." },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Kalifornijska pastrmka navedena." },
+          { "fish_id": "uklija", "level": "rare", "note": "Bjelica navedena." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "wels-catfish", "level": "absent" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "water-staraca-ilijas",
+    "slug": "staraca-ilijas",
+    "name": "Starača (Ilijaš)",
+    "type": "lake",
+    "municipality": "Ilijaš",
+    "city": "Ilijaš",
+    "region": "Kanton Sarajevo",
+    "latitude": 44.0200,
+    "longitude": 18.2700,
+    "description": "Akumulacija u Ilijašu. Česti šaran, štuka, deverika, bodorka, klijen, grgeč, karaš i babuška. Poribljene vrste: kaliornijska pastrmka, amur, linjak.",
+    "manager": "SRD Ilijaš",
+    "fishing_rules_url": "https://srsbih.com",
+    "permit_url": "https://srsbih.com",
+    "source_id": "src-srs-bih",
+    "cities": [
+      {
+        "id": "staraca-ilijas-akumulacija",
+        "name": "Ilijaš",
+        "latitude": 44.0200,
+        "longitude": 18.2700,
+        "municipality": "Ilijaš",
+        "region": "Kanton Sarajevo",
+        "spot_description": "Starača u Ilijašu. Šaran, štuka, deverika, grgeč, babuška i bodorka. Poribljene kaliornijska pastrmka, amur, linjak.",
+        "fish_presence": [
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "pike", "level": "common" },
+          { "fish_id": "bream", "level": "common" },
+          { "fish_id": "bodorka", "level": "common" },
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "perch", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "rainbow-trout", "level": "rare", "note": "Poribljavanjem." },
+          { "fish_id": "grass-carp", "level": "rare", "note": "Poribljavanjem." },
+          { "fish_id": "tench", "level": "rare", "note": "Poribljavanjem." },
+          { "fish_id": "barbel", "level": "rare" },
+          { "fish_id": "nase", "level": "rare" },
+          { "fish_id": "wels-catfish", "level": "rare", "note": "Nesigurno – potrebna provjera." },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" },
+          { "fish_id": "brown-trout", "level": "absent" }
         ]
       }
     ]
