@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Calendar, MapPin, Fish, Clock, Target, AlertTriangle, Info, Sparkles, Layers, Droplets } from 'lucide-react';
+import { Calendar, MapPin, Fish, Clock, Target, AlertTriangle, Info, Layers, Droplets, CheckCircle2 } from 'lucide-react';
 import watersData from '@/data/waters.json';
 import fishData from '@/data/fish.json';
 import { WaterBody, WaterCity, WaterClarity, BottomStructure } from '@/types';
@@ -44,7 +44,6 @@ export default function FishingPlanner({
   const selectedWater = waters.find((w) => w.id === selectedWaterId) || waters[0];
   const currentCities: WaterCity[] = selectedWater.cities || [];
 
-  // When selected water changes, auto-select first city of that water
   const handleWaterChange = (wId: string) => {
     setSelectedWaterId(wId);
     const newWater = waters.find((w) => w.id === wId);
@@ -77,7 +76,6 @@ export default function FishingPlanner({
     }
   };
 
-  // Re-calculate plan whenever params change
   useEffect(() => {
     async function calculatePlan() {
       const city = currentCities.find((c) => c.id === selectedCityId) || currentCities[0];
@@ -126,13 +124,13 @@ export default function FishingPlanner({
         <div>
           <span className="text-xs font-serif font-bold uppercase tracking-widest text-[#c49f6e] flex items-center gap-1.5">
             <Target className="w-4 h-4 text-[#4ca778]" />
-            INTERAKTIVNI PLANER RIBOLOVA
+            PLANER RIBOLOVA BIH
           </span>
           <h2 className="text-xl sm:text-2xl font-serif font-black text-white mt-0.5">
-            Prilagođena Prognoza i Taktički Vodič za Izlet
+            Prognoza i Taktički Vodič za Teren
           </h2>
           <p className="text-xs text-[#8ea396] font-sans mt-0.5">
-            Odaberite vodu, grad/mjesto, vrstu ribe, mutnoću vode i dno za procjenu uslova na terenu.
+            Odaberite vodu, grad ili mjesto, ciljnu vrstu te mutnoću vode i dno za procjenu uslova.
           </p>
         </div>
 
@@ -145,7 +143,7 @@ export default function FishingPlanner({
               </div>
             </div>
             <div className="text-xs font-bold px-2.5 py-1 rounded bg-[#274535] text-[#4ca778] uppercase font-serif">
-              🟢 {scoreResult.categoryLabel}
+              {scoreResult.categoryLabel}
             </div>
           </div>
         )}
@@ -169,7 +167,7 @@ export default function FishingPlanner({
               className="w-full bg-[#182820] text-white text-xs py-2.5 px-3 rounded border border-[#274535] focus:outline-none focus:border-[#4ca778] font-mono cursor-pointer"
             />
             <div className="text-[11px] text-[#4ca778] font-mono">
-              📅 {formatDateFull(new Date(planDateStr + 'T12:00:00'))}
+              {formatDateFull(new Date(planDateStr + 'T12:00:00'))}
             </div>
           </div>
 
@@ -197,7 +195,7 @@ export default function FishingPlanner({
           {/* 3. Cascading City / Location Selector */}
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif flex items-center gap-1.5">
-              📍 Grad / Mjesto
+              <MapPin className="w-3.5 h-3.5 text-[#4ca778]" /> Grad / Mjesto
             </label>
             <select
               value={selectedCityId}
@@ -233,13 +231,13 @@ export default function FishingPlanner({
             >
               {fishData.map((f) => {
                 const presence = getSpeciesPresenceForSpot(selectedWaterId, selectedCityId, f.id);
-                let badge = '🟢';
-                if (presence.isAbsent) badge = '❌ (Ne postoji)';
-                else if (presence.isRare) badge = '🟡 (Rijetka)';
+                let badgeText = '[Česta]';
+                if (presence.isAbsent) badgeText = '[Ne postoji]';
+                else if (presence.isRare) badgeText = '[Rijetka]';
 
                 return (
                   <option key={f.id} value={f.id} className="bg-[#0e1712]">
-                    {f.name_bs} {badge}
+                    {f.name_bs} {badgeText}
                   </option>
                 );
               })}
@@ -269,7 +267,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                💧 Bistra
+                Bistra
               </button>
               <button
                 type="button"
@@ -280,7 +278,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                🌊 Blago zamućena
+                Blago zamućena
               </button>
               <button
                 type="button"
@@ -291,7 +289,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                🪵 Mutna / Visoka
+                Mutna / Visoka
               </button>
             </div>
           </div>
@@ -299,7 +297,7 @@ export default function FishingPlanner({
           {/* Bottom Structure */}
           <div className="space-y-1.5">
             <label className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif flex items-center gap-1.5">
-              <Layers className="w-3.5 h-3.5 text-[#c49f6e]" /> Struktura i Sastav Dna Vode
+              <Layers className="w-3.5 h-3.5 text-[#c49f6e]" /> Struktura Dna Vode
             </label>
             <div className="grid grid-cols-4 gap-1.5">
               <button
@@ -311,7 +309,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                🪨 Kamen
+                Kamen
               </button>
               <button
                 type="button"
@@ -322,7 +320,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                🟤 Mulj
+                Mulj
               </button>
               <button
                 type="button"
@@ -333,7 +331,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                🌿 Trava
+                Trava
               </button>
               <button
                 type="button"
@@ -344,7 +342,7 @@ export default function FishingPlanner({
                     : 'bg-[#182820] text-[#8ea396] border-[#274535] hover:text-white'
                 }`}
               >
-                🪵 Panjevi
+                Panjevi
               </button>
             </div>
           </div>
@@ -373,7 +371,7 @@ export default function FishingPlanner({
                   {presenceResult.warningText || `Na lokaciji ${selectedWater.name} (${selectedCityObj?.name}) nema ove vrste ribe ili se pojavljuje izuzetno rijetko.`}
                 </p>
                 <div className="text-[11px] text-amber-300 font-semibold pt-1">
-                  💡 Savjet: Odaberite neku od dominantnih vrsta na ovoj vodi (npr. Klen, Mrena, Škobalj, Som, Štuka).
+                  Savjet: Odaberite neku od dominantnih vrsta na ovoj vodi (npr. Klen, Mrena, Škobalj, Som, Štuka).
                 </div>
               </div>
             </div>
@@ -394,7 +392,7 @@ export default function FishingPlanner({
             
             {/* Score & Best Period Card */}
             <div className="bg-[#182820] p-4 rounded-lg border border-[#274535] space-y-3">
-              <div className="text-xs font-serif font-bold uppercase text-[#c49f6e]">⚡ Ocjena Ulovnosti Za Cilj</div>
+              <div className="text-xs font-serif font-bold uppercase text-[#c49f6e]">Ocjena Ulovnosti Za Cilj</div>
               <div className="flex items-center justify-between">
                 <div>
                   <div className="text-3xl font-black text-white font-serif">{scoreResult.totalScore}<span className="text-xs text-[#4ca778]">/100</span></div>
@@ -420,11 +418,11 @@ export default function FishingPlanner({
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-bold text-white font-mono">{period.start} – {period.end}</span>
                       <span className="text-[10px] px-2 py-0.5 rounded bg-[#274535] text-[#4ca778] font-bold">
-                        {period.score}% ⭐
+                        {period.score}%
                       </span>
                     </div>
                     {period.reason && (
-                      <span className="text-[11px] text-[#c49f6e] font-serif mt-1">💡 {period.reason}</span>
+                      <span className="text-[11px] text-[#c49f6e] font-serif mt-1">{period.reason}</span>
                     )}
                   </div>
                 ))}
@@ -456,11 +454,11 @@ export default function FishingPlanner({
 
           {/* General Baits & Methods Row */}
           <div className="bg-[#182820] p-3.5 rounded-lg border border-[#274535] space-y-2 text-xs">
-            <div className="font-bold text-white font-serif">🎣 Preporučeni mamci i tehnike za {selectedFishObj.name_bs}:</div>
+            <div className="font-bold text-white font-serif">Preporučeni mamci i tehnike za {selectedFishObj.name_bs}:</div>
             <div className="flex flex-wrap gap-2">
               {selectedFishObj.baits.map((bait, idx) => (
                 <span key={bait} className="px-2.5 py-1 bg-[#121c17] text-[#e8e5db] rounded border border-[#274535] font-medium text-[11px]">
-                  {idx === 0 ? '⭐ ' : ''}{formatLabel(bait)}
+                  {formatLabel(bait)}
                 </span>
               ))}
             </div>

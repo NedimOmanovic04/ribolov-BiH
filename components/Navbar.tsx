@@ -23,7 +23,6 @@ export default function Navbar({
   const [isOpen, setIsOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Debounced search handler
   useEffect(() => {
     if (!searchQuery.trim()) {
       setResults([]);
@@ -42,7 +41,6 @@ export default function Navbar({
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  // Close search dropdown on click outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -97,7 +95,7 @@ export default function Navbar({
           {/* Outdoor Serif Branding */}
           <a href="/" className="flex items-center gap-3 shrink-0 group">
             <div className="w-11 h-11 rounded bg-[#182820] border border-[#274535] flex items-center justify-center text-white shadow-md">
-              <span className="text-xl">🎣</span>
+              <Fish className="w-6 h-6 text-[#4ca778]" />
             </div>
             <div>
               <span className="font-serif font-black text-xl text-white tracking-wide block">
@@ -118,7 +116,7 @@ export default function Navbar({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onFocus={() => searchQuery.trim() && setIsOpen(true)}
-                placeholder="Pretraži vode ili grad (npr. Jablaničko jezero, Bihać, Drina)..."
+                placeholder="Pretraži vode ili grad (npr. Jablaničko jezero, Bihać, Visoko)..."
                 className="w-full pl-10 pr-28 py-2.5 text-xs font-medium bg-[#14231b] border border-[#274535] rounded-md text-white placeholder-[#8ea396] focus:outline-none focus:border-[#4ca778] transition-colors"
               />
               <button
@@ -149,7 +147,6 @@ export default function Navbar({
                     >
                       <div>
                         <div className="text-sm font-semibold text-white group-hover:text-[#c49f6e] flex items-center gap-1.5 font-serif">
-                          <span>{item.type === 'water' ? '🏞️' : '🏙️'}</span>
                           {item.name}
                         </div>
                         <div className="text-xs text-[#8ea396]">

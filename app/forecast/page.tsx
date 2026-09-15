@@ -10,7 +10,7 @@ import { Calendar, Sun, Moon, Wind, Thermometer, CloudRain, MapPin, Fish, Clock,
 import watersData from '@/data/waters.json';
 import fishData from '@/data/fish.json';
 import { WaterBody, WaterCity, WaterClarity, BottomStructure } from '@/types';
-import { formatDateFull, formatDateShort, formatIsoDate } from '@/lib/utils/dates';
+import { formatDateFull, formatDateShort } from '@/lib/utils/dates';
 
 function getSolunarLabel(rating: string): { label: string; color: string } {
   switch (rating) {
@@ -148,7 +148,7 @@ export default function ForecastPage() {
         {/* Header */}
         <div className="panel-outdoors rounded-lg p-6 border border-[#1f3629] space-y-2">
           <span className="text-xs font-serif font-bold uppercase tracking-widest text-[#c49f6e] block">
-            📅 SOLUNARNI I VREMENSKI ALMANAH BIH
+            SOLUNARNI I VREMENSKI ALMANAH BIH
           </span>
           <h1 className="text-2xl sm:text-3xl font-serif font-black text-white">7-Dnevna Prognoza i Planer Izleta</h1>
           <div className="flex flex-wrap items-center gap-4 mt-1">
@@ -176,7 +176,7 @@ export default function ForecastPage() {
               </div>
               <div className="text-left">
                 <div className="text-sm font-bold text-white font-serif">Planer Ribolovnog Izleta Po Mjestima</div>
-                <div className="text-xs text-[#8ea396]">Odaberi datum, vodu, grad/mjesto, vrstu, mutnoću i dno vode → dobij rezultat i preporuke</div>
+                <div className="text-xs text-[#8ea396]">Odaberi datum, vodu, grad/mjesto, vrstu, mutnoću i dno vode za rezultat i preporuke</div>
               </div>
             </div>
             <ChevronDown className={`w-5 h-5 text-[#4ca778] transition-transform ${plannerOpen ? 'rotate-180' : ''}`} />
@@ -201,7 +201,7 @@ export default function ForecastPage() {
                   />
                   {planDate && (
                     <div className="text-[11px] text-[#4ca778] font-mono">
-                      📅 {formatDateFull(new Date(planDate + 'T12:00:00'))}
+                      {formatDateFull(new Date(planDate + 'T12:00:00'))}
                     </div>
                   )}
                 </div>
@@ -227,7 +227,7 @@ export default function ForecastPage() {
                 {/* City picker */}
                 <div className="space-y-1.5">
                   <label className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif flex items-center gap-1.5">
-                    📍 Grad / Mjesto
+                    <MapPin className="w-3.5 h-3.5" /> Grad / Mjesto
                   </label>
                   <select
                     value={planCityId}
@@ -254,12 +254,12 @@ export default function ForecastPage() {
                   >
                     {fishData.map((f) => {
                       const presence = getSpeciesPresenceForSpot(planWaterId, planCityId, f.id);
-                      let badge = '🟢';
-                      if (presence.isAbsent) badge = '❌ (Ne postoji)';
-                      else if (presence.isRare) badge = '🟡 (Rijetka)';
+                      let badgeText = '[Česta]';
+                      if (presence.isAbsent) badgeText = '[Ne postoji]';
+                      else if (presence.isRare) badgeText = '[Rijetka]';
                       return (
                         <option key={f.id} value={f.id} className="bg-[#0e1712]">
-                          {f.name_bs} {badge}
+                          {f.name_bs} {badgeText}
                         </option>
                       );
                     })}
@@ -275,9 +275,9 @@ export default function ForecastPage() {
                     <Droplets className="w-3.5 h-3.5 text-[#2b87be]" /> Mutnoća vode:
                   </label>
                   <div className="grid grid-cols-3 gap-2 text-xs">
-                    <button type="button" onClick={() => setWaterClarity('bistra')} className={`py-1.5 rounded border text-center font-medium ${waterClarity === 'bistra' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>💧 Bistra</button>
-                    <button type="button" onClick={() => setWaterClarity('blago_zamucena')} className={`py-1.5 rounded border text-center font-medium ${waterClarity === 'blago_zamucena' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>🌊 Blago zamućena</button>
-                    <button type="button" onClick={() => setWaterClarity('mutna')} className={`py-1.5 rounded border text-center font-medium ${waterClarity === 'mutna' ? 'bg-[#473d34] text-amber-200 border-amber-500 font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>🪵 Mutna/Visoka</button>
+                    <button type="button" onClick={() => setWaterClarity('bistra')} className={`py-1.5 rounded border text-center font-medium ${waterClarity === 'bistra' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Bistra</button>
+                    <button type="button" onClick={() => setWaterClarity('blago_zamucena')} className={`py-1.5 rounded border text-center font-medium ${waterClarity === 'blago_zamucena' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Blago zamućena</button>
+                    <button type="button" onClick={() => setWaterClarity('mutna')} className={`py-1.5 rounded border text-center font-medium ${waterClarity === 'mutna' ? 'bg-[#473d34] text-amber-200 border-amber-500 font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Mutna/Visoka</button>
                   </div>
                 </div>
 
@@ -286,10 +286,10 @@ export default function ForecastPage() {
                     <Layers className="w-3.5 h-3.5 text-[#c49f6e]" /> Dno vode:
                   </label>
                   <div className="grid grid-cols-4 gap-1.5 text-xs">
-                    <button type="button" onClick={() => setBottomStructure('kamen')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'kamen' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>🪨 Kamen</button>
-                    <button type="button" onClick={() => setBottomStructure('mulj')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'mulj' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>🟤 Mulj</button>
-                    <button type="button" onClick={() => setBottomStructure('trava')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'trava' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>🌿 Trava</button>
-                    <button type="button" onClick={() => setBottomStructure('panjevi')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'panjevi' ? 'bg-[#473d34] text-amber-200 border-amber-500 font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>🪵 Panjevi</button>
+                    <button type="button" onClick={() => setBottomStructure('kamen')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'kamen' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Kamen</button>
+                    <button type="button" onClick={() => setBottomStructure('mulj')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'mulj' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Mulj</button>
+                    <button type="button" onClick={() => setBottomStructure('trava')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'trava' ? 'bg-[#1c3528] text-white border-[#4ca778] font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Trava</button>
+                    <button type="button" onClick={() => setBottomStructure('panjevi')} className={`py-1.5 rounded border text-center font-medium ${bottomStructure === 'panjevi' ? 'bg-[#473d34] text-amber-200 border-amber-500 font-bold' : 'bg-[#182820] text-[#8ea396] border-[#274535]'}`}>Panjevi</button>
                   </div>
                 </div>
               </div>
@@ -327,7 +327,7 @@ export default function ForecastPage() {
                         {planResult.fish.name_bs} • {planResult.spotName}
                       </div>
                       <div className="text-xs text-[#8ea396] mt-0.5 font-mono">
-                        📅 {formatDateFull(planResult.planDateObj)}
+                        {formatDateFull(planResult.planDateObj)}
                       </div>
                     </div>
                     <div className="text-right">
@@ -343,7 +343,7 @@ export default function ForecastPage() {
 
                   {planResult.score.bestPeriods.length > 0 && (
                     <div className="space-y-2">
-                      <div className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif">🔥 Najbolji periodi za pecanje:</div>
+                      <div className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif">Najbolji periodi za pecanje:</div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {planResult.score.bestPeriods.map((p: any, i: number) => (
                           <div key={i} className="bg-[#182820] border border-[#274535] rounded p-3">
@@ -353,7 +353,7 @@ export default function ForecastPage() {
                               <span className="text-xs text-[#4ca778] font-normal ml-1">({p.score}%)</span>
                             </div>
                             {p.reason && (
-                              <div className="text-[11px] text-[#c49f6e] mt-1 font-serif">💡 {p.reason}</div>
+                              <div className="text-[11px] text-[#c49f6e] mt-1 font-serif">{p.reason}</div>
                             )}
                           </div>
                         ))}
@@ -364,21 +364,21 @@ export default function ForecastPage() {
                   {/* Tactics */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                     <div className="bg-[#182820] p-3 rounded border border-[#274535]">
-                      <div className="font-bold text-[#c49f6e] font-serif">🌊 Prozirnost vode:</div>
+                      <div className="font-bold text-[#c49f6e] font-serif">Prozirnost vode:</div>
                       <p className="text-[#d5d1c3] mt-0.5">{planResult.score.clarityTip}</p>
                     </div>
                     <div className="bg-[#182820] p-3 rounded border border-[#274535]">
-                      <div className="font-bold text-[#c49f6e] font-serif">🪨 Dno i montaža:</div>
+                      <div className="font-bold text-[#c49f6e] font-serif">Dno i montaža:</div>
                       <p className="text-[#d5d1c3] mt-0.5">{planResult.score.bottomTip}</p>
                     </div>
                   </div>
 
                   <div className="space-y-2 text-xs">
-                    <div className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif">🎣 Preporučeni mamci:</div>
+                    <div className="text-xs font-semibold text-[#c49f6e] uppercase tracking-wider font-serif">Preporučeni mamci:</div>
                     <div className="flex flex-wrap gap-2">
                       {planResult.fish.baits.map((bait: string, i: number) => (
                         <span key={bait} className="text-xs px-2.5 py-1 rounded bg-[#182820] border border-[#345b46] text-[#d5d1c3]">
-                          {i === 0 && '⭐ '}{formatLabel(bait)}
+                          {formatLabel(bait)}
                         </span>
                       ))}
                     </div>
@@ -405,7 +405,6 @@ export default function ForecastPage() {
               {weather.daily.time.map((dateIso, idx) => {
                 const d = new Date(dateIso + 'T12:00:00');
                 const formattedFull = formatDateFull(d);
-                const shortDay = formatDateShort(d);
                 const astro = getAstronomyData(d, location.lat, location.lng);
                 const maxTemp = Math.round(weather.daily.temperature_2m_max[idx]);
                 const minTemp = Math.round(weather.daily.temperature_2m_min[idx]);

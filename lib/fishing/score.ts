@@ -233,12 +233,12 @@ export function calculateFishingScore({
   // --- Water Clarity Score Adjustment ---
   let clarityAdjustment = 0;
   if (waterClarity === 'blago_zamucena') {
-    clarityAdjustment = 5; // Ideal for feeding
+    clarityAdjustment = 5;
   } else if (waterClarity === 'mutna') {
     if (['wels-catfish', 'common-carp', 'barbel', 'crucian-carp'].includes(species.id)) {
-      clarityAdjustment = 5; // Catfish & Carp thrive in murky water
+      clarityAdjustment = 5;
     } else if (['grayling', 'brown-trout', 'asp'].includes(species.id)) {
-      clarityAdjustment = -8; // Visual sight-feeders suffer in muddy water
+      clarityAdjustment = -8;
     }
   }
 
@@ -341,9 +341,9 @@ export function calculateFishingScore({
 
     let reason = 'Optimalni vremenski uslovi';
     if (species.id === 'common-carp' && isFullMoon) {
-      reason = 'Pun mjesec + noćna aktivnost šarana';
+      reason = 'Pun mjesec i noćna aktivnost šarana';
     } else if (species.id === 'common-carp' && diff6h <= -1) {
-      reason = 'Pritisak u blagom padu (Šaran intenzivno hranjenje)';
+      reason = 'Pritisak u blagom padu (Šaran intenzivno uzima)';
     } else if (species.category === 'predator' && diff6h <= -2) {
       reason = 'Pad pritiska stimulira agresivni napad grabljivica';
     } else if (species.category === 'fly_trout' && (h >= 5 && h <= 8)) {
@@ -397,34 +397,34 @@ export function calculateFishingScore({
     recommendations.push(`Preporučene tehnike: ${formattedMethods.slice(0, 3).join(', ')}.`);
   }
 
-  // Water Clarity Tip
+  // Water Clarity Tip (NO EMOJIS)
   let clarityTip = '';
   if (waterClarity === 'mutna') {
-    clarityTip = '🌊 Mutna / visoka voda: Koristite tamnije varalice jakog kontrasta (crna, chartreuse, firetiger), zvučne glavinjare/zvečke ili jaku aromu/miris na mamcu. Pecajte blizu obale u mirnim zalivima i kontra-strujama.';
+    clarityTip = 'Mutna / visoka voda: Koristite tamnije varalice jakog kontrasta (crna, chartreuse, firetiger), zvučne glavinjare ili zvučne zvečke te pojačajte aromu i miris na mamcima. Pecajte blizu obale u mirnim zalivima i kontra-strujama.';
   } else if (waterClarity === 'blago_zamucena') {
-    clarityTip = '🌊 Blago zamućena voda: Vrhunski uslovi! Riba gubi oprez i aktivno traži hranu. Prirodne i polusvijetle boje mamaca daju odlične rezultate.';
+    clarityTip = 'Blago zamućena voda: Vrhunski uslovi! Riba gubi oprez i aktivno traži hranu. Prirodne i polusvijetle boje mamaca daju odlične rezultate.';
   } else {
-    clarityTip = '🌊 Bistra voda: Riba je oprezna. Koristite tanji fluorokarbonski predvez, prirodne diskretne boje varalica/muha, daleke zabačaje i nečujan prilaz vode.';
+    clarityTip = 'Bistra voda: Riba je oprezna. Koristite tanji fluorokarbonski predvez, prirodne diskretne boje varalica ili mušica, daleke zabačaje i nečujan prilaz vodi.';
   }
 
-  // Bottom Structure Tip
+  // Bottom Structure Tip (NO EMOJIS)
   let bottomTip = '';
   if (bottomStructure === 'trava') {
     if (species.category === 'coarse_carp') {
-      bottomTip = '🌿 Dno sa travom/rastinjem: Koristite Pop-Up sistem (boila ili kukuruz odignut 3-7cm iznad trave), Chod rig ili Ronnie rig kako mamac ne bi potonuo u travu. Izbjegavajte klasična dno-olova.';
+      bottomTip = 'Dno sa travom ili rastinjem: Koristite Pop-Up sistem (boila ili kukuruz odignut 3 do 7cm iznad trave), Chod rig ili Ronnie rig kako mamac ne bi potonuo u travu. Izbjegavajte klasična dno olova.';
     } else {
-      bottomTip = '🌿 Dno sa travom/rastinjem: Koristite površince (poppere, žabe), weedless offset udice sa silikonom ili neotežane gume vođene tik iznad trave.';
+      bottomTip = 'Dno sa travom ili rastinjem: Koristite površinske varalice (poppere, žabe), weedless offset udice sa silikonom ili neotežane gume vođene tik iznad trave.';
     }
   } else if (bottomStructure === 'mulj') {
     if (species.category === 'coarse_carp') {
-      bottomTip = '🟤 Muljevito dno: Koristite Pop-Up ili Snowman (snješko) balansiranu boilu sa pljosnatim olovom (flat pear) koje ne tone duboko u mulj. Dodajte PVA mrežicu sa mrvljenom hranom.';
+      bottomTip = 'Muljevito dno: Koristite Pop-Up ili Snowman balansiranu boilu sa pljosnatim olovom (flat pear) koje ne tone duboko u mulj. Dodajte PVA mrežicu sa mrvljenom hranom.';
     } else {
-      bottomTip = '🟤 Muljevito dno: Koristite sporotonuće prezentacije i lagana olova kako montirani mamac ne bi potonuo u mulj.';
+      bottomTip = 'Muljevito dno: Koristite sporotonuće prezentacije i lagana olova kako montirani mamac ne bi potonuo u mulj.';
     }
   } else if (bottomStructure === 'kamen') {
-    bottomTip = '🪨 Kamenito / šljunkovito dno: Koristite Inline ili Lead clip olovo i robusne predveze otporne na krzanje o kamen. Za varaličarenje birajte dubokoroneće voblere ili jig glave sa zaštitom.';
+    bottomTip = 'Kamenito ili šljunkovito dno: Koristite Inline ili Lead clip olovo i robusne predveze otporne na krzanje o kamen. Za varaličarenje birajte dubokoroneće voblere ili jig glave sa zaštitom.';
   } else if (bottomStructure === 'panjevi') {
-    bottomTip = '🪵 Panjevi i potopljeno drveće (krš): Koristite weedless offset udice, Texas rig, čvrst najlon/pletenicu i jaku kontru kako se ulovljena riba ne bi uvukla u panjeve.';
+    bottomTip = 'Panjevi i potopljeno drveće (krš): Koristite weedless offset udice, Texas rig, čvrstu pletenicu i jaku kontru kako se ulovljena riba ne bi uvukla u panjeve.';
   }
 
   return {

@@ -34,8 +34,21 @@ export function getRankedSpecies(
     filtered = allSpecies.filter((s) => s.category === 'fly_trout');
   }
 
-  const evaluated = filtered.map((species) => {
+  const evaluated: {
+    species: FishSpecies;
+    scoreResult: FishingScoreResult;
+    presence: SpeciesSpotPresenceResult;
+    effectiveScore: number;
+  }[] = [];
+
+  for (const species of filtered) {
     const presence = getSpeciesPresenceForSpot(waterId || '', cityId, species.id);
+
+    // CRITICAL FIX: If species DOES NOT exist at this water & city, EXCLUDE it completely from recommendations!
+    if (presence.isAbsent) {
+      continue;
+    }
+
     const scoreResult = calculateFishingScore({
       species,
       weather,
@@ -44,21 +57,18 @@ export function getRankedSpecies(
       bottomStructure,
     });
 
-    // If species is absent at this spot, heavily penalize its display score for ranking
     let effectiveScore = scoreResult.totalScore;
-    if (presence.isAbsent) {
-      effectiveScore = -100; // Push absent species to the very bottom
-    } else if (presence.isRare) {
+    if (presence.isRare) {
       effectiveScore -= 15;
     }
 
-    return {
+    evaluated.push({
       species,
       scoreResult,
       presence,
       effectiveScore,
-    };
-  });
+    });
+  }
 
   // Sort descending by effectiveScore
   evaluated.sort((a, b) => b.effectiveScore - a.effectiveScore);

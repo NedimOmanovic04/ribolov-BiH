@@ -20,7 +20,7 @@ import watersData from '@/data/waters.json';
 import fishData from '@/data/fish.json';
 import sourcesData from '@/data/sources.json';
 import { WaterBody } from '@/types';
-import { MapPin, Shield, ExternalLink, Clock, Calendar, Sparkles } from 'lucide-react';
+import { MapPin, Shield, ExternalLink, Clock, Calendar, Compass } from 'lucide-react';
 
 export default function HomePage() {
   const [selectedLocation, setSelectedLocation] = useState<{
@@ -103,7 +103,6 @@ export default function HomePage() {
     loadData();
   }, [selectedLocation]);
 
-  // Browser Geolocation handler
   const handleUseMyLocation = () => {
     if (!navigator.geolocation) {
       alert('Vaš preglednik ne podržava geolociranje.');
@@ -146,7 +145,6 @@ export default function HomePage() {
       selectedLocation.cityId
     );
 
-    // Pick top species from ranked list for bulletin top featured species
     const topRecommendation = rankedSpeciesList.find((r) => !r.presence.isAbsent);
     if (topRecommendation) {
       topFeaturedSpeciesName = topRecommendation.species.name_bs;
@@ -183,7 +181,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#1f3629] pb-4">
               <div>
                 <span className="text-xs font-serif font-bold uppercase tracking-widest text-[#c49f6e] block">
-                  🎣 RIBOLOV BIH • VODIČ NA TERENU
+                  RIBOLOV BIH • VODIČ NA TERENU
                 </span>
                 <h1 className="text-2xl sm:text-4xl font-serif font-black text-white tracking-tight mt-0.5">
                   Gdje da idem na ribolov danas?
@@ -226,7 +224,7 @@ export default function HomePage() {
                 Trenutna lokacija: <strong className="text-white font-serif">{selectedLocation.name}</strong>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[#4ca778] font-semibold">⭐ Top ulov danas: {topFeaturedSpeciesName}</span>
+                <span className="text-[#4ca778] font-semibold">Top ulov danas: {topFeaturedSpeciesName}</span>
               </div>
             </div>
           </div>
@@ -306,7 +304,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between border-b border-[#1f3629] pb-2">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wider text-[#c49f6e] block font-serif">
-                      🗺️ Karta Voda i Lokacija Bosne i Hercegovine
+                      Karta Voda i Lokacija Bosne i Hercegovine
                     </span>
                     <h3 className="text-base font-bold text-white font-serif">Karta Rijeka, Jezera i Revira</h3>
                   </div>
@@ -380,7 +378,7 @@ export default function HomePage() {
       <footer className="bg-[#0e1712] border-t border-[#1f3629] text-[#8ea396] py-6 text-xs text-center space-y-2">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-4 font-serif">
           <div className="flex items-center gap-2 text-white">
-            <span>🎣 RIBOLOV BiH</span> • <span>Vremenski podaci Open-Meteo CC BY 4.0</span>
+            <span>RIBOLOV BiH</span> • <span>Vremenski podaci Open-Meteo CC BY 4.0</span>
           </div>
           <div className="flex gap-4 text-[#4ca778] font-sans">
             <a href="/forecast" className="hover:underline">Prognoza</a>

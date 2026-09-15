@@ -1,7 +1,7 @@
 'use client';
 
 import { FishingCategoryFilter } from '@/lib/fishing/recommendations';
-import { Compass } from 'lucide-react';
+import { Compass, Fish, Target, Waves, Feather, Mountain } from 'lucide-react';
 
 interface SpeciesFilterBarProps {
   activeFilter: FishingCategoryFilter;
@@ -9,13 +9,13 @@ interface SpeciesFilterBarProps {
 }
 
 export default function SpeciesFilterBar({ activeFilter, onSelectFilter }: SpeciesFilterBarProps) {
-  const options: { id: FishingCategoryFilter; label: string; emoji: string }[] = [
-    { id: 'all', label: 'Sve vrste', emoji: '🐟' },
-    { id: 'predator', label: 'Grabljivice', emoji: '🎯' },
-    { id: 'coarse_carp', label: 'Mirna riba', emoji: '🌾' },
-    { id: 'fly_trout', label: 'Mušičarenje', emoji: '🪰' },
-    { id: 'trout', label: 'Pastrmka', emoji: '🏔️' },
-    { id: 'carp', label: 'Šaran', emoji: '🎣' },
+  const options: { id: FishingCategoryFilter; label: string; icon: any }[] = [
+    { id: 'all', label: 'Sve vrste', icon: Fish },
+    { id: 'predator', label: 'Grabljivice', icon: Target },
+    { id: 'coarse_carp', label: 'Mirna riba', icon: Waves },
+    { id: 'fly_trout', label: 'Mušičarenje', icon: Feather },
+    { id: 'trout', label: 'Pastrmka', icon: Mountain },
+    { id: 'carp', label: 'Šaran', icon: Fish },
   ];
 
   return (
@@ -31,17 +31,18 @@ export default function SpeciesFilterBar({ activeFilter, onSelectFilter }: Speci
       <div className="flex flex-wrap gap-2">
         {options.map((opt) => {
           const isSelected = activeFilter === opt.id;
+          const IconComp = opt.icon;
           return (
             <button
               key={opt.id}
               onClick={() => onSelectFilter(opt.id)}
               className={`px-3.5 py-2 rounded text-xs font-semibold transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-[#274535] text-white border-[#4ca778] font-bold'
+                  ? 'bg-[#274535] text-white border-[#4ca778] font-bold shadow'
                   : 'bg-[#182820] hover:bg-[#1c3126] text-[#8ea396] hover:text-white border-[#274535]'
               }`}
             >
-              <span className="text-base">{opt.emoji}</span>
+              <IconComp className="w-4 h-4 text-[#4ca778]" />
               <span>{opt.label}</span>
             </button>
           );

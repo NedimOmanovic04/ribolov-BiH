@@ -1,7 +1,7 @@
 'use client';
 
 import { FishingScoreResult } from '@/lib/fishing/score';
-import { Clock, Info, TrendingUp, Award, Sparkles } from 'lucide-react';
+import { Clock, Info, TrendingUp, Award } from 'lucide-react';
 
 interface FishingScoreSummaryProps {
   scoreResult: FishingScoreResult;
@@ -47,13 +47,13 @@ export default function FishingScoreSummary({
             {featuredTitle}
             {isTopSpeciesFeatured && (
               <span className="text-[10px] px-2 py-0.5 rounded bg-[#2e7d58]/40 text-emerald-300 font-sans border border-[#2e7d58]">
-                ⭐ Najbolja Opcija Danas
+                Najbolji Izbor Danas
               </span>
             )}
           </h3>
         </div>
         <div className={`px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border ${badgeColor}`}>
-          🟢 {categoryLabel}
+          {categoryLabel}
         </div>
       </div>
 
@@ -93,12 +93,12 @@ export default function FishingScoreSummary({
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-bold text-white font-mono">{period.start} – {period.end}</span>
                   <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#2e7d58]/30 text-emerald-300 font-bold border border-[#2e7d58]">
-                    {period.score}% ⭐
+                    {period.score}%
                   </span>
                 </div>
                 {period.reason && (
                   <span className="text-[10px] text-[#c49f6e] font-medium truncate font-serif">
-                    💡 {period.reason}
+                    {period.reason}
                   </span>
                 )}
               </div>
@@ -145,9 +145,9 @@ export default function FishingScoreSummary({
       <div className="bg-[#0b120f] border border-[#1f3629] rounded-lg p-3.5 flex items-start gap-3 text-xs text-[#8ea396]">
         <Info className="w-4 h-4 text-[#4ca778] shrink-0 mt-0.5" />
         <div className="space-y-1">
-          <span className="font-bold text-[#e8e5db] font-serif block">⚠️ Odricanje odgovornosti i napomena za ribolovce:</span>
+          <span className="font-bold text-[#e8e5db] font-serif block">Odricanje odgovornosti i napomena za ribolovce:</span>
           <p className="leading-relaxed">
-            {disclaimer} Ova procjena ne garantuje ulov ribe 100%. Uspeh u ribolovu zavisi od mnoštva faktora na terenu: prozirnosti vode, vodenog dna (kamen, mulj, trava), izbora tačnog mjesta i zabacivanja, pravilne vožnje plovka ili vođenja varalice, adekvatnog mamca i debljine predveza.
+            {disclaimer} Ova procjena ne garantuje ulov ribe 100%. Uspjeh u ribolovu zavisi od mnoštva faktora na terenu: prozirnosti vode, vodenog dna (kamen, mulj, trava), izbora tačnog mjesta i zabacivanja, pravilne vožnje plovka ili vođenja varalice, adekvatnog mamca i debljine predveza.
           </p>
         </div>
       </div>

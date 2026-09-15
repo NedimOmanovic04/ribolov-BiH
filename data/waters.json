@@ -9,7 +9,7 @@
     "region": "Zeničko-dobojski kanton",
     "latitude": 44.2039,
     "longitude": 17.9078,
-    "description": "Glavni vodotok centralne BiH. Bogata mrenom, škobaljem, klenom, somom, štukom i bolenom.",
+    "description": "Glavni vodotok centralne BiH. Bogata mrenom, škobaljem, klenom, somom, štukom, smuđem i bolenom.",
     "manager": "UGSR Bistro Zenica / USR Visoko / USR Doboj",
     "fishing_rules_url": "https://srsbih.com",
     "permit_url": "https://srsbih.com",
@@ -27,12 +27,18 @@
           { "fish_id": "chub", "level": "common", "note": "Vrlo brojan klen na svim prelivima i uz obalu." },
           { "fish_id": "barbel", "level": "common", "note": "Dominantna riba u brzacima i na dubljem šljunku." },
           { "fish_id": "nase", "level": "common", "note": "Škobalj na vožnju plovka uz hleb i travu." },
-          { "fish_id": "wels-catfish", "level": "common", "note": "Lovljeni somovi u dubokim virovima ispod mostova." },
+          { "fish_id": "wels-catfish", "level": "common", "note": "Lovljeni somovi u dubokim virovima." },
           { "fish_id": "pike", "level": "common", "note": "Zasjede u sporijim zalivima i mrtvajama." },
           { "fish_id": "asp", "level": "common", "note": "Bolen pri površini na brzinama." },
+          { "fish_id": "zander", "level": "rare", "note": "Sporadični ulovi smuđa na dubini." },
           { "fish_id": "common-carp", "level": "rare", "note": "Sporadični ulovi šarana u mirnim zalivima." },
-          { "fish_id": "brown-trout", "level": "absent", "note": "Rijetko ili nikako u rijeci Bosni u Visokom (voda je topla mrenska zona); potražite je u pritoci Fojnici." },
-          { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne postoji u koritu rijeke Bosne u Visokom." }
+          { "fish_id": "crucian-carp", "level": "common", "note": "Babuška u spornim zalivima i mrtvajama." },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne postoji u rijeci Bosni u Visokom niti centralnom toku." },
+          { "fish_id": "brown-trout", "level": "absent", "note": "Pastrmka ne obitava u tolim mrenskim vodama Bosne u Visokom (potražite je u pritoci Fojnici)." },
+          { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne postoji u koritu rijeke Bosne u Visokom." },
+          { "fish_id": "rainbow-trout", "level": "absent", "note": "Nema kalifornijske pastrmke u Bosni u Visokom." },
+          { "fish_id": "softmouth-trout", "level": "absent", "note": "Nema mekouste pastrmke u slivovima Bosne." },
+          { "fish_id": "marble-trout-glavatica", "level": "absent", "note": "Glavatica ne obitava van jadranskog sliva." }
         ]
       },
       {
@@ -51,6 +57,8 @@
           { "fish_id": "pike", "level": "common" },
           { "fish_id": "zander", "level": "common" },
           { "fish_id": "asp", "level": "common" },
+          { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeki Bosni." },
           { "fish_id": "brown-trout", "level": "absent", "note": "U Zenici u rijeci Bosni nema pastrmke." },
           { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne postoji u rijeki Bosni u Zenici." }
         ]
@@ -71,8 +79,10 @@
           { "fish_id": "nase", "level": "common" },
           { "fish_id": "barbel", "level": "common" },
           { "fish_id": "asp", "level": "common" },
-          { "fish_id": "brown-trout", "level": "absent", "note": "Nema pastrmke u ravnokorskom toku Bosne kod Doboja." },
-          { "fish_id": "grayling", "level": "absent", "note": "Nema lipljena kod Doboja." }
+          { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
+          { "fish_id": "brown-trout", "level": "absent" },
+          { "fish_id": "grayling", "level": "absent" }
         ]
       },
       {
@@ -89,6 +99,7 @@
           { "fish_id": "nase", "level": "common" },
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "pike", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
@@ -108,6 +119,7 @@
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "pike", "level": "common" },
           { "fish_id": "asp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
@@ -125,7 +137,8 @@
           { "fish_id": "nase", "level": "common" },
           { "fish_id": "barbel", "level": "common" },
           { "fish_id": "pike", "level": "common" },
-          { "fish_id": "brown-trout", "level": "rare", "note": "Sporadično pri samom izvoru i ušću pritoka." },
+          { "fish_id": "brown-trout", "level": "rare", "note": "Sporadično pri samom izvoru Vrela Bosne i ušću pritoka." },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
       }
@@ -160,6 +173,7 @@
           { "fish_id": "softmouth-trout", "level": "common" },
           { "fish_id": "grayling", "level": "common" },
           { "fish_id": "marble-trout-glavatica", "level": "common" },
+          { "fish_id": "huchen", "level": "absent", "note": "Mladica ne obitava u rijeci Neretvi." },
           { "fish_id": "common-carp", "level": "absent", "note": "Šaran ne obitava u hladnoj planinskoj Neretvi u Glavatičevu." },
           { "fish_id": "wels-catfish", "level": "absent" },
           { "fish_id": "pike", "level": "absent" }
@@ -179,6 +193,7 @@
           { "fish_id": "chub", "level": "common" },
           { "fish_id": "grayling", "level": "common" },
           { "fish_id": "marble-trout-glavatica", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "common-carp", "level": "absent" },
           { "fish_id": "wels-catfish", "level": "absent" }
         ]
@@ -197,6 +212,7 @@
           { "fish_id": "chub", "level": "common" },
           { "fish_id": "marble-trout-glavatica", "level": "rare" },
           { "fish_id": "common-carp", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "grayling", "level": "absent", "note": "Lipljen ne obitava u donjem toku Neretve kod Mostara." }
         ]
       },
@@ -214,6 +230,7 @@
           { "fish_id": "wels-catfish", "level": "rare" },
           { "fish_id": "brown-trout", "level": "rare" },
           { "fish_id": "softmouth-trout", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
       }
@@ -247,6 +264,7 @@
           { "fish_id": "brown-trout", "level": "common" },
           { "fish_id": "rainbow-trout", "level": "common" },
           { "fish_id": "grayling", "level": "common" },
+          { "fish_id": "huchen", "level": "rare" },
           { "fish_id": "common-carp", "level": "absent", "note": "Šaran ne obitava u hladnom hladnom reviru Unac." },
           { "fish_id": "wels-catfish", "level": "absent" },
           { "fish_id": "pike", "level": "absent" }
@@ -334,6 +352,7 @@
           { "fish_id": "wels-catfish", "level": "common", "note": "Somovi na kedere i bućku." },
           { "fish_id": "chub", "level": "common" },
           { "fish_id": "brown-trout", "level": "rare" },
+          { "fish_id": "huchen", "level": "absent", "note": "U Jablaničkom jezeru nema mladice." },
           { "fish_id": "grayling", "level": "absent", "note": "U Jablaničkom jezeru nema lipljena." }
         ]
       },
@@ -350,6 +369,7 @@
           { "fish_id": "zander", "level": "common" },
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "chub", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
       },
@@ -365,6 +385,7 @@
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "zander", "level": "common" },
           { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
       }
@@ -397,6 +418,7 @@
         "fish_presence": [
           { "fish_id": "grayling", "level": "common", "note": "Trofejni lipljeni preko 50cm na suvu muvu." },
           { "fish_id": "brown-trout", "level": "common", "note": "Divlja potočna pastrmka izuzetne opreznosti." },
+          { "fish_id": "huchen", "level": "absent", "note": "Nema mladice u gornjem toku Plive u Šipovu." },
           { "fish_id": "common-carp", "level": "absent", "note": "Pliva u Šipovu je čista salmonidna voda, nema šarana, soma ni štuke." },
           { "fish_id": "wels-catfish", "level": "absent" },
           { "fish_id": "pike", "level": "absent" }
@@ -416,7 +438,8 @@
           { "fish_id": "lake-trout", "level": "common" },
           { "fish_id": "grayling", "level": "common" },
           { "fish_id": "chub", "level": "common" },
-          { "fish_id": "tench", "level": "common" }
+          { "fish_id": "tench", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" }
         ]
       }
     ]
@@ -583,6 +606,7 @@
         "fish_presence": [
           { "fish_id": "grayling", "level": "common", "note": "Gustoća lipljena preko 500 ribe po 100m rijeke." },
           { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "common-carp", "level": "absent", "note": "Ribnik je čista kraška salmonidna rijeka, nema šarana, soma ni štuke." },
           { "fish_id": "wels-catfish", "level": "absent" },
           { "fish_id": "pike", "level": "absent" }
@@ -686,6 +710,7 @@
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "bream", "level": "common" },
           { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent", "note": "U Buškom jezeru nema pastrmke ni lipljena." },
           { "fish_id": "grayling", "level": "absent" }
         ]
@@ -703,6 +728,7 @@
           { "fish_id": "zander", "level": "common" },
           { "fish_id": "wels-catfish", "level": "common" },
           { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
@@ -741,6 +767,7 @@
           { "fish_id": "crucian-carp", "level": "common" },
           { "fish_id": "pike", "level": "common" },
           { "fish_id": "grass-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent", "note": "U jezeru Modrac nema pastrmke ni lipljena." },
           { "fish_id": "grayling", "level": "absent" }
         ]
@@ -776,6 +803,7 @@
           { "fish_id": "common-carp", "level": "common" },
           { "fish_id": "zander", "level": "common" },
           { "fish_id": "crucian-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" },
           { "fish_id": "brown-trout", "level": "absent" },
           { "fish_id": "grayling", "level": "absent" }
         ]
@@ -810,7 +838,8 @@
           { "fish_id": "common-carp", "level": "common" },
           { "fish_id": "chub", "level": "common" },
           { "fish_id": "lake-trout", "level": "common" },
-          { "fish_id": "brown-trout", "level": "common" }
+          { "fish_id": "brown-trout", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" }
         ]
       }
     ]
@@ -843,7 +872,8 @@
           { "fish_id": "brown-trout", "level": "common" },
           { "fish_id": "lake-trout", "level": "common" },
           { "fish_id": "chub", "level": "common" },
-          { "fish_id": "common-carp", "level": "common" }
+          { "fish_id": "common-carp", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" }
         ]
       }
     ]
@@ -875,7 +905,8 @@
         "fish_presence": [
           { "fish_id": "rainbow-trout", "level": "common" },
           { "fish_id": "brown-trout", "level": "common" },
-          { "fish_id": "chub", "level": "common" }
+          { "fish_id": "chub", "level": "common" },
+          { "fish_id": "huchen", "level": "absent" }
         ]
       }
     ]

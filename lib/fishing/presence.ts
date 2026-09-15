@@ -37,9 +37,14 @@ export function getSpeciesPresenceForSpot(
   let level: FishPresenceLevel = presenceItem ? presenceItem.level : 'common';
   let note = presenceItem?.note;
 
-  // Fallback defaults for pastrmka/lipljen in warm rivers if not explicitly marked
+  // Strict fallback rules for salmonids (Mladica, Lipljen, Pastrmke) in non-salmonid waters like Bosna
   if (!presenceItem) {
-    if (['brown-trout', 'grayling', 'rainbow-trout', 'softmouth-trout'].includes(fishId)) {
+    if (fishId === 'huchen') {
+      if (['water-bosna', 'water-neretva', 'water-jablanicko-lake', 'water-busko-lake', 'water-modrac', 'water-bilecko-lake', 'water-ramsko-lake', 'water-boracko-lake', 'water-trebisnjica'].includes(water.id)) {
+        level = 'absent';
+        note = `Mladica ne obitava u vodi ${water.name}.`;
+      }
+    } else if (['brown-trout', 'grayling', 'rainbow-trout', 'softmouth-trout', 'marble-trout-glavatica', 'lake-trout'].includes(fishId)) {
       if (water.id === 'water-bosna' && city?.id !== 'bosna-sarajevo') {
         level = 'absent';
         note = `Potočna pastrmka i lipljen ne obitavaju u tolim mrenskim vodama rijeke Bosne kod mjesta ${city?.name || 'ovdje'}. Dominantne vrste su Klen, Mrena, Škobalj, Som i Štuka.`;
@@ -60,12 +65,12 @@ export function getSpeciesPresenceForSpot(
 
   if (isAbsent) {
     warningText = note
-      ? `⚠️ ${fishName}: ${note}`
-      : `⚠️ ${fishName} rijetko ili nikako ne postoji na lokaciji ${spotName}. Preporučujemo odabir dominantnih vrsta poput Klena, Mrene, Škobalja ili Soma.`;
+      ? `${fishName}: ${note}`
+      : `${fishName} ne postoji na lokaciji ${spotName}. Preporučujemo odabir dominantnih vrsta poput Klena, Mrene, Škobalja ili Soma.`;
   } else if (isRare) {
     warningText = note
-      ? `🟡 ${fishName}: ${note}`
-      : `🟡 ${fishName} je rijetka vrsta na lokaciji ${spotName}. Šanse za ulov su smanjene.`;
+      ? `${fishName}: ${note}`
+      : `${fishName} je rijetka vrsta na lokaciji ${spotName}. Šanse za ulov su smanjene.`;
   }
 
   return {
