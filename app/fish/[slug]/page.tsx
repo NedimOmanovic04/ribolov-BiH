@@ -6,7 +6,7 @@ import sourcesData from '@/data/sources.json';
 import Navbar from '@/components/Navbar';
 import { formatLabel } from '@/lib/fishing/score';
 import { notFound } from 'next/navigation';
-import { ShieldCheck, Thermometer, Anchor, FileText, Waves, Clock } from 'lucide-react';
+import { ShieldCheck, Thermometer, Anchor, FileText, Waves } from 'lucide-react';
 
 interface Props {
   params: { slug: string };
@@ -40,8 +40,19 @@ export default function FishDetailPage({ params }: Props) {
       <Navbar currentLocationName={fish.name_bs} />
 
       <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-        {/* Header Title Field Guide Card */}
-        <div className="panel-outdoors rounded-lg p-6 space-y-3 border border-[#1f3629]">
+        
+        {/* Header Title Field Guide Card with Large Photo Banner */}
+        <div className="panel-outdoors rounded-lg p-6 space-y-4 border border-[#1f3629] overflow-hidden">
+          {fish.image_url && (
+            <div className="w-full h-64 sm:h-80 rounded border border-[#274535] overflow-hidden bg-[#0e1712]">
+              <img
+                src={fish.image_url}
+                alt={fish.name_bs}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#1f3629] pb-3">
             <div>
               <span className="text-xs font-serif font-bold uppercase tracking-widest text-[#c49f6e] block">
@@ -58,7 +69,7 @@ export default function FishDetailPage({ params }: Props) {
           <p className="text-sm text-[#d5d1c3] leading-relaxed font-sans">{fish.description}</p>
         </div>
 
-        {/* Temperature & Bait Matrices */}
+        {/* Temperature & Requirements Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           {/* Temperature Matrix */}

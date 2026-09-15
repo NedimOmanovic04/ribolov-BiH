@@ -4,6 +4,7 @@ export interface FishSpecies {
   name_bs: string;
   scientific_name: string;
   category: 'predator' | 'fly_trout' | 'coarse_carp';
+  image_url?: string;
   description: string;
   habitat: string[];
   temperature: {
@@ -27,13 +28,32 @@ export interface FishSpecies {
   last_verified?: string;
 }
 
+export type FishPresenceLevel = 'common' | 'rare' | 'absent';
+
+export interface CityFishPresence {
+  fish_id: string;
+  level: FishPresenceLevel;
+  note?: string;
+}
+
+export interface WaterCity {
+  id: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+  municipality: string;
+  region?: string;
+  spot_description?: string;
+  fish_presence?: CityFishPresence[];
+}
+
 export interface WaterBody {
   id: string;
   slug: string;
   name: string;
   type: 'river' | 'lake' | 'reservoir';
   municipality: string;
-  city: string;
+  city: string; // Default primary city name
   region: string;
   latitude: number;
   longitude: number;
@@ -42,12 +62,16 @@ export interface WaterBody {
   fishing_rules_url: string;
   permit_url: string;
   source_id: string;
+  cities?: WaterCity[]; // List of specific cities/spots along this waterbody
 }
+
+export type WaterClarity = 'bistra' | 'blago_zamucena' | 'mutna';
+export type BottomStructure = 'kamen' | 'mulj' | 'trava' | 'panjevi';
 
 export interface FishWaterRelation {
   fish_id: string;
   water_body_id: string;
-  presence_level: 'low' | 'medium' | 'high';
+  presence_level: 'low' | 'medium' | 'high' | 'absent';
   confidence: 'low' | 'medium' | 'high';
   source_id: string;
   notes: string;

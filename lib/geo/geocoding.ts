@@ -38,7 +38,7 @@ export async function searchLocations(query: string): Promise<LocationSearchResu
     });
   });
 
-  // 2. Query Open-Meteo Geocoding API for BiH cities/locations
+  // 2. Query Open-Meteo Geocoding API for cities/settlements
   try {
     const response = await fetch(
       `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=10&language=bs&format=json`
@@ -48,7 +48,6 @@ export async function searchLocations(query: string): Promise<LocationSearchResu
       const data = await response.json();
       if (data.results && Array.isArray(data.results)) {
         data.results.forEach((item: any) => {
-          // Prioritize Bosnia and Herzegovina results
           const isBiH = item.country_code === 'BA' || item.country === 'Bosnia and Herzegovina';
           results.push({
             id: `geo-${item.id}`,
@@ -67,8 +66,56 @@ export async function searchLocations(query: string): Promise<LocationSearchResu
     console.error('Open-Meteo Geocoding search error:', err);
   }
 
-  // Deduplicate and filter by relevance
   return results.slice(0, 10);
+}
+
+// Reverse Geocode precise GPS coordinates to exact village / suburb / city name (e.g. Donje Moštre)
+export async function reverseGeocode(lat: number, lng: number): Promise<string> {
+  try {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`,
+      {
+        headers: {
+          'User-Agent': 'RibolovBiH-App/1.0',
+        },
+      }
+    );
+
+    if (res.ok) {
+      const data = await res.json();
+      if (data.address) {
+        const addr = data.address;
+        const exactName =
+          addr.village ||
+          addr.suburb ||
+          addr.neighbourhood ||
+          addr.hamlet ||
+          addr.town ||
+          addr.city ||
+          addr.municipality ||
+          addr.county;
+
+        if (exactName) {
+          return exactName;
+        }
+      }
+    }
+  } catch (err) {
+    console.error('Reverse geocode error:', err);
+  }
+
+  // Fallback: check nearest known water body
+  const nearestWater = watersData.reduce((prev, curr) => {
+    const dPrev = calculateDistanceKm(lat, lng, prev.latitude, prev.longitude);
+    const dCurr = calculateDistanceKm(lat, lng, curr.latitude, curr.longitude);
+    return dCurr < dPrev ? curr : prev;
+  });
+
+  if (nearestWater && calculateDistanceKm(lat, lng, nearestWater.latitude, nearestWater.longitude) <= 15) {
+    return nearestWater.name;
+  }
+
+  return 'Moja Lokacija';
 }
 
 // Calculate Haversine distance between two lat/lng points in kilometers

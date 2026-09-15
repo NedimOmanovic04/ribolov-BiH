@@ -19,11 +19,11 @@ export default function FishDirectoryPage() {
           </span>
           <h1 className="text-2xl sm:text-3xl font-serif font-black text-white">Slatkovodne Vrste Riba u BiH</h1>
           <p className="text-xs text-[#8ea396] font-sans">
-            Katalog autohtonih i unesenih vrsta s biologijom, temperaturnim rasponima, mamcima i važećim zakonskim mjerama.
+            Katalog autohtonih i unesenih vrsta s biologijom, fotografijama, temperaturnim rasponima, mamcima i važećim zakonskim mjerama.
           </p>
         </div>
 
-        {/* Editorial Field Guide Grid */}
+        {/* Editorial Field Guide Grid with Fish Photos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {fishData.map((fish) => {
             const rule = rulesData.find((r) => r.fish_id === fish.id);
@@ -33,8 +33,19 @@ export default function FishDirectoryPage() {
               <a
                 key={fish.id}
                 href={`/fish/${fish.slug}`}
-                className="panel-outdoors hover:bg-[#182820] rounded-lg p-5 space-y-3 transition-colors block border border-[#1f3629] hover:border-[#4ca778] group"
+                className="panel-outdoors hover:bg-[#182820] rounded-lg p-5 space-y-3 transition-colors block border border-[#1f3629] hover:border-[#4ca778] group overflow-hidden"
               >
+                {/* Fish Photo Banner */}
+                {fish.image_url && (
+                  <div className="w-full h-40 rounded border border-[#274535] overflow-hidden bg-[#0e1712]">
+                    <img
+                      src={fish.image_url}
+                      alt={fish.name_bs}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between border-b border-[#1f3629] pb-2">
                   <div>
                     <h3 className="font-bold text-white text-lg font-serif group-hover:text-[#c49f6e] transition-colors">

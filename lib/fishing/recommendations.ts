@@ -1,11 +1,14 @@
 import fishData from '@/data/fish.json';
 import { calculateFishingScore, FishSpecies, FishingScoreResult } from './score';
+import { getSpeciesPresenceForSpot, SpeciesSpotPresenceResult } from './presence';
 import { WeatherData } from '../weather/open-meteo';
 import { AstronomyData } from '../astronomy/moon';
+import { WaterClarity, BottomStructure } from '@/types';
 
 export interface SpeciesRecommendation {
   species: FishSpecies;
   scoreResult: FishingScoreResult;
+  presence: SpeciesSpotPresenceResult;
   rank: number;
 }
 
@@ -14,7 +17,11 @@ export type FishingCategoryFilter = 'all' | 'predator' | 'coarse_carp' | 'fly_tr
 export function getRankedSpecies(
   weather: WeatherData,
   astronomy: AstronomyData,
-  filterCategory: FishingCategoryFilter = 'all'
+  filterCategory: FishingCategoryFilter = 'all',
+  waterId?: string,
+  cityId?: string,
+  waterClarity: WaterClarity = 'bistra',
+  bottomStructure: BottomStructure = 'kamen'
 ): SpeciesRecommendation[] {
   const allSpecies = fishData as FishSpecies[];
 
@@ -28,22 +35,38 @@ export function getRankedSpecies(
   }
 
   const evaluated = filtered.map((species) => {
+    const presence = getSpeciesPresenceForSpot(waterId || '', cityId, species.id);
     const scoreResult = calculateFishingScore({
       species,
       weather,
-      astronomy
+      astronomy,
+      waterClarity,
+      bottomStructure,
     });
+
+    // If species is absent at this spot, heavily penalize its display score for ranking
+    let effectiveScore = scoreResult.totalScore;
+    if (presence.isAbsent) {
+      effectiveScore = -100; // Push absent species to the very bottom
+    } else if (presence.isRare) {
+      effectiveScore -= 15;
+    }
+
     return {
       species,
-      scoreResult
+      scoreResult,
+      presence,
+      effectiveScore,
     };
   });
 
-  // Sort descending by totalScore
-  evaluated.sort((a, b) => b.scoreResult.totalScore - a.scoreResult.totalScore);
+  // Sort descending by effectiveScore
+  evaluated.sort((a, b) => b.effectiveScore - a.effectiveScore);
 
   return evaluated.map((item, index) => ({
-    ...item,
-    rank: index + 1
+    species: item.species,
+    scoreResult: item.scoreResult,
+    presence: item.presence,
+    rank: index + 1,
   }));
 }

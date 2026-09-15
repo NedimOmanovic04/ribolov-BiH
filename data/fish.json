@@ -5,23 +5,19 @@
     "name_bs": "Potočna pastrmka",
     "scientific_name": "Salmo trutta m. fario",
     "category": "fly_trout",
+    "image_url": "/slikeriba/potocna.jpg",
     "description": "Autohtona vrsta brzih i hladnih planinskih rijeka BiH. Izuzetno oprezna i borbena riba prepoznatljiva po crvenim i crnim tačkama.",
     "habitat": ["brze_rijeke", "potoci", "gornji_tokovi"],
-    "temperature": {
-      "min": 4,
-      "optimal_min": 10,
-      "optimal_max": 16,
-      "max": 20
-    },
+    "temperature": { "min": 4, "optimal_min": 10, "optimal_max": 16, "max": 20 },
     "best_times": ["early_morning", "late_afternoon", "dusk"],
     "seasons": ["spring", "summer", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "medium_to_high",
-      "rain": "light_rain_ideal",
-      "wind": "light",
-      "pressure": "stable_or_slightly_falling"
-    },
-    "baits": ["suha_muha", "nimfa", "strimer", "mali_vobler", "leptir_varalica"],
+    "weather_preferences": { "cloud_cover": "medium_to_high", "rain": "light_rain_ideal", "wind": "light", "pressure": "stable_or_slightly_falling" },
+    "baits": [
+      "suha_muha", "nimfa", "strimer", "mali_vobler",
+      "leptir_varalica", "mokra_muha", "pauk_imitacija",
+      "mali_kašikara", "pheasant_tail", "elk_hair_caddis",
+      "glista", "crvić", "mala_ribica_keder"
+    ],
     "methods": ["musicarenje", "varalicarenje"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -33,23 +29,19 @@
     "name_bs": "Kalifornijska pastrmka",
     "scientific_name": "Oncorhynchus mykiss",
     "category": "fly_trout",
+    "image_url": "/slikeriba/kalifornijska.jpg",
     "description": "Alohtona vrsta prilagođena hladnijim i umjerenim vodama BiH. Poznata po ružičastoj bočnoj pruzi i agresivnom napadu na mamce.",
     "habitat": ["rijeke", "jezera", "ribogojilista_reviri"],
-    "temperature": {
-      "min": 6,
-      "optimal_min": 12,
-      "optimal_max": 18,
-      "max": 22
-    },
+    "temperature": { "min": 6, "optimal_min": 12, "optimal_max": 18, "max": 22 },
     "best_times": ["morning", "afternoon"],
     "seasons": ["spring", "summer", "autumn", "winter"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "any",
-      "wind": "light_to_medium",
-      "pressure": "stable"
-    },
-    "baits": ["nimfa", "strimer", "pelet", "pasta_za_pastrmku", "leptir"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "any", "wind": "light_to_medium", "pressure": "stable" },
+    "baits": [
+      "nimfa", "strimer", "pelet",
+      "pasta_za_pastrmku", "leptir", "suha_muha",
+      "wooly_bugger", "san_juan_worm", "copper_john",
+      "glista", "crvić", "mali_vobler", "kašikara"
+    ],
     "methods": ["musicarenje", "varalicarenje", "plovak"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -61,23 +53,19 @@
     "name_bs": "Mladica",
     "scientific_name": "Hucho hucho",
     "category": "predator",
+    "image_url": "/slikeriba/mladica.jpg",
     "description": "Kraljica balkanskih rijeka. Najveća salmonidna vrsta u rijekama Una, Drina, Sana, Vrbas i Neretva. Vrhunski predator koji zahtijeva specijalni pribor.",
     "habitat": ["velike_rijeke", "duboki_virovi", "brzaci"],
-    "temperature": {
-      "min": 2,
-      "optimal_min": 6,
-      "optimal_max": 14,
-      "max": 18
-    },
+    "temperature": { "min": 2, "optimal_min": 6, "optimal_max": 14, "max": 18 },
     "best_times": ["dawn", "dusk", "night", "overcast_day"],
     "seasons": ["autumn", "winter"],
-    "weather_preferences": {
-      "cloud_cover": "high",
-      "rain": "rain_snow_mix",
-      "wind": "medium",
-      "pressure": "rapidly_falling"
-    },
-    "baits": ["peš peel/sunđerasti peš", "veliki vobler (15-25cm)", "veliki strimer", "glavinjara"],
+    "weather_preferences": { "cloud_cover": "high", "rain": "rain_snow_mix", "wind": "medium", "pressure": "rapidly_falling" },
+    "baits": [
+      "veliki_vobler_15_25cm", "veliki_strimer", "peš",
+      "glavinjara", "gumena_riba_20cm", "imitacija_peša",
+      "dead_bait_ribica", "large_spinnerbait", "bucktail_jig",
+      "keder_veliki", "veliki_twister", "srebrna_kašikara"
+    ],
     "methods": ["varalicarenje", "teški_strimer"],
     "source_id": "src-np-drina",
     "confidence": "high",
@@ -89,23 +77,19 @@
     "name_bs": "Lipljen",
     "scientific_name": "Thymallus thymallus",
     "category": "fly_trout",
+    "image_url": "/slikeriba/lipljen.jpg",
     "description": "Vitez naših čistih voda s karakterističnim velikim leđnim perajem. Glavna meta mušičara na Plivi, Ribniku, Sanici i Uncu.",
     "habitat": ["bistre_rijeke", "srednji_tokovi", "šljunkovito_dno"],
-    "temperature": {
-      "min": 4,
-      "optimal_min": 10,
-      "optimal_max": 15,
-      "max": 19
-    },
+    "temperature": { "min": 4, "optimal_min": 10, "optimal_max": 15, "max": 19 },
     "best_times": ["midday", "afternoon", "dusk"],
     "seasons": ["summer", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "light_to_medium",
-      "rain": "none_or_drizzle",
-      "wind": "none_to_light",
-      "pressure": "high_stable"
-    },
-    "baits": ["sitna_suha_muha", "sitna_mikronimfa"],
+    "weather_preferences": { "cloud_cover": "light_to_medium", "rain": "none_or_drizzle", "wind": "none_to_light", "pressure": "high_stable" },
+    "baits": [
+      "sitna_suha_muha", "sitna_mikronimfa", "cdc_fly",
+      "klinkhammer", "comparadun", "parachute_adams",
+      "hare_ear_nymph", "pheasant_tail_nimfa",
+      "riblje_jaje_imitacija", "glista_mala", "crvić"
+    ],
     "methods": ["musicarenje"],
     "source_id": "src-pliva-una-guide",
     "confidence": "high",
@@ -117,23 +101,21 @@
     "name_bs": "Šaran",
     "scientific_name": "Cyprinus carpio",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/sraran.jpg",
     "description": "Najpopularnija mirna riba u jezerima i sporim rijekama BiH (Jablaničko, Modrac, Buško, Ramsko). Poznat po borbenosti i oprezu.",
     "habitat": ["jezera", "akumulacije", "spore_rijeke"],
-    "temperature": {
-      "min": 8,
-      "optimal_min": 18,
-      "optimal_max": 26,
-      "max": 30
-    },
+    "temperature": { "min": 8, "optimal_min": 18, "optimal_max": 26, "max": 30 },
     "best_times": ["early_morning", "dusk", "night"],
     "seasons": ["spring", "summer", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "warm_summer_rain",
-      "wind": "medium_south_wind",
-      "pressure": "slightly_falling_or_stable"
-    },
-    "baits": ["kukuruz_secerac", "boila", "pelet", "tijesto", "glista"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "warm_summer_rain", "wind": "medium_south_wind", "pressure": "slightly_falling_or_stable" },
+    "baits": [
+      "boila", "kukuruz_secerac", "pelet",
+      "tijesto", "glista", "crvić",
+      "tiger_nut", "hemp_seed", "groundbait_mixtura",
+      "pop_up_boila", "wafter_boila", "kruh_hleb",
+      "mahune_slane", "griz_tijesto", "dinja_komad",
+      "riblja_pasta", "kukuruzna_krupa"
+    ],
     "methods": ["feeder", "carp_modern", "dubinski"],
     "source_id": "src-jablanicko-lake",
     "confidence": "high",
@@ -145,23 +127,20 @@
     "name_bs": "Štuka",
     "scientific_name": "Esox lucius",
     "category": "predator",
+    "image_url": "/slikeriba/stuka.jpg",
     "description": "Agresivni vodeni zasjedač oštrih zuba. Obitava u trsci i lopoču jezera te mirnijim dijelovima rijeka Bosne, Save i jezera.",
     "habitat": ["jezera", "mrtvaje", "tršćaci", "spore_rijeke"],
-    "temperature": {
-      "min": 4,
-      "optimal_min": 12,
-      "optimal_max": 19,
-      "max": 24
-    },
+    "temperature": { "min": 4, "optimal_min": 12, "optimal_max": 19, "max": 24 },
     "best_times": ["morning", "late_afternoon"],
     "seasons": ["autumn", "winter", "spring"],
-    "weather_preferences": {
-      "cloud_cover": "high_overcast",
-      "rain": "light_drizzle",
-      "wind": "medium_ripple",
-      "pressure": "falling"
-    },
-    "baits": ["kašikara", "vobler", "spinnerbait", "keder", "guma_kašika"],
+    "weather_preferences": { "cloud_cover": "high_overcast", "rain": "light_drizzle", "wind": "medium_ripple", "pressure": "falling" },
+    "baits": [
+      "vobler", "kašikara", "spinnerbait",
+      "keder", "gumena_riba", "surface_lure",
+      "jerkbait", "glider", "swimbait",
+      "big_twister", "bucktail_spinner", "dead_bait_ribica",
+      "živi_keder", "soft_jerkbait"
+    ],
     "methods": ["varalicarenje", "kedere"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -173,23 +152,19 @@
     "name_bs": "Smuđ",
     "scientific_name": "Sander lucioperca",
     "category": "predator",
+    "image_url": "/slikeriba/smud.jpg",
     "description": "Cijenjeni noćni lovac staklastih očiju. Voli tvrdo, šljunkovito i kameno dno u rijekama i akumulacijama (Jablaničko, Modrac, Sava, Vrbas).",
     "habitat": ["akumulacije", "duboke_rijeke", "kameno_dno"],
-    "temperature": {
-      "min": 6,
-      "optimal_min": 14,
-      "optimal_max": 22,
-      "max": 26
-    },
+    "temperature": { "min": 6, "optimal_min": 14, "optimal_max": 22, "max": 26 },
     "best_times": ["dusk", "night", "dawn"],
     "seasons": ["autumn", "winter", "late_summer"],
-    "weather_preferences": {
-      "cloud_cover": "high",
-      "rain": "none_or_light",
-      "wind": "light",
-      "pressure": "stable"
-    },
-    "baits": ["silikonski_tvister", "šed", "keder_mrtvi", "uzak_vobler"],
+    "weather_preferences": { "cloud_cover": "high", "rain": "none_or_light", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "silikonski_twister", "šed", "keder_mrtvi",
+      "uzak_vobler", "jig_gumena_riba", "drop_shot_guma",
+      "shad_soft_bait", "blade_lure", "slow_jig",
+      "mali_jerkbait", "riblja_traka_keder", "worm_texas"
+    ],
     "methods": ["jigging_jig", "muvanje", "dubinski"],
     "source_id": "src-jablanicko-lake",
     "confidence": "high",
@@ -201,23 +176,19 @@
     "name_bs": "Som",
     "scientific_name": "Silurus glanis",
     "category": "predator",
+    "image_url": "/slikeriba/som.jpg",
     "description": "Najveća slatkovodna riba BiH. Može narasti preko 2 metra i 100 kg. Nastanjuje duboke virove Bosne, Neretve, Save, Drine i Jablaničkog jezera.",
     "habitat": ["duboki_virovi", "spore_rijeke", "velika_jezera"],
-    "temperature": {
-      "min": 10,
-      "optimal_min": 20,
-      "optimal_max": 28,
-      "max": 32
-    },
+    "temperature": { "min": 10, "optimal_min": 20, "optimal_max": 28, "max": 32 },
     "best_times": ["dusk", "night", "thunderstorm_approach"],
     "seasons": ["summer", "late_spring"],
-    "weather_preferences": {
-      "cloud_cover": "high",
-      "rain": "heavy_before_storm",
-      "wind": "medium",
-      "pressure": "rapidly_falling"
-    },
-    "baits": ["durdubak", "snop_glista", "rovac", "veliki_keder", "glavinjara"],
+    "weather_preferences": { "cloud_cover": "high", "rain": "heavy_before_storm", "wind": "medium", "pressure": "rapidly_falling" },
+    "baits": [
+      "snop_glista", "durdubak", "rovac",
+      "veliki_keder", "glavinjara", "živi_keder_ribica",
+      "lignjin_očnjak", "velika_gumena_riba", "bućka",
+      "peš_punjen", "meso_peradi", "svježi_keder"
+    ],
     "methods": ["teški_dubinski", "bućka", "teško_varaličarenje"],
     "source_id": "src-jablanicko-lake",
     "confidence": "high",
@@ -229,23 +200,19 @@
     "name_bs": "Škobalj",
     "scientific_name": "Chondrostoma nasus",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/skobalj.jpg",
     "description": "Najmasovnija sportska riba rijeka Drine, Bosne, Vrbasa, Une i Neretve. Struže algu s kamenja karakterističnim podsečenim ustima.",
-    "habitat": ["brze_rijeke", "šljunkovite_bravura", "srednji_tokovi"],
-    "temperature": {
-      "min": 4,
-      "optimal_min": 10,
-      "optimal_max": 18,
-      "max": 24
-    },
+    "habitat": ["brze_rijeke", "šljunkovite_ravuri", "srednji_tokovi"],
+    "temperature": { "min": 4, "optimal_min": 10, "optimal_max": 18, "max": 24 },
     "best_times": ["morning", "midday"],
     "seasons": ["autumn", "winter", "spring"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "none",
-      "wind": "light",
-      "pressure": "high_stable"
-    },
-    "baits": ["hleb_skobaljaš", "trava_cladophora", "crvići"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "none", "wind": "light", "pressure": "high_stable" },
+    "baits": [
+      "hleb_skobaljaš", "trava_cladophora", "crvići",
+      "glista_sitna", "skalamerija_kobasica", "pšenično_tijesto",
+      "alga_zelena", "kukuruzna_krupica", "crveni_crvić",
+      "mini_pelet", "sir_trappist_mala_doza"
+    ],
     "methods": ["vožnja_plovka", "bolonjez"],
     "source_id": "src-np-drina",
     "confidence": "high",
@@ -257,23 +224,20 @@
     "name_bs": "Klen",
     "scientific_name": "Squalius cephalus",
     "category": "coarse_carp",
-    "description": "Svežder prisutan u niemurano svim vodotocima BiH. Riba izuzetnog vida koja zahtijeva nečujno prikradanje vode.",
+    "image_url": "/slikeriba/klen.jpg",
+    "description": "Svežder prisutan u gotovo svim vodotocima BiH. Riba izuzetnog vida koja zahtijeva nečujno prikradanje vodi.",
     "habitat": ["rijeke", "jezera", "potoci"],
-    "temperature": {
-      "min": 5,
-      "optimal_min": 14,
-      "optimal_max": 24,
-      "max": 28
-    },
+    "temperature": { "min": 5, "optimal_min": 14, "optimal_max": 24, "max": 28 },
     "best_times": ["morning", "afternoon", "warm_evening"],
     "seasons": ["spring", "summer", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "light",
-      "rain": "none",
-      "wind": "light",
-      "pressure": "stable"
-    },
-    "baits": ["trešnja", "skakavac", "hleb", "mali_vobler", "crvići"],
+    "weather_preferences": { "cloud_cover": "light", "rain": "none", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "trešnja", "skakavac", "hleb",
+      "mali_vobler", "crvići", "mušica_suchá",
+      "kornjaš_imitacija", "muha_površinska", "glista",
+      "mali_twister", "voćni_komad", "slab_keder",
+      "suve_muhe_klen", "mali_spinner"
+    ],
     "methods": ["plovak", "varaličarenje", "mušičarenje"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -285,23 +249,20 @@
     "name_bs": "Mrena",
     "scientific_name": "Barbus barbus",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/mrena.jfif",
     "description": "Snažna drenažna riba jakih brzaka sa 4 brka. Obitava na dnu riječnih korita Drine, Vrbasa, Bosne i Save.",
     "habitat": ["jaki_brzaci", "kameno_dno", "duboki_kanali"],
-    "temperature": {
-      "min": 6,
-      "optimal_min": 15,
-      "optimal_max": 23,
-      "max": 27
-    },
+    "temperature": { "min": 6, "optimal_min": 15, "optimal_max": 23, "max": 27 },
     "best_times": ["dusk", "night", "early_morning"],
     "seasons": ["summer", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "light_after_rain",
-      "wind": "light",
-      "pressure": "stable"
-    },
-    "baits": ["sir_trappist", "mesni_crvići", "glista", "kukuruz"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "light_after_rain", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "sir_trappist", "mesni_crvići", "glista",
+      "kukuruz", "pelet_feeder", "hrana_mrena",
+      "mekani_peleti", "paket_gliste", "boila_mali",
+      "crveni_crvić_pakovanje", "testo_sir", "hemp_seed",
+      "caddis_larva_imitacija"
+    ],
     "methods": ["feeder", "teški_dubinski"],
     "source_id": "src-np-drina",
     "confidence": "high",
@@ -313,23 +274,19 @@
     "name_bs": "Grgeč (Ostriž)",
     "scientific_name": "Perca fluviatilis",
     "category": "predator",
+    "image_url": "/slikeriba/grgec.JPG",
     "description": "Mali, prugasti i vrlo agresivni predator koji lovi u jatima po jezerima i mirnijim dijelovima rijeka.",
     "habitat": ["jezera", "akumulacije", "spore_rijeke"],
-    "temperature": {
-      "min": 5,
-      "optimal_min": 12,
-      "optimal_max": 20,
-      "max": 25
-    },
+    "temperature": { "min": 5, "optimal_min": 12, "optimal_max": 20, "max": 25 },
     "best_times": ["morning", "afternoon"],
     "seasons": ["autumn", "spring", "summer"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "light",
-      "wind": "light",
-      "pressure": "stable"
-    },
-    "baits": ["mali_tvister", "glista", "leptirić", "mali_keder"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "light", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "mali_twister", "glista", "keder_mali",
+      "drop_shot_guma", "blade_lure", "mali_vobler",
+      "micro_jig", "crvić_bundle", "perch_imitacija",
+      "small_spinnerbait", "mini_shad", "mali_spinner"
+    ],
     "methods": ["ultralight_varaličarenje", "plovak"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -341,23 +298,20 @@
     "name_bs": "Deverika",
     "scientific_name": "Abramis brama",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/deverika.jpg",
     "description": "Karakteristična pljosnata riba mirnih i muljevitih voda. Česta u akumulacijama Modrac, Buško jezero i ravničarskim rijekama.",
     "habitat": ["akumulacije", "muljevito_dno", "spore_rijeke"],
-    "temperature": {
-      "min": 8,
-      "optimal_min": 16,
-      "optimal_max": 24,
-      "max": 28
-    },
+    "temperature": { "min": 8, "optimal_min": 16, "optimal_max": 24, "max": 28 },
     "best_times": ["morning", "dusk", "night"],
     "seasons": ["spring", "summer", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "none",
-      "wind": "light_south",
-      "pressure": "high_stable"
-    },
-    "baits": ["crvići", "glista", "šećerac", "praškasta_hrana"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "none", "wind": "light_south", "pressure": "high_stable" },
+    "baits": [
+      "crvići", "glista", "šećerac",
+      "praškasta_hrana", "crveni_crvić", "pelet",
+      "bloodworm_imitacija", "tijesto_deverika", "hemp_seed",
+      "pinkie", "kukuruz", "breadflake",
+      "groundbait_deep", "maggots_red"
+    ],
     "methods": ["feeder", "plovak_takmičarski"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -369,23 +323,19 @@
     "name_bs": "Amur",
     "scientific_name": "Ctenopharyngodon idella",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/amur.jpg",
     "description": "Biljožder razorne snage ubačen u pojedina jezera i ribnjake radi čišćenja vegetacije.",
     "habitat": ["jezera", "stajaćice", "topliji_kanali"],
-    "temperature": {
-      "min": 12,
-      "optimal_min": 22,
-      "optimal_max": 29,
-      "max": 33
-    },
+    "temperature": { "min": 12, "optimal_min": 22, "optimal_max": 29, "max": 33 },
     "best_times": ["midday", "afternoon"],
     "seasons": ["summer"],
-    "weather_preferences": {
-      "cloud_cover": "clear_sunny",
-      "rain": "none",
-      "wind": "light",
-      "pressure": "high"
-    },
-    "baits": ["mladi_kukuruz", "trska", "list_maslačka", "boila_voćna"],
+    "weather_preferences": { "cloud_cover": "clear_sunny", "rain": "none", "wind": "light", "pressure": "high" },
+    "baits": [
+      "mladi_kukuruz", "trska_mlada", "list_maslačka",
+      "boila_voćna", "zelena_trava", "list_djeteline",
+      "zeleni_grašak", "zeleni_salat_list", "bread_surface",
+      "hemp_seed", "boila_biljni_ekstrakt", "kukuruzni_klip"
+    ],
     "methods": ["carp_modern", "dubinski"],
     "source_id": "src-srs-bih",
     "confidence": "medium",
@@ -397,23 +347,19 @@
     "name_bs": "Crvenperka",
     "scientific_name": "Scardinius erythrophthalmus",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/crvenperka.jpg",
     "description": "Lijepa jatna ribica jarko crvenih peraja koja obitava uz površinu u tršćacima jezera.",
     "habitat": ["jezera", "tršćaci", "zalivi"],
-    "temperature": {
-      "min": 8,
-      "optimal_min": 16,
-      "optimal_max": 24,
-      "max": 28
-    },
+    "temperature": { "min": 8, "optimal_min": 16, "optimal_max": 24, "max": 28 },
     "best_times": ["sunny_afternoon"],
     "seasons": ["spring", "summer"],
-    "weather_preferences": {
-      "cloud_cover": "clear",
-      "rain": "none",
-      "wind": "none",
-      "pressure": "stable"
-    },
-    "baits": ["hleb", "crvić", "mušica"],
+    "weather_preferences": { "cloud_cover": "clear", "rain": "none", "wind": "none", "pressure": "stable" },
+    "baits": [
+      "hleb", "crvić", "mušica",
+      "mali_plovak_tijesto", "mala_glista", "pinkie",
+      "površinska_muha", "maggot", "mini_boila",
+      "bread_flake_mali", "hemp_seed_sitni"
+    ],
     "methods": ["vožnja_plovka"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -425,23 +371,19 @@
     "name_bs": "Linjak",
     "scientific_name": "Tinca tinca",
     "category": "coarse_carp",
+    "image_url": "/slikeriba/linjak.jpg",
     "description": "Autohtona zelenkasto-zlatna riba sa sluzavim tijelom. Rijetka i zaštićena u mnogim vodama BiH.",
     "habitat": ["zarasla_jezera", "mrtvaje"],
-    "temperature": {
-      "min": 10,
-      "optimal_min": 18,
-      "optimal_max": 25,
-      "max": 29
-    },
+    "temperature": { "min": 10, "optimal_min": 18, "optimal_max": 25, "max": 29 },
     "best_times": ["early_morning", "dusk"],
     "seasons": ["late_spring", "summer"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "warm_drizzle",
-      "wind": "none",
-      "pressure": "stable"
-    },
-    "baits": ["crveni_crvić", "mala_glista", "kukuruz"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "warm_drizzle", "wind": "none", "pressure": "stable" },
+    "baits": [
+      "crveni_crvić", "mala_glista", "kukuruz",
+      "crvić_pakovanje", "tijesto_linjak", "bloodworm",
+      "hemp_seed", "pelet_mali", "bijeli_hleb",
+      "praškasta_hrana_linjak", "maggots_white"
+    ],
     "methods": ["plovak_osjetljivi"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -453,23 +395,19 @@
     "name_bs": "Bolen (Bucov)",
     "scientific_name": "Leuciscus aspius",
     "category": "predator",
+    "image_url": "/slikeriba/bucov.jfif",
     "description": "Brzi površinski predator iz porodice šarana. Lovi kedere bučnim udarcima po površini rijeka Bosne i Save.",
     "habitat": ["brze_rijeke", "ušća", "površina_vode"],
-    "temperature": {
-      "min": 8,
-      "optimal_min": 16,
-      "optimal_max": 24,
-      "max": 28
-    },
+    "temperature": { "min": 8, "optimal_min": 16, "optimal_max": 24, "max": 28 },
     "best_times": ["early_morning", "dusk"],
     "seasons": ["summer", "early_autumn"],
-    "weather_preferences": {
-      "cloud_cover": "clear_to_medium",
-      "rain": "none",
-      "wind": "light",
-      "pressure": "stable"
-    },
-    "baits": ["brzi_površinski_popere", "stramer", "pilker", "uzak_vobler"],
+    "weather_preferences": { "cloud_cover": "clear_to_medium", "rain": "none", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "površinski_popper", "strimer", "pilker",
+      "uzak_vobler", "mali_keder", "slider",
+      "bullet_jig", "cast_master_kašikara", "spinnerbait_mali",
+      "rapid_spinner", "površinska_imitacija_ribe"
+    ],
     "methods": ["brzo_varaličarenje"],
     "source_id": "src-srs-bih",
     "confidence": "high",
@@ -481,23 +419,19 @@
     "name_bs": "Glavatica",
     "scientific_name": "Salmo marmoratus",
     "category": "fly_trout",
+    "image_url": "/slikeriba/glavatica.jfif",
     "description": "Rijetka i jadranskom slivu autohtona vrsta pastrmke iz rijeke Neretve i njenih pritoka. Može izrasti u gorostasa.",
     "habitat": ["sliv_neretve", "duboki_kanjoni"],
-    "temperature": {
-      "min": 4,
-      "optimal_min": 9,
-      "optimal_max": 15,
-      "max": 18
-    },
+    "temperature": { "min": 4, "optimal_min": 9, "optimal_max": 15, "max": 18 },
     "best_times": ["dawn", "dusk"],
     "seasons": ["spring", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "high",
-      "rain": "after_rain",
-      "wind": "light",
-      "pressure": "falling"
-    },
-    "baits": ["veliki_strimer", "vobler"],
+    "weather_preferences": { "cloud_cover": "high", "rain": "after_rain", "wind": "light", "pressure": "falling" },
+    "baits": [
+      "veliki_strimer", "vobler_srednji", "peš_imitacija",
+      "veliki_wooly_bugger", "senegalese_streamer", "keder_mali",
+      "suha_muha_velika", "salmon_fly_imitacija", "large_nymph",
+      "stonefly_imitacija", "mouse_imitacija_noć"
+    ],
     "methods": ["musicarenje", "varalicarenje"],
     "source_id": "src-jablanicko-lake",
     "confidence": "high",
@@ -509,23 +443,19 @@
     "name_bs": "Mekousna pastrmka",
     "scientific_name": "Salmothymus obtusirostris",
     "category": "fly_trout",
+    "image_url": "/slikeriba/mekousna.jfif",
     "description": "Endemska vrsta jadranskog sliva (Neretva, Buna, Drežanka). Izuzetno rijetka i zaštićena sa specifičnom mesnatom gornjom usnom.",
     "habitat": ["neretva", "buna", "drezanka"],
-    "temperature": {
-      "min": 6,
-      "optimal_min": 10,
-      "optimal_max": 15,
-      "max": 18
-    },
+    "temperature": { "min": 6, "optimal_min": 10, "optimal_max": 15, "max": 18 },
     "best_times": ["morning", "late_afternoon"],
     "seasons": ["spring", "summer"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "none",
-      "wind": "light",
-      "pressure": "stable"
-    },
-    "baits": ["sitna_nimfa"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "none", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "sitna_nimfa", "cdc_emerger", "micro_dry_fly",
+      "sitna_suha_muha", "micro_nymph_bead_head",
+      "pheasant_tail_micro", "caddis_pupa_imitacija",
+      "sitna_moka_muha"
+    ],
     "methods": ["musicarenje_catch_and_release"],
     "source_id": "src-jablanicko-lake",
     "confidence": "high",
@@ -537,26 +467,46 @@
     "name_bs": "Jezerska pastrmka",
     "scientific_name": "Salmo trutta m. lacustris",
     "category": "fly_trout",
+    "image_url": "/slikeriba/jezerska pastrmka.jfif",
     "description": "Obitava u dubokim i hladnim planinskim jezerima poput Boračkog i Plivskih jezera.",
     "habitat": ["duboka_jezera", "plivska_jezera", "boracko_jezero"],
-    "temperature": {
-      "min": 4,
-      "optimal_min": 10,
-      "optimal_max": 16,
-      "max": 19
-    },
+    "temperature": { "min": 4, "optimal_min": 10, "optimal_max": 16, "max": 19 },
     "best_times": ["early_morning", "dusk"],
     "seasons": ["spring", "autumn"],
-    "weather_preferences": {
-      "cloud_cover": "medium",
-      "rain": "light",
-      "wind": "medium_breeze",
-      "pressure": "stable"
-    },
-    "baits": ["vobler", "kašika", "strimer"],
-    "methods": ["trolling_trolling", "varaličarenje", "mušičarenje"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "light", "wind": "medium_breeze", "pressure": "stable" },
+    "baits": [
+      "vobler", "kašika", "strimer",
+      "trolling_plug", "deep_diver_vobler", "spoon_gold",
+      "worm_pattern_fly", "wooly_bugger_large", "marabou_streamer",
+      "large_nymph_jezerska", "dead_bait_mali_keder"
+    ],
+    "methods": ["trolling", "varaličarenje", "mušičarenje"],
     "source_id": "src-jablanicko-lake",
     "confidence": "high",
     "last_verified": "2026-05-12"
+  },
+  {
+    "id": "crucian-carp",
+    "slug": "karas",
+    "name_bs": "Karaš (Babuška)",
+    "scientific_name": "Carassius gibelio",
+    "category": "coarse_carp",
+    "image_url": "/slikeriba/babuska.jfif",
+    "description": "Izuzetno otporna mirna riba stajaćih voda i zaraslih zaliva. Reaguje na gliste i kukuruz.",
+    "habitat": ["jezera", "mrtvaje", "stajaćice"],
+    "temperature": { "min": 6, "optimal_min": 16, "optimal_max": 25, "max": 30 },
+    "best_times": ["morning", "afternoon"],
+    "seasons": ["spring", "summer", "autumn"],
+    "weather_preferences": { "cloud_cover": "medium", "rain": "none", "wind": "light", "pressure": "stable" },
+    "baits": [
+      "glista", "hleb", "kukuruz",
+      "crvić", "crveni_crvić", "tijesto_babuška",
+      "pinkie", "maggots", "hemp_seed",
+      "bread_paste", "mali_pelet", "praškasta_hrana_sitna"
+    ],
+    "methods": ["plovak", "feeder"],
+    "source_id": "src-srs-bih",
+    "confidence": "high",
+    "last_verified": "2026-03-01"
   }
 ]

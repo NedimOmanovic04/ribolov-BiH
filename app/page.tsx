@@ -7,28 +7,34 @@ import FishingScoreSummary from '@/components/FishingScoreSummary';
 import HourlyGraph from '@/components/HourlyGraph';
 import SpeciesFilterBar from '@/components/SpeciesFilterBar';
 import TopSpeciesList from '@/components/TopSpeciesList';
+import FishingPlanner from '@/components/FishingPlanner';
 import FishingMap from '@/components/map/FishingMap';
 import NearbyWaters from '@/components/NearbyWaters';
 import { fetchWeatherData, WeatherData } from '@/lib/weather/open-meteo';
 import { getAstronomyData, AstronomyData } from '@/lib/astronomy/moon';
 import { calculateFishingScore, FishingScoreResult } from '@/lib/fishing/score';
 import { getRankedSpecies, FishingCategoryFilter, SpeciesRecommendation } from '@/lib/fishing/recommendations';
-import { calculateDistanceKm } from '@/lib/geo/geocoding';
+import { reverseGeocode } from '@/lib/geo/geocoding';
+import { formatDateFull } from '@/lib/utils/dates';
 import watersData from '@/data/waters.json';
 import fishData from '@/data/fish.json';
 import sourcesData from '@/data/sources.json';
 import { WaterBody } from '@/types';
-import { MapPin, Shield, ExternalLink, ChevronDown, Clock, Thermometer, Gauge, Wind } from 'lucide-react';
+import { MapPin, Shield, ExternalLink, Clock, Calendar, Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   const [selectedLocation, setSelectedLocation] = useState<{
     lat: number;
     lng: number;
     name: string;
+    waterId?: string;
+    cityId?: string;
   }>({
-    lat: 43.6844,
-    lng: 17.8289,
-    name: 'Jablaničko jezero',
+    lat: 43.9889,
+    lng: 18.1781,
+    name: 'Rijeka Bosna (Visoko)',
+    waterId: 'water-bosna',
+    cityId: 'bosna-visoko',
   });
 
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -36,9 +42,23 @@ export default function HomePage() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [isLocating, setIsLocating] = useState<boolean>(false);
+  const [nowStr, setNowStr] = useState<string>('');
+  const [dateStr, setDateStr] = useState<string>('');
 
   const [filterCategory, setFilterCategory] = useState<FishingCategoryFilter>('all');
-  const [selectedSpeciesId, setSelectedSpeciesId] = useState<string>('common-carp');
+  const [selectedSpeciesId, setSelectedSpeciesId] = useState<string>('chub');
+
+  // Live clock + date
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      setNowStr(now.toLocaleTimeString('bs-BA', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }));
+      setDateStr(formatDateFull(now));
+    };
+    updateClock();
+    const iv = setInterval(updateClock, 1000);
+    return () => clearInterval(iv);
+  }, []);
 
   // Load URL query params if user selected a location link
   useEffect(() => {
@@ -50,12 +70,14 @@ export default function HomePage() {
         const lat = parseFloat(latP);
         const lng = parseFloat(lngP);
         const matchedWater = (watersData as WaterBody[]).find(
-          (w) => Math.abs(w.latitude - lat) < 0.05 && Math.abs(w.longitude - lng) < 0.05
+          (w) => Math.abs(w.latitude - lat) < 0.08 && Math.abs(w.longitude - lng) < 0.08
         );
         setSelectedLocation({
           lat,
           lng,
           name: matchedWater ? matchedWater.name : 'Odabrana lokacija',
+          waterId: matchedWater?.id,
+          cityId: matchedWater?.cities?.[0]?.id,
         });
       }
     }
@@ -91,26 +113,14 @@ export default function HomePage() {
     setIsLocating(true);
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
-        const lat = Number(pos.coords.latitude.toFixed(4));
-        const lng = Number(pos.coords.longitude.toFixed(4));
-        let placeName = 'Moja Lokacija';
-
-        const nearestWater = (watersData as WaterBody[]).reduce((prev, curr) => {
-          const dPrev = calculateDistanceKm(lat, lng, prev.latitude, prev.longitude);
-          const dCurr = calculateDistanceKm(lat, lng, curr.latitude, curr.longitude);
-          return dCurr < dPrev ? curr : prev;
-        });
-
-        if (nearestWater && calculateDistanceKm(lat, lng, nearestWater.latitude, nearestWater.longitude) <= 30) {
-          placeName = nearestWater.name;
-        } else {
-          placeName = 'Sarajevo';
-        }
+        const lat = Number(pos.coords.latitude.toFixed(5));
+        const lng = Number(pos.coords.longitude.toFixed(5));
+        let placeName = await reverseGeocode(lat, lng);
 
         setSelectedLocation({
           lat,
           lng,
-          name: `${placeName} (Moja trenutna lokacija)`,
+          name: `${placeName} (Moja GPS lokacija)`,
         });
         setIsLocating(false);
       },
@@ -119,15 +129,29 @@ export default function HomePage() {
         alert('Neuspješno određivanje lokacije.');
         setIsLocating(false);
       },
-      { timeout: 10000 }
+      { timeout: 10000, enableHighAccuracy: true }
     );
   };
 
   let currentSpeciesScoreResult: FishingScoreResult | null = null;
   let rankedSpeciesList: SpeciesRecommendation[] = [];
+  let topFeaturedSpeciesName = 'Klen';
 
   if (weather && astronomy) {
-    rankedSpeciesList = getRankedSpecies(weather, astronomy, filterCategory);
+    rankedSpeciesList = getRankedSpecies(
+      weather,
+      astronomy,
+      filterCategory,
+      selectedLocation.waterId,
+      selectedLocation.cityId
+    );
+
+    // Pick top species from ranked list for bulletin top featured species
+    const topRecommendation = rankedSpeciesList.find((r) => !r.presence.isAbsent);
+    if (topRecommendation) {
+      topFeaturedSpeciesName = topRecommendation.species.name_bs;
+    }
+
     const targetSpecies = fishData.find((f) => f.id === selectedSpeciesId) || fishData[0];
     currentSpeciesScoreResult = calculateFishingScore({
       species: targetSpecies as any,
@@ -136,7 +160,7 @@ export default function HomePage() {
     });
   }
 
-  const selectedSpeciesName = fishData.find((f) => f.id === selectedSpeciesId)?.name_bs || 'Šaran';
+  const selectedSpeciesName = fishData.find((f) => f.id === selectedSpeciesId)?.name_bs || 'Klen';
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0b120f] text-[#f4f3ef]">
@@ -151,12 +175,11 @@ export default function HomePage() {
       {/* Main Outdoor Portal Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
         
-        {/* FISHERMAN'S HERO SECTION: Large Natural Landscape & Spot Summary */}
+        {/* HERO SECTION WITH LIVE DATE & GPS */}
         <section className="bg-[#121c17] border border-[#1f3629] rounded-lg p-6 relative overflow-hidden shadow-xl">
-          {/* Subtle river texture background accent */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#0e1712] via-[#14231b] to-transparent opacity-95"></div>
           
-          <div className="relative z-10 space-y-5">
+          <div className="relative z-10 space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#1f3629] pb-4">
               <div>
                 <span className="text-xs font-serif font-bold uppercase tracking-widest text-[#c49f6e] block">
@@ -166,88 +189,58 @@ export default function HomePage() {
                   Gdje da idem na ribolov danas?
                 </h1>
                 <p className="text-xs text-[#8ea396] font-sans mt-1">
-                  Pronađite najbolje vrijeme za ribolov po rijekama, jezerima i vrstama u Bosni i Hercegovini.
+                  Pronađite najbolje vrijeme za ribolov po rijekama, jezerima i mjestima u Bosni i Hercegovini.
                 </p>
+                {/* Live Date formatted as DD.MM.YYYY. (Dan) */}
+                {nowStr && (
+                  <div className="flex items-center gap-3 mt-2 text-xs">
+                    <span className="flex items-center gap-1.5 text-[#d5d1c3]">
+                      <Calendar className="w-3.5 h-3.5 text-[#4ca778]" />
+                      <span className="capitalize font-mono">{dateStr}</span>
+                    </span>
+                    <span className="flex items-center gap-1.5 bg-[#182820] border border-[#274535] px-2 py-0.5 rounded font-mono font-bold text-white">
+                      <Clock className="w-3 h-3 text-[#4ca778]" />
+                      {nowStr}
+                    </span>
+                  </div>
+                )}
               </div>
 
-              {/* Location Picker Quick Dropdown */}
+              {/* GPS Button */}
               <div className="flex items-center gap-2">
-                <div className="relative">
-                  <select
-                    value={selectedLocation.name}
-                    onChange={(e) => {
-                      const matched = (watersData as WaterBody[]).find((w) => w.name === e.target.value);
-                      if (matched) {
-                        setSelectedLocation({
-                          lat: matched.latitude,
-                          lng: matched.longitude,
-                          name: matched.name,
-                        });
-                      }
-                    }}
-                    className="appearance-none bg-[#182820] text-white text-xs font-bold font-serif py-2.5 pl-3.5 pr-8 rounded border border-[#274535] focus:outline-none focus:border-[#4ca778] cursor-pointer"
-                  >
-                    {(watersData as WaterBody[]).map((w) => (
-                      <option key={w.id} value={w.name} className="bg-[#0e1712] text-white">
-                        {w.name} ({w.municipality})
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown className="w-4 h-4 text-[#c49f6e] absolute right-2.5 top-3 pointer-events-none" />
-                </div>
-
                 <button
                   onClick={handleUseMyLocation}
                   disabled={isLocating}
-                  className="px-3 py-2 bg-[#274535] hover:bg-[#2e7d58] text-white rounded text-xs font-semibold flex items-center gap-1.5 transition-colors border border-[#345b46]"
-                  title="Moja GPS lokacija"
+                  className="px-4 py-2.5 bg-[#274535] hover:bg-[#2e7d58] text-white rounded text-xs font-semibold flex items-center gap-2 transition-colors border border-[#345b46]"
+                  title="Detektuj moju GPS lokaciju"
                 >
                   <MapPin className="w-3.5 h-3.5 text-[#4ca778]" />
-                  <span className="hidden sm:inline">{isLocating ? 'Lociram...' : 'Moja lokacija'}</span>
+                  <span>{isLocating ? 'Lociram...' : 'Moja lokacija'}</span>
                 </button>
               </div>
             </div>
 
-            {/* Quick Conditions Banner for Selected Spot */}
-            {weather && currentSpeciesScoreResult && (
-              <div className="bg-[#182820] border border-[#274535] rounded p-4 flex flex-wrap items-center justify-between gap-4 text-xs">
-                <div>
-                  <div className="text-[11px] text-[#8ea396] font-serif uppercase tracking-wider">Trenutno odabrano:</div>
-                  <div className="text-lg font-bold text-white font-serif flex items-center gap-2">
-                    📍 {selectedLocation.name}
-                  </div>
-                </div>
-
-                {/* Score badge */}
-                <div className="flex items-center gap-3">
-                  <div className="text-right">
-                    <div className="text-2xl font-black text-white font-serif">
-                      {currentSpeciesScoreResult.totalScore}<span className="text-xs text-[#4ca778]">/100</span>
-                    </div>
-                    <div className="text-[10px] text-[#4ca778] uppercase font-bold">
-                      🟢 {currentSpeciesScoreResult.categoryLabel}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quick Metrics */}
-                <div className="flex items-center gap-4 border-l border-[#274535] pl-4 text-xs">
-                  <div className="flex items-center gap-1.5 text-[#e8e5db]">
-                    <Clock className="w-4 h-4 text-[#2b87be]" />
-                    <span>Najbolje: <strong className="text-white">{currentSpeciesScoreResult.bestPeriods[0]?.start}–{currentSpeciesScoreResult.bestPeriods[0]?.end} ⭐</strong></span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[#e8e5db]">
-                    <Thermometer className="w-4 h-4 text-[#4ca778]" />
-                    <span>Temp: <strong className="text-white">{Math.round(weather.current.temperature_2m)}°C</strong></span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[#e8e5db]">
-                    <Gauge className="w-4 h-4 text-[#4ca778]" />
-                    <span>Pritisak: <strong className="text-white">{Math.round(weather.current.surface_pressure)} hPa</strong></span>
-                  </div>
-                </div>
+            {/* Quick Status Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-[#8ea396]">
+              <div>
+                Trenutna lokacija: <strong className="text-white font-serif">{selectedLocation.name}</strong>
               </div>
-            )}
+              <div className="flex items-center gap-2">
+                <span className="text-[#4ca778] font-semibold">⭐ Top ulov danas: {topFeaturedSpeciesName}</span>
+              </div>
+            </div>
           </div>
+        </section>
+
+        {/* PRIMARY FEATURE: PLANER RIBOLOVA ON HOMEPAGE */}
+        <section>
+          <FishingPlanner
+            onLocationChange={(lat, lng, name) => setSelectedLocation({ lat, lng, name })}
+            onSpeciesChange={(id) => setSelectedSpeciesId(id)}
+            initialWaterId={selectedLocation.waterId || 'water-bosna'}
+            initialCityId={selectedLocation.cityId || 'bosna-visoko'}
+            initialFishId={selectedSpeciesId}
+          />
         </section>
 
         {/* Loading State */}
@@ -265,17 +258,17 @@ export default function HomePage() {
           <div className="bg-[#3a1919] border border-rose-800 text-rose-200 rounded-lg p-5 text-center space-y-2 text-xs">
             <p className="font-bold">{error}</p>
             <button
-              onClick={() => setSelectedLocation({ lat: 43.6844, lng: 17.8289, name: 'Jablaničko jezero' })}
+              onClick={() => setSelectedLocation({ lat: 43.9889, lng: 18.1781, name: 'Rijeka Bosna (Visoko)', waterId: 'water-bosna', cityId: 'bosna-visoko' })}
               className="px-3 py-1.5 bg-rose-800 hover:bg-rose-700 text-white font-bold rounded"
             >
-              Vrati na Jablaničko jezero
+              Vrati na Rijeka Bosna (Visoko)
             </button>
           </div>
         )}
 
         {!loading && !error && weather && astronomy && currentSpeciesScoreResult && (
           <>
-            {/* Top Grid: Outdoor Weather Almanac + Score Bulletin */}
+            {/* Top Grid: Weather Almanac + Bulletin featuring Top Species */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <WeatherWidget
                 weather={weather}
@@ -286,13 +279,15 @@ export default function HomePage() {
                 scoreResult={currentSpeciesScoreResult}
                 locationName={selectedLocation.name}
                 selectedSpeciesName={selectedSpeciesName}
+                topSpeciesName={topFeaturedSpeciesName}
+                isTopSpeciesFeatured={true}
               />
             </div>
 
-            {/* Satni Almanah (00:00 - 23:00) */}
+            {/* Hourly Score Graph (00:00 - 23:00) */}
             <HourlyGraph hourlyScores={currentSpeciesScoreResult.hourlyScores} />
 
-            {/* Category Filter ("Šta da lovim?") & Ranked Species List */}
+            {/* Category Filter & Ranked Species List with Spot Presence Status */}
             <div className="space-y-4">
               <SpeciesFilterBar
                 activeFilter={filterCategory}
@@ -301,18 +296,17 @@ export default function HomePage() {
               <TopSpeciesList
                 recommendations={rankedSpeciesList}
                 onSelectSpecies={(id) => setSelectedSpeciesId(id)}
+                locationName={selectedLocation.name}
               />
             </div>
 
-            {/* Bottom Grid: Natural Clean BiH Map & Nearby Fishing Spots */}
+            {/* Bottom Grid: Interactive BiH Map & Nearby Fishing Spots */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              
-              {/* Interactive BiH Leaflet Map */}
               <div className="lg:col-span-2 panel-outdoors rounded-lg p-4 space-y-3 flex flex-col min-h-[420px]">
                 <div className="flex items-center justify-between border-b border-[#1f3629] pb-2">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wider text-[#c49f6e] block font-serif">
-                      🗺️ Karta Voda Bosne i Hercegovine
+                      🗺️ Karta Voda i Lokacija Bosne i Hercegovine
                     </span>
                     <h3 className="text-base font-bold text-white font-serif">Karta Rijeka, Jezera i Revira</h3>
                   </div>
@@ -326,13 +320,14 @@ export default function HomePage() {
                         lat: w.latitude,
                         lng: w.longitude,
                         name: w.name,
+                        waterId: w.id,
+                        cityId: w.cities?.[0]?.id,
                       })
                     }
                   />
                 </div>
               </div>
 
-              {/* Nearby Waters radius table */}
               <div>
                 <NearbyWaters
                   currentLat={selectedLocation.lat}
@@ -342,11 +337,12 @@ export default function HomePage() {
                       lat: w.latitude,
                       lng: w.longitude,
                       name: w.name,
+                      waterId: w.id,
+                      cityId: w.cities?.[0]?.id,
                     })
                   }
                 />
               </div>
-
             </div>
 
             {/* Verification Sources Section */}
@@ -356,7 +352,7 @@ export default function HomePage() {
                   <Shield className="w-4 h-4 text-[#4ca778]" />
                   Verificirani Službeni Izvori Podataka
                 </h4>
-                <span className="text-xs text-[#8ea396]">FBiH & SRS BiH Pravilnici</span>
+                <span className="text-xs text-[#8ea396]">SRS BiH & Pravilnici FBiH/RS</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
                 {sourcesData.map((src) => (

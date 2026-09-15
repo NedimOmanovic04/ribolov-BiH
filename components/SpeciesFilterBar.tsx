@@ -10,22 +10,22 @@ interface SpeciesFilterBarProps {
 
 export default function SpeciesFilterBar({ activeFilter, onSelectFilter }: SpeciesFilterBarProps) {
   const options: { id: FishingCategoryFilter; label: string; emoji: string }[] = [
-    { id: 'all', label: 'Bilo šta', emoji: '🐟' },
-    { id: 'predator', label: 'Predatorska riba', emoji: '🎯' },
+    { id: 'all', label: 'Sve vrste', emoji: '🐟' },
+    { id: 'predator', label: 'Grabljivice', emoji: '🎯' },
     { id: 'coarse_carp', label: 'Mirna riba', emoji: '🌾' },
     { id: 'fly_trout', label: 'Mušičarenje', emoji: '🪰' },
-    { id: 'trout', label: 'Pastrmka', emoji: '🐟' },
-    { id: 'carp', label: 'Šaran', emoji: '🐟' },
+    { id: 'trout', label: 'Pastrmka', emoji: '🏔️' },
+    { id: 'carp', label: 'Šaran', emoji: '🎣' },
   ];
 
   return (
-    <div className="glass-panel rounded-2xl p-4 border border-river-800/80 space-y-3">
-      <div className="flex items-center justify-between">
-        <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-          <Compass className="w-4 h-4 text-emerald-400" />
-          Kategorija ribolova — "Šta da lovim?"
+    <div className="panel-outdoors rounded-lg p-4 border border-[#1f3629] space-y-3">
+      <div className="flex items-center justify-between border-b border-[#1f3629] pb-2">
+        <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5 font-serif">
+          <Compass className="w-4 h-4 text-[#4ca778]" />
+          Kategorija ribolova — &quot;Šta da lovim?&quot;
         </h3>
-        <span className="text-xs text-emerald-400/70 hidden sm:inline">Odaberi stil ribolova</span>
+        <span className="text-xs text-[#8ea396] hidden sm:inline">Odaberi stil ribolova</span>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -35,10 +35,10 @@ export default function SpeciesFilterBar({ activeFilter, onSelectFilter }: Speci
             <button
               key={opt.id}
               onClick={() => onSelectFilter(opt.id)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
+              className={`px-3.5 py-2 rounded text-xs font-semibold transition-all flex items-center gap-2 border ${
                 isSelected
-                  ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-950/60 border border-emerald-400'
-                  : 'bg-river-900/80 hover:bg-river-800 text-emerald-200/80 border border-river-800'
+                  ? 'bg-[#274535] text-white border-[#4ca778] font-bold'
+                  : 'bg-[#182820] hover:bg-[#1c3126] text-[#8ea396] hover:text-white border-[#274535]'
               }`}
             >
               <span className="text-base">{opt.emoji}</span>
