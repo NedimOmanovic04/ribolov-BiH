@@ -1,17 +1,3 @@
-const config = {
-  default: {
-    override: {
-      wrapper: "cloudflare-node",
-      converter: "edge",
-      incrementalCache: "dummy",
-      tagCache: "dummy",
-      queue: "dummy",
-    },
-  },
-  dangerous: {
-    disableTagCache: true,
-    disableIncrementalCache: true,
-  },
-};
+import { defineCloudflareConfig } from "@opennextjs/cloudflare/config";
 
-export default config;
+export default defineCloudflareConfig();
