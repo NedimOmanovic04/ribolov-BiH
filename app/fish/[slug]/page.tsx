@@ -9,15 +9,16 @@ import { notFound } from 'next/navigation';
 import { ShieldCheck, Thermometer, Anchor, FileText, Waves } from 'lucide-react';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return fishData.map((f) => ({ slug: f.slug }));
 }
 
-export default function FishDetailPage({ params }: Props) {
-  const fish = fishData.find((f) => f.slug === params.slug);
+export default async function FishDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const fish = fishData.find((f) => f.slug === slug);
 
   if (!fish) {
     notFound();

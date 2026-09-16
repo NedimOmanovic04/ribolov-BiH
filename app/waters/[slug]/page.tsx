@@ -7,15 +7,16 @@ import { notFound } from 'next/navigation';
 import { MapPin, ExternalLink, ShieldCheck, Fish } from 'lucide-react';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return watersData.map((w) => ({ slug: w.slug }));
 }
 
-export default function WaterDetailPage({ params }: Props) {
-  const water = watersData.find((w) => w.slug === params.slug);
+export default async function WaterDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const water = watersData.find((w) => w.slug === slug);
 
   if (!water) {
     notFound();
