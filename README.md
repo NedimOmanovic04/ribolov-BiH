@@ -2,7 +2,7 @@
 # Ribolov BiH — Bosnia and Herzegovina Fishing Assistant
 
 ## Live Demo
-[YOUR_LIVE_DEMO_LINK]
+https://ribolov-bi-h.vercel.app
 
 ## Screenshots
 
